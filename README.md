@@ -50,19 +50,30 @@ To set up the project locally, follow these steps:
 1. **Clone the repository**:
    ```bash
    git clone <repository-url>
+Install dependencies:
 
+bash
+Copy code
+npm install
+Run the application:
 
-Installation
-To set up the project locally, follow these steps:
+bash
+Copy code
+node index.js
+Optional: Install Nodemon (if you don’t have it already):
 
-- Clone the repository: ( git clone <repository-url> ) copy this in terminal.
-- Install dependencies: ( npm install ) copy this in terminal.
-- Run the application: ( node index.js ) copy this in terminal.
-- The application will be available at http://localhost:8080.
-- Mave sure that you have already downloaded Nodemon , if not then ( npm i nodemon ) copy this in terminal.
+bash
+Copy code
+npm i nodemon
+Access the app:
+The application will be available at:
+👉 http://localhost:8080
 
-Author Information
-
-- Name: SK Akram
-- Email: skcodewizard786@gmail.com
-- Social Media: Follow me on Twitter, LinkedIn, Instagram, and YouTube for updates!
+👤 Author Information
+Name: SK Akram
+Email: skcodewizard786@gmail.com
+Follow me on Social Media:
+Twitter
+LinkedIn
+Instagram
+YouTube
