@@ -65,3 +65,14 @@ node index.js
 
 # The application will be available at:
 # 👉 http://localhost:8080
+
+# Name: SK Akram
+
+# Email: skcodewizard786@gmail.com
+
+# Social Media:
+# - Twitter: https://twitter.com/akramcodez
+# - LinkedIn: https://linkedin.com/in/akramcodez
+# - Instagram: https://instagram.com/akramcodez
+# - YouTube: https://youtube.com/@akramcodez
+
