@@ -43,6 +43,28 @@ Showcasing their unique bios, posts, and interactions.
 
 ---
 
+## 💡 Suggestions  
+
+If the image URL from `data.json` is not working:  
+1. Open **Google** and search for a new image.  
+2. Copy the image URL from Google.  
+3. Replace the old URL in the `data.json` file with the new one.  
+4. Restart the application to see the changes.
+
+---
+
+## 👤 Author Information  
+
+- **Name**: SK Akram  
+- **Email**: skcodewizard786@gmail.com  
+- **Social Media**:  
+  - [Twitter](https://twitter.com/akramcodez)  
+  - [LinkedIn](https://linkedin.com/in/akramcodez)  
+  - [Instagram](https://instagram.com/akramcodez)  
+  - [YouTube](https://youtube.com/@akramcodez)
+
+---
+
 ## ⚙️ Installation  
 
 Follow these steps to set up the project locally:  
@@ -65,14 +87,3 @@ node index.js
 
 # The application will be available at:
 # 👉 http://localhost:8080
-
-# Name: SK Akram
-
-# Email: skcodewizard786@gmail.com
-
-# Social Media:
-# - Twitter: https://twitter.com/akramcodez
-# - LinkedIn: https://linkedin.com/in/akramcodez
-# - Instagram: https://instagram.com/akramcodez
-# - YouTube: https://youtube.com/@akramcodez
-
