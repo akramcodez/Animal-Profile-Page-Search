@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Animalgram</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="icon" href="/animals.png" >
+  </head>
+  <body>
+    <div class="side-bar">
+        <div class="upperside-bar">
+            <p class="icon-p" type="button"><i class="fa-solid fa-house"></i> Home</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-magnifying-glass"></i>Search</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-rotate-right"></i>Explore</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-film"></i>Reels</h1>
+            <p class="icon-p" type="button"><i class="fa-solid fa-envelope"></i>Message</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-heart"></i>Like</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-plus"></i>Create</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-user"></i>Profile</p>
+        </div>
+        <div class="lowerside-bar">
+            <p class="icon-p" type="button"><i class="fa-solid fa-share"></i>Threads</p>
+            <p class="icon-p" type="button"><i class="fa-regular fa-sun"></i>Settings</p>
+        </div>
+    </div>
+    <div class="right-side">
+        <div class="top-bar">
+            <div class="profile-img">
+                <div class="img">
+                    <img src="<%= data.profile %>" alt="No Found">
+                </div>
+            </div>
+            <div class="section">
+                <div class="section1">
+                    <span>@<%=data.name%></span>
+                    <button class="follow-btn">Follow</button>
+                    <button>Message</button>
+                </div>
+                <div class="section2">
+                    <p>
+                        Followers : <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp; Following : <%=
+                        data.following %>
+                      </p>
+                </div>
+                <div class="section3">
+                    <p><%=data.bio.line1%></p>
+                    <p><%=data.bio.line2%></p>
+                    <p><%=data.bio.line3%></p>
+                    <p><%=data.bio.line4%></p>
+                </div>
+            </div>
+        </div>
+        <div class="down-bar">
+            <% for (let post of data.posts) { %>
+              <div class="post">
+                    <img src="<%= post.image %>" alt="Post Image" />
+                    <div class="post-details">
+                        <p>
+                            Likes: <%= post.likes %> &nbsp;&nbsp; Comments: <%= post.comments %>
+                        </p>
+                    </div>
+               
+              </div>
+            <% } %>
+          </div>
+    </div>
+   
+
+    <script src="/app.js"></script>
+  </body>
+</html>
