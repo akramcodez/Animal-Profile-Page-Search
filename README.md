@@ -29,3 +29,18 @@ Project Details
 - Data Storage: User profiles and posts are stored in a JSON file (data.json).
 - Routing: User profiles are dynamically rendered based on the URL (e.g., /ig/:username).
 - Use a localhost for start the page.
+
+Installation
+To set up the project locally, follow these steps:
+
+1 . Clone the repository: ( git clone <repository-url> ) copy this in terminal.
+2 . Install dependencies: ( npm install ) copy this in terminal.
+3 . Run the application: ( node index.js ) copy this in terminal.
+4 . The application will be available at http://localhost:8080.
+5 . Mave sure that you have already downloaded Nodemon , if not then ( npm i nodemon ) copy this in terminal.
+
+Author Information
+
+- Name: SK Akram
+- Email: skcodewizard786@gmail.com
+- Social Media: Follow me on Twitter, LinkedIn, Instagram, and YouTube for updates!
