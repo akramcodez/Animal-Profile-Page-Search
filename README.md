@@ -59,7 +59,7 @@ If the image URL from `data.json` is not working:
 - **Email**: skcodewizard786@gmail.com  
 - **Social Media**:  
   - [Twitter](https://twitter.com/akramcodez)  
-  - [LinkedIn]([https://linkedin.com/in/akramcodez](https://www.linkedin.com/in/sk-akram-aaa903318/))  
+  - [LinkedIn](https://www.linkedin.com/in/sk-akram-aaa903318/)  
   - [Instagram](https://instagram.com/akramcodez)  
   - [YouTube](https://youtube.com/@akramcodez)
 
