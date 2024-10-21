@@ -66,11 +66,6 @@ We appreciate everyone who contributes to the development of **Animal-Profile-Pa
 
 - **Name**: SK Akram and Mishra  
 - **Email**: skcodewizard786@gmail.com  
-- **Social Media**:  
-  - [Twitter](https://twitter.com/akramcodez)  
-  - [LinkedIn](https://www.linkedin.com/in/sk-akram-aaa903318/)  
-  - [Instagram](https://instagram.com/akramcodez)  
-  - [YouTube](https://youtube.com/@akramcodez)
 
 ---
 
