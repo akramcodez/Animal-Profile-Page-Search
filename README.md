@@ -53,9 +53,18 @@ If the image URL from `data.json` is not working:
 
 ---
 
+## 🤝 Contributors  
+
+We appreciate everyone who contributes to the development of **Animal-Profile-Page-Search**!  
+
+- **Akram**  
+- **Mishra**  
+
+---
+
 ## 👤 Author Information  
 
-- **Name**: SK Akram  
+- **Name**: SK Akram and Mishra  
 - **Email**: skcodewizard786@gmail.com  
 - **Social Media**:  
   - [Twitter](https://twitter.com/akramcodez)  
