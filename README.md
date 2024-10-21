@@ -57,8 +57,8 @@ If the image URL from `data.json` is not working:
 
 We appreciate everyone who contributes to the development of **Animal-Profile-Page-Search**!  
 
-- **Akram**  
-- **Mishra**  
+- **SK Akram**  
+- **Rajat Mishra**  
 
 ---
 
