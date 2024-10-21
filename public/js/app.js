@@ -1,6 +1,6 @@
 const btns = document.querySelectorAll("button");
 const icons = document.querySelectorAll(".icon-p");
-const followBtn = document.querySelector(".follow-btn")
+const followBtn = document.querySelector(".follow-btn");
 
 for (let btn of btns) {
   btn.addEventListener("click", () => {

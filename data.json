@@ -1,4 +1,54 @@
 {
+  "tiger247": {
+    "name": "tiger247",
+    "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0HZFkEV1of9BSQikITJ0NAVnSOMrlLX_aMA&s",
+    "followers": "75M",
+    "following": 150,
+    "bio": {
+      "line1": "🐾 Name: Sher-Khan",
+      "line2": "😼 Full-time troublemaker",
+      "line3": "🛏️ Belongs to cat family",
+      "line4": "🐅 I does not shout its my tigritude "
+    },
+    "posts": [
+      {
+        "id": "1a",
+        "image": "https://transforms.stlzoo.org/production/animals/amur-tiger-01-01.jpg?w=1200&h=1200&auto=compress%2Cformat&fit=crop&dm=1658935145&s=95d03aceddd44dc8271beed46eae30bc",
+        "likes": 3000,
+        "comments": 41
+      },
+      {
+        "id": "2a",
+        "image": "https://media.4-paws.org/5/4/4/c/544c2b2fd37541596134734c42bf77186f0df0ae/VIER%20PFOTEN_2017-10-20_164-3854x2667-1920x1329.jpg",
+        "likes": 2500,
+        "comments": 32
+      },
+      {
+        "id": "3a",
+        "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/P.t.altaica_Tomak_Male.jpg",
+        "likes": 6500,
+        "comments": 32
+      },
+      {
+        "id": "4a",
+        "image": "https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg",
+        "likes": 4500,
+        "comments": 32
+      },
+      {
+        "id": "5a",
+        "image": "https://th-thumbnailer.cdn-si-edu.com/YrxLdBclT392HAcO2KyM_ULjfCo=/800x800/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/1d/10/1d102878-7750-49f4-bced-1809c4d7e8ea/tiger.jpg",
+        "likes": 3500,
+        "comments": 32
+      },
+      {
+        "id": "6a",
+        "image": "https://media.cnn.com/api/v1/images/stellar/prod/200605082916-01-real-tiger-king-siberian.jpg?q=x_3,y_92,h_1725,w_3065,c_crop/h_833,w_1480",
+        "likes": 500,
+        "comments": 6
+      }
+    ]
+  },
   "cat": {
     "name": "Jack123",
     "profile": "https://www.hindustantimes.com/ht-img/img/2023/04/12/550x309/cat_thumb_1681303010348_1681303048932_1681303048932.jpg",
