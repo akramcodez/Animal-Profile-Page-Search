@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous"
+        referrerpolicy="no-referrer"
+        />
+    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="/card.css" />
+    <link rel="icon" href="/animals.png" >
+</head>
+<body>
+    <div class="side-bar">
+        <div class="upperside-bar">
+            <p class="icon-p" type="button"><i class="fa-solid fa-house"></i> Home</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-magnifying-glass"></i>Search</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-rotate-right"></i>Explore</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-film"></i>Reels</h1>
+            <p class="icon-p" type="button"><i class="fa-solid fa-envelope"></i>Message</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-heart"></i>Like</p>
+            <p class="icon-p" type="button"><i class="fa-solid fa-plus"></i>Create</p>
+            <p class="icon-p" type="button" style="opacity: 1; filter: brightness(2);">
+                <i class="fa-solid fa-user"></i>Profile
+            </p>
+        </div>
+        <div class="lowerside-bar">
+            <p class="icon-p" type="button"><i class="fa-solid fa-share"></i>Threads</p>
+            <p class="icon-p" type="button"><i class="fa-regular fa-sun"></i>Settings</p>
+        </div>
+    </div>
+
+    <div class="right-side">
+        <div class="card">
+            <div class="upper">
+                <h3>Edit your profile</h3>
+            <p>Username: @king_Of_Pirates2003</p>
+            </div>
+            <div class="lower">
+                <form method="post" action="/ig/<%= data.name %>?_method=PATCH">
+                    <label for="profile">Profile Picture</label>
+                    <input type="text" name="profile" id="profile" placeholder="Enter image link" value="<%= data.profile %>">
+        
+                    <label for="bio_line1">Name:</label>
+                    <input type="text" name="bio_line1" id="bio_line1" placeholder="Enter name" value="<%= data.bio.line1%>">
+        
+                    <label for="bio_line2">Bio Line 1:</label>
+                    <input type="text" name="bio_line2" id="bio_line2" placeholder="Enter line 2" value="<%= data.bio.line2%>">
+        
+                    <label for="bio_line3">Bio Line 2:</label>
+                    <input type="text" name="bio_line3" id="bio_line3" placeholder="Enter line 3" value="<%= data.bio.line3%>">
+        
+                    <label for="bio_line4">Bio Line 3:</label>
+                    <input type="text" name="bio_line4" id="bio_line4" placeholder="Enter line 4" value="<%= data.bio.line4%>">
+                    
+                    <button type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    
+</body>
+</html>
