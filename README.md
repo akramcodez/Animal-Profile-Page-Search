@@ -46,7 +46,7 @@ We appreciate everyone who contributes to the development of **Animal-Profile-Pa
 
 ## 🛠️ Technologies Used  
 
-- **Frontend**: HTML, CSS, EJS (Embedded JavaScript templating)  
+- **Frontend**: EJS (Embedded JavaScript templating), CSS,  
 - **Backend**: Node.js, Express.js  
 - **Data Storage**: JSON file (`data.json`)  
 - **Package Manager**: npm  
