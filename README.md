@@ -58,14 +58,19 @@ If the image URL from `data.json` is not working:
 We appreciate everyone who contributes to the development of **Animal-Profile-Page-Search**!  
 
 - **SK Akram**  
-- **Rajat Mishra**  
+- **[Rajat Mishra](https://twitter.com/akramcodez)  **  
 
 ---
 
 ## 👤 Author Information  
 
-- **Name**: SK Akram and Mishra  
-- **Email**: skcodewizard786@gmail.com  
+- **Name**: SK Akram 
+- **Email**: skcodewizard786@gmail.com
+- - *Social Media*:  
+  - [Twitter](https://twitter.com/akramcodez)  
+  - [LinkedIn](https://www.linkedin.com/in/sk-akram-aaa903318/)  
+  - [Instagram](https://instagram.com/akramcodez)  
+  - [YouTube](https://youtube.com/@akramcodez)
 
 ---
 
