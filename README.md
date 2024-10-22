@@ -19,7 +19,7 @@ Showcasing their unique bios, posts, and interactions.
 
 ## 🌟 Features  
 
-### 🔥 Features by[SK Akram](https://github.com/akramcodez)  
+### 🔥 Features by [SK Akram](https://github.com/akramcodez)  
 - **User Profiles**:  
   Each pet has a unique profile with their name, bio, and profile picture.  
 
