@@ -13,7 +13,7 @@ Showcasing their unique bios, posts, and interactions.
 
 ## 🤝 Collaboration Project
 
-**Animal-Profile-Page-Search** is an open-source collaboration project. We welcome contributions from developers worldwide. Whether you add new features, fix bugs, or improve the design, your input is valued and appreciated.
+**Animal-Profile-Page-Search** is an open-source collaboration project. We welcome contributions from developers worldwide. Whether you add new features, fix bugs, or improve the design, your input is valued and appreciated. **Please create your own branch and push the changes to it before submitting a pull request.**
 
 ---
 
@@ -120,9 +120,16 @@ npm install
 # Step 4: (Optional) Install Nodemon for automatic server restarts
 npm i nodemon
 
-# Step 5: Run the application
+# Step 5: Create your own branch for the new features or fixes
+git checkout -b <your-branch-name>
+
+# Step 6: Run the application
 node index.js
+
+# Step 7: After making changes, commit, push, and submit a pull request:
+git add .
+git commit -m "Added new feature"
+git push origin <your-branch-name>
 
 # The application will be available at:
 # 👉 http://localhost:8080
-
