@@ -7,7 +7,7 @@ A responsive demo of an **animal profile page** that allows users to browse, sea
 A fun social media platform for pets! This web application allows users to explore animal profiles like:  
 **CAT | DOG | GOAT | COW | HEN | DUCK**  
 
-Showcasing their unique bios, posts, and interactions.
+Showcasing their unique bios, posts, and interactions..
 
 ---
 
