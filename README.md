@@ -39,7 +39,7 @@ Showcasing their unique bios, posts, and interactions.
 - **Delete Posts**:  
   Users can delete posts from the profile page.  
 
-### 🌐 Features by [Abhijit](https://github.com/Abhijit8951)  
+### 🌐 Features by [Abhijit Swain](https://github.com/Abhijit8951)  
 - **Home Page**:  
   Added a home page showcasing recent activity and trending animal profiles.  
 
@@ -100,7 +100,7 @@ We appreciate the effort and dedication of all the contributors:
   [GitHub](https://github.com/mishraRj)  
   Contributed to: **Edit Profile**, **Delete Posts**.
 
-- **Abhijit**:  
+- **Abhijit Swain**:  
   [GitHub](https://github.com/Abhijit8951)  
   Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
 
