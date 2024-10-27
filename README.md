@@ -7,7 +7,7 @@ A responsive demo of an **animal profile page** that allows users to browse, sea
 A fun social media platform for pets! This web application allows users to explore animal profiles like:  
 **CAT | DOG | GOAT | COW | HEN | DUCK**  
 
-Showcasing their unique bios, posts, and interactions..
+Showcasing their unique bios, posts, and interactions.
 
 ---
 
@@ -39,11 +39,21 @@ Showcasing their unique bios, posts, and interactions..
 - **Delete Posts**:  
   Users can delete posts from the profile page.  
 
+### 🌐 Features by [Abhijit](https://github.com/Abhijit8951)  
+- **Home Page**:  
+  Added a home page showcasing recent activity and trending animal profiles.  
+
+- **Stories Section**:  
+  Implemented **stories** on the home page, allowing users to view short updates from animal profiles.  
+
+- **Routing Enhancements**:  
+  Improved routing for smoother navigation across profiles and home sections.  
+
 ---
 
 ## 🛠️ Technologies Used  
 
-- **Frontend**: EJS, CSS
+- **Frontend**: EJS, CSS  
 - **Backend**: Node.js, Express.js  
 - **Data Storage**: JSON file (`data.json`)  
 - **Package Manager**: npm  
@@ -55,15 +65,16 @@ Showcasing their unique bios, posts, and interactions..
 - Users can explore various animal profiles and interact with posts.  
 - **Profiles** showcase unique bios and images, which users can edit anytime.  
 - Users can also **delete posts** to keep things organized.  
-- Engagement metrics include **likes and comments** to make the experience more interactive.
+- Engagement metrics include **likes and comments** to make the experience more interactive.  
+- **Home Page** displays recent activities and trending profiles, along with stories for quick updates.
 
 ---
 
 ## 📂 Project Details  
 
 - **Data Storage**: User profiles and posts are stored in `data.json`.  
-- **Routing**: Profiles are dynamically rendered based on the URL (e.g., `/ig/:username`).  
-- **Localhost**: Use a localhost to start the page.  
+- **Routing**: Profiles and the home page are dynamically rendered based on the URL (e.g., `/ig/:username` or `/home`).  
+- **Localhost**: Use a localhost to start the page.
 
 ---
 
@@ -88,6 +99,10 @@ We appreciate the effort and dedication of all the contributors:
 - **Rajat Mishra**:  
   [GitHub](https://github.com/mishraRj)  
   Contributed to: **Edit Profile**, **Delete Posts**.
+
+- **Abhijit**:  
+  [GitHub](https://github.com/Abhijit8951)  
+  Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
 
 ---
 
