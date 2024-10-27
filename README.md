@@ -2,6 +2,8 @@
 
 A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.
 
+---
+
 ## 🎉 Welcome to Animal-Page  
 
 A fun social media platform for pets! This web application allows users to explore animal profiles like:  
