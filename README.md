@@ -59,16 +59,13 @@ If the image URL from `data.json` is not working:
 
 We appreciate the effort and dedication of all the contributors:
 
-- **[Sk Akram](https://github.com/akramcodez)**:  
-    
+- **[Sk Akram](https://github.com/akramcodez)** :  
   Contributed to: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
 
-- **Rajat Mishra**:  
-  [GitHub](https://github.com/mishraRj)  
+- **[Rajat Mishra](https://github.com/mishraRj)** :  
   Contributed to: **Edit Profile**, **Delete Posts**.
 
-- **Abhijit Swain**:  
-  [GitHub](https://github.com/Abhijit8951)  
+- **[Abhijit Swain](https://github.com/Abhijit8951)** :
   Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
 
 ---
