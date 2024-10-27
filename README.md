@@ -17,10 +17,6 @@ Showcasing their unique bios, posts, and interactions.
 
 ---
 
-
-
----
-
 ## 🛠️ Technologies Used  
 
 - **Frontend**: EJS, CSS  
