@@ -59,8 +59,8 @@ If the image URL from `data.json` is not working:
 
 We appreciate the effort and dedication of all the contributors:
 
-- **SK Akram**:  
-  [GitHub](https://github.com/akramcodez)  
+- **[Sk Akram](https://github.com/akramcodez)**:  
+    
   Contributed to: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
 
 - **Rajat Mishra**:  
