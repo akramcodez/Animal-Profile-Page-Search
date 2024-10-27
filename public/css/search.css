@@ -1,0 +1,118 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.search-container {
+    display: flex;
+    flex-direction: column;
+    padding: 1em;
+    width: 40%;
+    margin-left: 3rem;
+}
+
+.search-1 {
+    height: 5rem;
+    font-weight: bolder;
+    font-size: xx-large;
+    padding-left: 2rem;
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    padding-right: 1rem;
+    opacity: 0.7;
+    margin-top: 3.5rem;
+}
+
+.search-2 {
+    width: 75%;
+    align-content: center;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+    border-bottom-style: solid;
+    border-bottom-width: 1px;
+}
+
+/* Style for the search form */
+#searchForm {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    margin-bottom: 1em;
+}
+
+/* Style for the input field */
+#searchInput {
+    flex-grow: 1;
+  padding: 0.5em 1em;
+  border: none;
+  border-radius: 8px;
+  background-color: #363636;
+  font-size: 1em;
+  outline: none;
+  color: #a8a8a8;
+}
+
+/* CSS for the search button */
+.search-button {
+    background: none;
+    border: none;
+    outline: none;
+    padding: 0.5em; 
+    cursor: pointer;     /* Change cursor to pointer */
+    margin-left: 1rem;
+}
+
+.search-button i {
+    font-size: 1.5em; /* Adjust icon size */
+    color: white; /* Set icon color */
+    opacity: 0.7;
+    transition: opacity 0.3s ease; /* Smooth color transition on hover */
+}
+
+.search-button:hover i {
+    opacity: 1;
+}
+
+.searchResults {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+/* Style for the profile picture in each result */
+.profile-picture {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+    margin-right: 0.75em;
+    overflow: hidden;
+    object-fit: cover;
+}
+
+.user-result {
+    display: flex;
+    width: 15em;
+    flex-direction: row;
+    margin-left: 1rem;
+}
+
+.user-link {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* Style for the username in each result */
+.user-name {
+    font-size: 2em;
+    color: #ffffff;
+    display: flex;
+    font-weight: 500;
+    height: 3rem;
+    align-items: center;
+}
