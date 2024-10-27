@@ -131,7 +131,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin: 1rem auto;
-  
+
   padding-bottom: 2rem;
 }
 
@@ -150,11 +150,9 @@ body {
   cursor: pointer;
 }
 
-.post:hover{
+.post:hover {
   transform: scale(1.05);
 }
-
-
 
 .fa-solid {
   cursor: pointer;
@@ -164,7 +162,6 @@ body {
 .post .fa-solid:hover {
   transform: scale(1.2);
 }
-
 
 a {
   text-decoration: none;
@@ -195,16 +192,16 @@ a {
   text-overflow: ellipsis;
 }
 
-.error-body{
+.error-body {
   display: flex;
   justify-content: center;
 }
-.error-page{
+.error-page {
   font-size: 3rem;
   margin-top: 5rem;
 }
 
-.card{
+.card {
   width: 800px;
   height: 800px;
   display: flex;
@@ -213,13 +210,24 @@ a {
   top: 5%;
 }
 
-.card input{
+.card input {
   background-color: #212121;
   color: white;
 }
 
-.card button{
+.card button {
   background-color: #212121;
   color: white;
 }
 
+a {
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+
+@media (max-width: 860px) {
+  .icon-p {
+    margin-left: 0.5rem;
+  }
+}
