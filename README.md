@@ -66,7 +66,7 @@ We appreciate the effort and dedication of all the contributors:
   Contributed to: **Edit Profile**, **Delete Posts**.
 
 - **[Abhijit Swain](https://github.com/Abhijit8951)** :
-  Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
+Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
 
 ---
 
