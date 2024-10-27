@@ -17,37 +17,7 @@ Showcasing their unique bios, posts, and interactions.
 
 ---
 
-## 🌟 Features  
 
-### 🔥 Features by [SK Akram](https://github.com/akramcodez)  
-- **User Profiles**:  
-  Each pet has a unique profile with their name, bio, and profile picture.  
-
-- **Posts**:  
-  Animals can share posts with images, likes, and comments.  
-
-- **Responsive Design**:  
-  The layout adapts to different screen sizes for a seamless experience.  
-
-- **Sidebar Navigation**:  
-  Easy navigation to various sections of the app.
-
-### 🚀 Features by [Rajat Mishra](https://github.com/mishraRj)  
-- **Edit Profile**:  
-  Users can update the animal's **bio** and **profile picture**.  
-
-- **Delete Posts**:  
-  Users can delete posts from the profile page.  
-
-### 🌐 Features by [Abhijit Swain](https://github.com/Abhijit8951)  
-- **Home Page**:  
-  Added a home page showcasing recent activity and trending animal profiles.  
-
-- **Stories Section**:  
-  Implemented **stories** on the home page, allowing users to view short updates from animal profiles.  
-
-- **Routing Enhancements**:  
-  Improved routing for smoother navigation across profiles and home sections.  
 
 ---
 
