@@ -89,6 +89,11 @@ app.use(express.static(path.join(__dirname, "/public/css")));
 app.use(express.static(path.join(__dirname, "/public/js")));
 app.use(express.static(path.join(__dirname, "/public/icon")));
 
+app.get("/ig", (req, res) => {
+  let data = require("./data.json");
+  res.render("home.ejs", { data });
+});
+
 app.listen(port, () => {
   console.log("App is listening :", port);
 });
