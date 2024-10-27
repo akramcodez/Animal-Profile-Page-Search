@@ -73,7 +73,7 @@ Showcasing their unique bios, posts, and interactions.
 ## 📂 Project Details  
 
 - **Data Storage**: User profiles and posts are stored in `data.json`.  
-- **Routing**: Profiles and the home page are dynamically rendered based on the URL (e.g., `/ig/:username` or `/home`).  
+- **Routing**: Profiles and the home page are dynamically rendered based on the URL (e.g., `/ig/:username` or `/ig`).  
 - **Localhost**: Use a localhost to start the page.
 
 ---
