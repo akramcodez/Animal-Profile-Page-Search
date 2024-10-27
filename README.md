@@ -65,8 +65,8 @@ We appreciate the effort and dedication of all the contributors:
 - **[Rajat Mishra](https://github.com/mishraRj)** :  
   Contributed to: **Edit Profile**, **Delete Posts**.
 
-- **[Abi](https://github.com/Abhijit8951)** :
-Contributed to: **Home Page**, **Stories**, **Routing Enhancements**.
+- **[Abijit Swain](https://github.com/Abhijit8951)** :  
+  Contributed to: **Edit Profile**, **Delete Posts**.
 
 ---
 
