@@ -2,7 +2,6 @@
 
 A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.
 
----
 
 ## 🎉 Welcome to Animal-Page  
 
