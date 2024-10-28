@@ -2,7 +2,6 @@
 
 A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.
 
-
 ## 🎉 Welcome to Animal-Page  
 
 A fun social media platform for pets! This web application allows users to explore animal profiles like:  
@@ -33,7 +32,8 @@ Showcasing their unique bios, posts, and interactions.
 - **Profiles** showcase unique bios and images, which users can edit anytime.  
 - Users can also **delete posts** to keep things organized.  
 - Engagement metrics include **likes and comments** to make the experience more interactive.  
-- **Home Page** displays recent activities and trending profiles, along with stories for quick updates.
+- **Home Page** displays recent activities and trending profiles, along with stories for quick updates.  
+- A new **search function** allows users to find profiles easily and receive suggestions based on their queries.
 
 ---
 
@@ -59,7 +59,7 @@ If the image URL from `data.json` is not working:
 
 We appreciate the effort and dedication of all the contributors:
 
-- **[Sk Akram](https://github.com/akramcodez)** :  
+- **[SK Akram](https://github.com/akramcodez)** :  
   Contributed to: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
 
 - **[Rajat Mishra](https://github.com/mishraRj)** :  
@@ -67,6 +67,9 @@ We appreciate the effort and dedication of all the contributors:
 
 - **[Abijit Swain](https://github.com/Abhijit8951)** :  
   Contributed to: **Home Page**, **Routing to another page**.
+
+- **[Himanshu](https://github.com/Himanshu19-coder)** :  
+  Contributed to: **Search Functionality and Suggestions**.
 
 ---
 
@@ -111,4 +114,4 @@ git commit -m "Added new feature"
 git push origin <your-branch-name>
 
 # The application will be available at:
-# 👉 http://localhost:8080
+# 👉 http://localhost:8080 
