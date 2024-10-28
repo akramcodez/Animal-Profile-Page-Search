@@ -108,7 +108,9 @@
 }
 
 #searchResults{
-    border-top: 1px solid white;
+     margin-left: 0.8rem;
+     margin-right: 0.8rem;
+     border-top: 1px solid rgba(255, 255, 255, 0.521);
 }
 
 .user-result {
