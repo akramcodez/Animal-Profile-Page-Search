@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 const fs = require("fs"); // To read/write files
-const { v4: uuidv4 } = require('uuid'); // Import UUID
+const { v4: uuidv4 } = require("uuid"); // Import UUID
 const path = require("path");
 const methodOverride = require("method-override");
 const port = 8080;
@@ -12,7 +12,6 @@ app.use(express.json()); // To parse JSON data
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
-
 
 const readData = () => {
   return JSON.parse(fs.readFileSync("data.json", "utf8"));
@@ -86,29 +85,28 @@ app.delete("/ig/:username/:id", (req, res) => {
   res.redirect(`/ig/${username}`);
 });
 
-
 //to search user
-app.get("ig/search", (req, res) => {
+app.get("/search", (req, res) => {
   res.render("search.ejs");
 });
 
 //to send search results
 app.get("/ig/search/users", (req, res) => {
-  const searchQuery = req.query.query;  
+  const searchQuery = req.query.query;
 
   let data = require("./data.json");
   const matchedUsers = Object.keys(data)
-    .filter(username => username.toLowerCase().includes(searchQuery))
-    .map(username => {
+    .filter((username) => username.toLowerCase().includes(searchQuery))
+    .map((username) => {
       return {
         username: username,
         profile: data[username].profile,
-        name: data[username].name
+        name: data[username].name,
       };
     });
-    
+
   res.json({ users: matchedUsers });
-}); 
+});
 
 //search complete
 
