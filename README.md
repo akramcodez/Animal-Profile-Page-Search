@@ -1,8 +1,9 @@
-# 🐾 Instagram-Clone  
+# 🐾 Animalgram  
 
-A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.
+A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.  
+**Inspired by Instagram!**
 
-## 🎉 Welcome to Instagram-Clone  
+## 🎉 Welcome to Animalgram  
 
 A fun social media platform for pets! This web application lets users explore animal profiles, such as:  
 **CAT | DOG | GOAT | COW | HEN | DUCK | HORSE**
@@ -13,7 +14,7 @@ Each profile showcases unique bios, posts, and user interactions.
 
 ## 🤝 Collaboration Project  
 
-**Instagram-Clone** is an open-source collaboration project. We welcome contributions from developers around the world. Whether you're adding features, fixing bugs, or improving the design, your input is valuable.  
+**Animalgram** is an open-source collaboration project. We welcome contributions from developers around the world. Whether you're adding features, fixing bugs, or improving the design, your input is valuable.  
 **Please create a separate branch and push your changes before submitting a pull request.**
 
 ---
