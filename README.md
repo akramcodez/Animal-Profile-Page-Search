@@ -4,16 +4,17 @@ A responsive demo of an **animal profile page** that allows users to browse, sea
 
 ## 🎉 Welcome to Animal-Page  
 
-A fun social media platform for pets! This web application allows users to explore animal profiles like:  
-**CAT | DOG | GOAT | COW | HEN | DUCK**  
+A fun social media platform for pets! This web application lets users explore animal profiles, such as:  
+**CAT | DOG | GOAT | COW | HEN | DUCK | HORSE**
 
-Showcasing their unique bios, posts, and interactions.
+Each profile showcases unique bios, posts, and user interactions.
 
 ---
 
-## 🤝 Collaboration Project
+## 🤝 Collaboration Project  
 
-**Animal-Profile-Page-Search** is an open-source collaboration project. We welcome contributions from developers worldwide. Whether you add new features, fix bugs, or improve the design, your input is valued and appreciated. **Please create your own branch and push the changes to it before submitting a pull request.**
+**Animal-Profile-Page-Search** is an open-source collaboration project. We welcome contributions from developers around the world. Whether you're adding features, fixing bugs, or improving the design, your input is valuable.  
+**Please create a separate branch and push your changes before submitting a pull request.**
 
 ---
 
@@ -28,48 +29,48 @@ Showcasing their unique bios, posts, and interactions.
 
 ## 🚀 Usage  
 
-- Users can explore various animal profiles and interact with posts.  
-- **Profiles** showcase unique bios and images, which users can edit anytime.  
-- Users can also **delete posts** to keep things organized.  
-- Engagement metrics include **likes and comments** to make the experience more interactive.  
-- **Home Page** displays recent activities and trending profiles, along with stories for quick updates.  
-- A new **search function** allows users to find profiles easily and receive suggestions based on their queries.
+- Users can explore various animal profiles and engage with posts.  
+- **Profiles** include unique bios and images, which can be edited at any time.  
+- Posts can be **deleted** to maintain an organized feed.  
+- User interactions feature **likes and comments** to enhance engagement.  
+- The **Home Page** displays recent activities, trending profiles, and quick updates via stories.  
+- A **search function** enables users to find profiles easily, with helpful suggestions based on their input.
 
 ---
 
 ## 📂 Project Details  
 
 - **Data Storage**: User profiles and posts are stored in `data.json`.  
-- **Routing**: Profiles and the home page are dynamically rendered based on the URL (e.g., `/ig/:username` or `/ig`).  
-- **Localhost**: Use a localhost to start the page.
+- **Routing**: Profiles and pages are dynamically rendered using URLs (e.g., `/ig/:username` or `/ig`).  
+- **Localhost**: Run the application on a localhost for development.
 
 ---
 
 ## 💡 Suggestions  
 
-If the image URL from `data.json` is not working:  
-1. Open **Google** and search for a new image.  
-2. Copy the image URL from Google.  
+If the image URL from `data.json` isn't working:  
+1. Open **Google** and search for an appropriate image.  
+2. Copy the image URL.  
 3. Replace the old URL in the `data.json` file with the new one.  
-4. Restart the application to see the changes.
+4. Restart the application to apply the changes.
 
 ---
 
 ## 👥 Contributors  
 
-We appreciate the effort and dedication of all the contributors:
+We appreciate the efforts and dedication of all contributors:
 
 - **[SK Akram](https://github.com/akramcodez)** :  
-  Contributed to: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
+  Worked on: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
 
 - **[Rajat Mishra](https://github.com/mishraRj)** :  
-  Contributed to: **Edit Profile**, **Delete Posts**.
+  Worked on: **Profile Editing**, **Post Deletion**.
 
 - **[Abijit Swain](https://github.com/Abhijit8951)** :  
-  Contributed to: **Home Page**, **Routing to another page**.
+  Worked on: **Home Page**, **Routing**.
 
 - **[Himanshu](https://github.com/Himanshu19-coder)** :  
-  Contributed to: **Search Functionality and Suggestions**.
+  Worked on: **Search Functionality and Suggestions**.
 
 ---
 
@@ -102,7 +103,7 @@ npm install
 # Step 4: (Optional) Install Nodemon for automatic server restarts
 npm i nodemon
 
-# Step 5: Create your own branch for the new features or fixes
+# Step 5: Create a branch for your changes
 git checkout -b <your-branch-name>
 
 # Step 6: Run the application
@@ -110,8 +111,8 @@ node index.js
 
 # Step 7: After making changes, commit, push, and submit a pull request:
 git add .
-git commit -m "Added new feature"
+git commit -m "Enhanced functionality"
 git push origin <your-branch-name>
 
 # The application will be available at:
-# 👉 http://localhost:8080 
+# 👉 http://localhost:8080
