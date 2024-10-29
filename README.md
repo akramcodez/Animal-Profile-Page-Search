@@ -1,8 +1,8 @@
-# 🐾 Animal-Profile-Page-Search  
+# 🐾 Instagram-Clone  
 
 A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.
 
-## 🎉 Welcome to Animal-Page  
+## 🎉 Welcome to Instagram-Clone  
 
 A fun social media platform for pets! This web application lets users explore animal profiles, such as:  
 **CAT | DOG | GOAT | COW | HEN | DUCK | HORSE**
@@ -13,7 +13,7 @@ Each profile showcases unique bios, posts, and user interactions.
 
 ## 🤝 Collaboration Project  
 
-**Animal-Profile-Page-Search** is an open-source collaboration project. We welcome contributions from developers around the world. Whether you're adding features, fixing bugs, or improving the design, your input is valuable.  
+**Instagram-Clone** is an open-source collaboration project. We welcome contributions from developers around the world. Whether you're adding features, fixing bugs, or improving the design, your input is valuable.  
 **Please create a separate branch and push your changes before submitting a pull request.**
 
 ---
