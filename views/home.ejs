@@ -1,102 +1,237 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Animalgram . Home</title>
     <link rel="stylesheet" href="/css/home.css" />
-    <link rel="icon" href="/icon/animals.png" >
+    <link rel="icon" href="/icon/animals.png" />
     <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-        />
-</head>
-<body>
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
     <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
     <div class="side-bar">
-        <div class="upperside-bar">
-            <p class="icon-p" type="button"><a href="/ig"><i class="fa-solid fa-house"></i> Home</a></p>
-            <p class="icon-p" type="button"><a href="/search"><i class="fa-solid fa-magnifying-glass"></i> Search </a></p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-rotate-right" style="opacity: 1;"></i> Explore</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-film"></i> Reels</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-envelope"></i> Message</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-heart"></i> Like</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-plus"></i> Create</p>
-            <a href="/ig/tiger247" id="pfAnchor">
-                <p class="icon-p" type="button" id="profile"><i class="fa-solid fa-user"></i>Profile</p>
-            </a>
-        </div>
-        <div class="lowerside-bar">
-            <p class="icon-p" type="button"><i class="fa-solid fa-share"></i>Threads</p>
-            <p class="icon-p" type="button"><i class="fa-regular fa-sun"></i>Settings</p>
-        </div>
+      <div class="upperside-bar">
+        <p class="icon-p" type="button">
+          <a href="/ig"><i class="fa-solid fa-house"></i> Home</a>
+        </p>
+        <p class="icon-p" type="button">
+          <a href="/search"
+            ><i class="fa-solid fa-magnifying-glass"></i> Search
+          </a>
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-rotate-right" style="opacity: 1"></i> Explore
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-film"></i> Reels
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-envelope"></i> Message
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-heart"></i> Like
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-plus"></i> Create
+        </p>
+        <a href="/ig/tiger247" id="pfAnchor">
+          <p class="icon-p" type="button" id="profile">
+            <i class="fa-solid fa-user"></i>Profile
+          </p>
+        </a>
+      </div>
+      <div class="lowerside-bar">
+        <p class="icon-p" type="button">
+          <i class="fa-solid fa-share"></i>Threads
+        </p>
+        <p class="icon-p" type="button">
+          <i class="fa-regular fa-sun"></i>Settings
+        </p>
+      </div>
     </div>
     <div class="main-area">
-        <div class="stories">
-            <% Object.keys(data).forEach(function(animalKey) { %>
-                <a href="/ig/<%= animalKey %>" class="story">
-                    <img src="<%= data[animalKey].profile %>" alt="<%= data[animalKey].name %>">
-                    <p><%= data[animalKey].name %></p>
-                </a>
-            <% }); %>
-        </div>
-        <div class="content-area">
-            <div class="main-content">
-                <div class="content">
-                    <div class="post">
-                        <div class="user-info">
-                            <img src="" alt="" id="profileImg">
-                            <div class="userData">
-                                <p class="userId">Jerry123</p>
-                                <p class="location">california</p>
-                            </div>
-                            <div class="followBtn">
-                                <button class="button-23" role="button">Follow</button>
-                            </div>
-                        </div>
-                        <div class="mainImage">
-                            <img src="" alt="" id="mainImg">
-                        </div>
-                        <div class="interactions">
-                            <div class="like">
-                                <i class="fa-regular fa-heart" id="lkicon"></i>
-                                <p class="lkcount">195</p>
-                            </div>
-                            <div class="comment">
-                                <i class="fa-regular fa-comment"></i>
-                                <p class="cmtcount">22</p>
-                            </div>
-                            <div class="share">
-                                <i class="fa-solid fa-share"></i>
-                                <p class="shrcount">2</p>
-                            </div>
-                        </div>
-                    </div>
+      <div class="stories">
+        <% Object.keys(data).forEach(function(animalKey) { %>
+        <a href="/ig/<%= animalKey %>" class="story">
+          <img
+            src="<%= data[animalKey].profile %>"
+            alt="<%= data[animalKey].name %>"
+          />
+          <p><%= data[animalKey].name %></p>
+        </a>
+        <% }); %>
+      </div>
+      <div class="content-area">
+        <div class="main-content">
+          <div class="content content1">
+            <div class="post">
+              <div class="user-info">
+                <img
+                  src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg"
+                  onerror="this.hidden = true"
+                  id="profileImg"
+                />
+                <div class="userData">
+                  <p class="userId">Beerry123</p>
+                  <p class="location">California</p>
                 </div>
+                <div class="followBtn">
+                  <button class="button-23" role="button">Follow</button>
+                </div>
+              </div>
+              <div class="mainImage">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMWJqP3gln_06nqC_HE2Ec00WzPHhlGcP_SQ&s"
+                  onerror="this.hidden = true"
+                  id="mainImg"
+                />
+              </div>
+              <div class="interactions">
+                <div class="like">
+                  <i class="fa-regular fa-heart" id="lkicon"></i>
+                  <p class="lkcount">
+                    <%= Math.floor(Math.random() * 500) + 50 %>
+                  </p>
+                </div>
+                <div class="comment">
+                  <i class="fa-regular fa-comment"></i>
+                  <p class="cmtcount">
+                    <%= Math.floor(Math.random() * 150) + 10 %>
+                  </p>
+                </div>
+                <div class="share">
+                  <i class="fa-solid fa-share"></i>
+                  <p class="shrcount">
+                    <%= Math.floor(Math.random() * 50) + 3 %>
+                  </p>
+                </div>
+              </div>
             </div>
+          </div>
+          <br />
+          <div class="content">
+            <div class="post">
+              <div class="user-info">
+                <img
+                  src="https://t3.ftcdn.net/jpg/05/55/36/46/360_F_555364630_zkz5asZ4Fg7GnaKvEkGOCM4Xg1aekXRO.jpg"
+                  onerror="this.hidden = true"
+                  id="profileImg"
+                />
+                <div class="userData">
+                  <p class="userId">Speed123</p>
+                  <p class="location">London</p>
+                </div>
+                <div class="followBtn">
+                  <button class="button-23" role="button">Follow</button>
+                </div>
+              </div>
+              <div class="mainImage">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4snuKZzai5nlcM3mmu1mJ7np7QGGQPaS6w&s"
+                  onerror="this.hidden = true"
+                  id="mainImg"
+                />
+              </div>
+              <div class="interactions">
+                <div class="like">
+                  <i class="fa-regular fa-heart" id="lkicon"></i>
+                  <p class="lkcount">
+                    <%= Math.floor(Math.random() * 500) + 50 %>
+                  </p>
+                </div>
+                <div class="comment">
+                  <i class="fa-regular fa-comment"></i>
+                  <p class="cmtcount">
+                    <%= Math.floor(Math.random() * 150) + 10 %>
+                  </p>
+                </div>
+                <div class="share">
+                  <i class="fa-solid fa-share"></i>
+                  <p class="shrcount">
+                    <%= Math.floor(Math.random() * 50) + 3 %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="content">
+            <div class="post">
+              <div class="user-info">
+                <img
+                  src="https://imengine.public.prod.cmg.infomaker.io/?uuid=814201e0-1c57-5285-b4f1-bb1711ab087a&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+                  onerror="this.hidden = true"
+                  id="profileImg"
+                />
+                <div class="userData">
+                  <p class="userId">Jhunu123</p>
+                  <p class="location">India</p>
+                </div>
+                <div class="followBtn">
+                  <button class="button-23" role="button">Follow</button>
+                </div>
+              </div>
+              <div class="mainImage">
+                <img
+                  src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjIiZWEoKn-rxMDYsLa9XtvwxL2BnLyYRsaA&s"
+                  onerror="this.hidden = true"
+                  id="mainImg"
+                />
+              </div>
+              <div class="interactions">
+                <div class="like">
+                  <i class="fa-regular fa-heart" id="lkicon"></i>
+                  <p class="lkcount">
+                    <%= Math.floor(Math.random() * 500) + 50 %>
+                  </p>
+                </div>
+                <div class="comment">
+                  <i class="fa-regular fa-comment"></i>
+                  <p class="cmtcount">
+                    <%= Math.floor(Math.random() * 150) + 10 %>
+                  </p>
+                </div>
+                <div class="share">
+                  <i class="fa-solid fa-share"></i>
+                  <p class="shrcount">
+                    <%= Math.floor(Math.random() * 50) + 3 %>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
     <div class="suggestion">
-        <div class="text">
-            <p class="sugg">Suggested for you</p>
-            <p class="see">See all</p>
+      <div class="text">
+        <p class="sugg">Suggested for you</p>
+        <p class="see">See all</p>
+      </div>
+      <div class="suggrows">
+        <% Object.keys(data).forEach(function(animalKey) { %>
+        <div class="row">
+          <img
+            src="<%= data[animalKey].profile %>"
+            alt="<%= data[animalKey].name %>"
+            class="rowImg"
+          />
+          <div class="bound">
+            <p class="name"><%= data[animalKey].name %></p>
+            <p>Followed by Jerry123</p>
+          </div>
+          <p class="follow">Follow</p>
         </div>
-        <div class="suggrows">
-            <% Object.keys(data).forEach(function(animalKey) { %>
-                <div class="row">
-                    <img src="<%= data[animalKey].profile %>" alt="<%= data[animalKey].name %>" class="rowImg">
-                    <div class="bound">
-                        <p class="name"><%= data[animalKey].name %></p>
-                        <p>Followed by Jerry123</p>
-                    </div>
-                    <p class="follow">Follow</p>
-                </div>
-            <% }); %>
-        </div>
+        <% }); %>
+      </div>
     </div>
     <script src="/js/home.js"></script>
-</body>
+  </body>
 </html>
