@@ -62,11 +62,13 @@
           <div class="content content1">
             <div class="post">
               <div class="user-info">
-                <img
-                  src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg"
-                  onerror="this.hidden = true"
-                  id="profileImg"
-                />
+                <a href="/ig/dog" class="post-link">
+                  <img
+                    src="https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg"
+                    onerror="this.hidden = true"
+                    id="profileImg"
+                  />
+                </a>
                 <div class="userData">
                   <p class="userId">Beerry123</p>
                   <p class="location">California</p>
@@ -104,23 +106,30 @@
               </div>
             </div>
           </div>
-          <% const posts = [ { userId: "Speed123", location: "London", mainImg:
+          <% const posts = [ { userId: "Speed123", location: "London", animal:
+          "horse", mainImg:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4snuKZzai5nlcM3mmu1mJ7np7QGGQPaS6w&s",
           profileImg:
           "https://t3.ftcdn.net/jpg/05/55/36/46/360_F_555364630_zkz5asZ4Fg7GnaKvEkGOCM4Xg1aekXRO.jpg"
-          }, { userId: "Jhunu123", location: "India", mainImg:
+          }, { userId: "Jhunu123", location: "India", animal: "hen", mainImg:
           "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjIiZWEoKn-rxMDYsLa9XtvwxL2BnLyYRsaA&s",
           profileImg:
           "https://imengine.public.prod.cmg.infomaker.io/?uuid=814201e0-1c57-5285-b4f1-bb1711ab087a&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0"
+          }, { userId: "Jack123", location: "Tokyo",animal: "cat", mainImg:
+          "https://i.pinimg.com/originals/fe/6d/b4/fe6db44abd8df5bac889c3c25dd32436.jpg",
+          profileImg:
+          "https://www.hindustantimes.com/ht-img/img/2023/04/12/550x309/cat_thumb_1681303010348_1681303048932_1681303048932.jpg"
           } ]; %> <% posts.forEach(post => { %>
           <div class="content">
             <div class="post">
               <div class="user-info">
-                <img
+                <a href="/ig/<%= post.animal %>">
+                  <img
                   src="<%= post.profileImg %>"
                   onerror="this.hidden = true"
                   id="profileImg"
                 />
+                </a>
                 <div class="userData">
                   <p class="userId"><%= post.userId %></p>
                   <p class="location"><%= post.location %></p>
@@ -170,11 +179,13 @@
       <div class="suggrows">
         <% Object.keys(data).forEach(animalKey => { %>
         <div class="row">
-          <img
+          <a href="/ig/<%= animalKey %>">
+            <img
             src="<%= data[animalKey].profile %>"
             alt="<%= data[animalKey].name %>"
             class="rowImg"
           />
+          </a>
           <div class="bound">
             <p class="name"><%= data[animalKey].name %></p>
             <p>Followed by Jack123</p>
