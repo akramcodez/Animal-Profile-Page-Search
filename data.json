@@ -14,31 +14,31 @@
       {
         "id": "1a",
         "image": "https://transforms.stlzoo.org/production/animals/amur-tiger-01-01.jpg?w=1200&h=1200&auto=compress%2Cformat&fit=crop&dm=1658935145&s=95d03aceddd44dc8271beed46eae30bc",
-        "likes": 3000,
+        "likes": "3k",
         "comments": 41
       },
       {
         "id": "2a",
         "image": "https://media.4-paws.org/5/4/4/c/544c2b2fd37541596134734c42bf77186f0df0ae/VIER%20PFOTEN_2017-10-20_164-3854x2667-1920x1329.jpg",
-        "likes": 2500,
+        "likes": "2.5k",
         "comments": 32
       },
       {
         "id": "3a",
         "image": "https://upload.wikimedia.org/wikipedia/commons/b/b9/P.t.altaica_Tomak_Male.jpg",
-        "likes": 6500,
+        "likes": "6.5k",
         "comments": 32
       },
       {
         "id": "4a",
         "image": "https://files.worldwildlife.org/wwfcmsprod/images/Tiger_resting_Bandhavgarh_National_Park_India/hero_small/6aofsvaglm_Medium_WW226365.jpg",
-        "likes": 4500,
+        "likes": "4.5k",
         "comments": 32
       },
       {
         "id": "5a",
         "image": "https://th-thumbnailer.cdn-si-edu.com/YrxLdBclT392HAcO2KyM_ULjfCo=/800x800/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/1d/10/1d102878-7750-49f4-bced-1809c4d7e8ea/tiger.jpg",
-        "likes": 3500,
+        "likes": "3.5k",
         "comments": 32
       },
       {
@@ -52,7 +52,7 @@
   "cat": {
     "name": "Jack123",
     "profile": "https://www.hindustantimes.com/ht-img/img/2023/04/12/550x309/cat_thumb_1681303010348_1681303048932_1681303048932.jpg",
-    "followers": 25000,
+    "followers": "25k",
     "following": 5,
     "bio": {
       "line1": "🐾 Name: Jack",
@@ -73,7 +73,7 @@
       },
       {
         "image": "https://images.unsplash.com/photo-1577023311546-cdc07a8454d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8Y2F0c3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-        "likes": 1065,
+        "likes": "1.65k",
         "comments": 200
       }
     ]
@@ -81,7 +81,7 @@
   "dog": {
     "name": "Beerry123",
     "profile": "https://d3544la1u8djza.cloudfront.net/APHI/Blog/2021/07-06/small+white+fluffy+dog+smiling+at+the+camera+in+close-up-min.jpg",
-    "followers": 75000,
+    "followers": "75k",
     "following": 150,
     "bio": {
       "line1": "🐾 Name: Beerry",
@@ -92,12 +92,12 @@
     "posts": [
       {
         "image": "https://images.unsplash.com/photo-1598133894008-61f7fdb8cc3a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZG9nc3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=800&q=60",
-        "likes": 3000,
+        "likes": "3k",
         "comments": 41
       },
       {
         "image": "https://images.unsplash.com/photo-1552053831-71594a27632d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTd8fGRvZ3N8ZW58MHx8MHx8fDA%3D&auto=format&fit=crop&w=800&q=60",
-        "likes": 2500,
+        "likes": "2.5k",
         "comments": 32
       },
       {
@@ -110,7 +110,7 @@
   "cow": {
     "name": "Momo123",
     "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvx-BiWiLeoVXXAX5SrAvLYKl5xz4LEoIbkQ&s",
-    "followers": 66000,
+    "followers": "66k",
     "following": 100,
     "bio": {
       "line1": "🐮 Name: momo",
@@ -121,17 +121,17 @@
     "posts": [
       {
         "image": "https://static.wixstatic.com/media/6a0ce2_ed0cdcb5095940f7b5d5e3736af79619~mv2.jpg/v1/fill/w_676,h_756,al_c,q_85,usm_1.20_1.00_0.01,enc_auto/6a0ce2_ed0cdcb5095940f7b5d5e3736af79619~mv2.jpg",
-        "likes": 8000,
+        "likes": "8k",
         "comments": 41
       },
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGI3eBGYK5r_HnPerP_E6tzfl-sMph8V-Kkg&s",
-        "likes": 7500,
+        "likes": "7.5k",
         "comments": 32
       },
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSRqUXUCLAXXhNNc9OAZo0ro9x6Qv6R7VQyCg&s",
-        "likes": 9500,
+        "likes": "9.5k",
         "comments": 96
       }
     ]
@@ -139,7 +139,7 @@
   "goat": {
     "name": "Kuttu123",
     "profile": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaCXKj3NNyJj084cRQKYCe9ZvaTPVkYXLniw&s",
-    "followers": 6000,
+    "followers": "6k",
     "following": 10,
     "bio": {
       "line1": "🐐 Kuttu – The G.O.A.T. in every way",
@@ -168,7 +168,7 @@
   "hen": {
     "name": "Jhunu123",
     "profile": "https://imengine.public.prod.cmg.infomaker.io/?uuid=814201e0-1c57-5285-b4f1-bb1711ab087a&function=fit&type=preview&source=false&q=75&maxsize=1200&scaleup=0",
-    "followers": 6900,
+    "followers": "6.9k",
     "following": 180,
     "bio": {
       "line1": "🐔 Jhunu :  The sassiest chick in the coop",
@@ -179,17 +179,17 @@
     "posts": [
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWXFH-eKpuILF0lKFs5LnWAZmSYogC7E4zxA&s",
-        "likes": 8990,
-        "comments": 4444
+        "likes": "8.99k",
+        "comments": "4.44k"
       },
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTMAnXj5mSiyiphrRZkXUYuQ53jjcd-1V9Pdg&s",
-        "likes": 70000,
-        "comments": 6663
+        "likes": "70k",
+        "comments": "6.66k"
       },
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKp9i5RKVL-oe1xiG4NH2CP3kvT9ajwsZ3tQ&s",
-        "likes": 9570,
+        "likes": "9.57k",
         "comments": 98
       }
     ]
@@ -219,6 +219,35 @@
       {
         "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQnAxiCXjW4dJgSQOrXjib2eOKloFGrd7S_QA&s",
         "likes": 90,
+        "comments": 8
+      }
+    ]
+  },
+  "horse": {
+    "name": "speed123",
+    "profile": "https://t3.ftcdn.net/jpg/05/55/36/46/360_F_555364630_zkz5asZ4Fg7GnaKvEkGOCM4Xg1aekXRO.jpg",
+    "followers": "3k",
+    "following": 100,
+    "bio": {
+      "line1": "🐎 Speed - Galloping into the horizon with flair",
+      "line2": "💨 Wind chaser & thrill seeker",
+      "line3": "😎 Mood: Always in the fast lane",
+      "line4": "🍎 Favorite hobby: Sprinting... and sneaking apples!"
+    },
+    "posts": [
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRb4snuKZzai5nlcM3mmu1mJ7np7QGGQPaS6w&s",
+        "likes": 700,
+        "comments": 44
+      },
+      {
+        "image": "https://wallpapers.com/images/featured/horse-pictures-43yrqa5yhv3h4r6q.jpg",
+        "likes": "1.1k",
+        "comments": 63
+      },
+      {
+        "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRm5QDm4a-Ojr2s2QKqhX6Flq4Fj4LeQYUrBMpABnAlLlTTvxAUaM1Wg4NfcmEq6OLjc-M&usqp=CAU",
+        "likes": 800,
         "comments": 8
       }
     ]
