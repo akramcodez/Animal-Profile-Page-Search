@@ -298,32 +298,26 @@ a {
   margin-top: 75rem;
 }
 
-/* Scrollbar track */
 .main-content::-webkit-scrollbar {
   width: 10px;
 }
 
-/* Track background */
 .main-content::-webkit-scrollbar-track {
-  background: #1c1c1e; /* Dark grey to blend with the theme */
+  background: #1c1c1e;
   border-radius: 10px;
 }
 
-/* Scrollbar thumb */
 .main-content::-webkit-scrollbar-thumb {
-  background: #444; /* Slightly lighter grey for visibility */
-  border-radius: 10px;
-  border: 2px solid #1c1c1e; /* Blends with the track and adds separation */
+  background: #444;
+  border: 2px solid #1c1c1e;
 }
 
-/* Thumb on hover */
 .main-content::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Lighter grey on hover for interactivity */
+  background: #555;
 }
 
-/* Active state when dragging */
 .main-content::-webkit-scrollbar-thumb:active {
-  background: #777; /* Slight highlight */
+  background: #777;
 }
 
 @media (max-width: 1200px) {
