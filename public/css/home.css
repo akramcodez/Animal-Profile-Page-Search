@@ -292,6 +292,7 @@ a {
 
 .content {
   display: flex;
+  margin-bottom: 2rem;
 }
 
 .content1 {
