@@ -15,6 +15,7 @@
   height: 100%;
 }
 
+
 .search-box {
   margin-left: 10%;
   margin-top: 1rem;
@@ -104,6 +105,7 @@
   overflow: hidden;
   object-fit: cover;
 }
+
 
 #searchResults {
   margin-left: 0.8rem;
