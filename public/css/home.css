@@ -10,21 +10,6 @@ body {
   background-color: black;
   height: 100vh;
   overflow: hidden;
-  margin: 0;
-}
-
-.side-bar {
-  position: fixed; /* Keeps sidebar fixed in place */
-  left: 0; /* Aligns it to the left side */
-  width: 20%; /* Sets sidebar width */
-  height: 92%; /* Sidebar takes full viewport height */
-  background-color: black;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  font-size: 1.2rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding-top: 4rem; /* Adds space at the top */
 }
 
 .stories {
@@ -32,16 +17,14 @@ body {
   justify-content: center;
   padding: 1rem;
   box-sizing: border-box;
-  height: auto;
 }
 
 .story {
   flex: 0 1 60px;
   text-align: center;
   margin: 0 0.8rem;
-  color: white;
-  text-decoration: none;
   opacity: 0.9;
+  text-decoration: none;
 }
 
 .story img {
@@ -70,7 +53,6 @@ body {
 .main-area {
   display: flex;
   flex-direction: column;
-  margin-left: 20%;
   width: 55%;
   overflow-y: auto;
 }
@@ -80,15 +62,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
   flex-direction: column;
   flex-grow: 2;
-  overflow-y: auto;
   margin-top: 1rem;
+  overflow-y: auto;
+}
+
+.content1 {
+  margin-top: 115rem;
 }
 
 .content {
-  width: 80%;
+  width: 40rem;
+  margin-bottom: 2rem;
 }
 
 .post {
@@ -96,33 +82,20 @@ body {
   padding: 2rem;
   border-radius: 10px;
   text-align: center;
-}
-
-.upperside-bar,
-.lowerside-bar {
-  margin: 1rem 0;
-}
-
-.icon-p {
-  margin: 1.5rem 1.8rem;
-  color: white;
-  opacity: 0.7;
-}
-
-.icon-p i {
-  margin-right: 1rem;
-}
-
-.icon-p:hover {
-  opacity: 1;
-  cursor: pointer;
+  display: flex;
+  flex-direction: column;
 }
 
 .user-info {
   display: flex;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   height: 50px;
+}
+
+.pic-name-location{
+  display: flex;
 }
 
 .user-info img {
@@ -136,9 +109,7 @@ body {
   margin-left: 15px;
   display: flex;
   flex-direction: column;
-  height: 100%;
   justify-content: space-evenly;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .userId {
@@ -146,49 +117,32 @@ body {
 }
 
 .button-23 {
+  right: 0;
   background-color: transparent;
   border: 1px solid white;
   border-radius: 8px;
-  box-sizing: border-box;
-  color: white;
-  cursor: pointer;
-  display: inline-block;
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto,
-    "Helvetica Neue", sans-serif;
   font-size: 16px;
   font-weight: 600;
-  line-height: 20px;
-  margin: 0;
-  margin-left: 330px;
-  outline: none;
-  padding: 13px 23px;
-  position: relative;
-  text-align: center;
-  text-decoration: none;
-  touch-action: manipulation;
-  transition: box-shadow 0.2s, -ms-transform 0.1s, -webkit-transform 0.1s,
-    transform 0.1s;
-  user-select: none;
-  -webkit-user-select: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.2s;
   width: auto;
 }
 
 .button-23:focus-visible {
-  box-shadow: #222222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
-  transition: box-shadow 0.2s;
+  box-shadow: #222 0 0 0 2px, rgba(255, 255, 255, 0.8) 0 0 0 4px;
 }
 
 .button-23:active {
   background-color: #f7f7f7;
-  border-color: #000000;
+  border-color: black;
   transform: scale(0.96);
 }
 
 .button-23:disabled {
-  border-color: #dddddd;
-  color: #dddddd;
+  border-color: #ddd;
+  color: #ddd;
   cursor: not-allowed;
-  opacity: 1;
 }
 
 #mainImg {
@@ -200,38 +154,29 @@ body {
 
 .interactions {
   display: flex;
-  flex-direction: row;
   margin-top: 1rem;
   margin-left: 0.5rem;
 }
 
-.like {
+.like,
+.comment,
+.share {
   display: flex;
-  flex-direction: row;
+  align-items: center;
 }
 
-.lkcount {
+.lkcount,
+.cmtcount,
+.shrcount {
   margin-left: 0.3rem;
 }
 
 .comment {
-  display: flex;
-  flex-direction: row;
   margin-left: 1rem;
-}
-
-.cmtcount {
-  margin-left: 0.3rem;
 }
 
 .share {
-  display: flex;
-  flex-direction: row;
   margin-left: 1rem;
-}
-
-.shrcount {
-  margin-left: 0.3rem;
 }
 
 .suggestion {
@@ -240,16 +185,13 @@ body {
   background-color: black;
   border-radius: 8px;
   font-size: 1rem;
-  margin-left: 1rem;
-  overflow-y: auto;
-  float: right;
-  margin-top: 2rem;
   margin-left: 2rem;
+  margin-top: 2rem;
+  overflow-y: auto;
 }
 
 .text {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -263,9 +205,8 @@ body {
 
 .row {
   display: flex;
-  flex-direction: row;
+  align-items: center;
   margin: 2rem 0;
-  width: 100%;
   font-size: 15px;
 }
 
@@ -286,17 +227,6 @@ body {
 
 a {
   text-decoration: none;
-  margin: 0;
-  padding: 0;
-}
-
-.content {
-  display: flex;
-  margin-bottom: 2rem;
-}
-
-.content1 {
-  margin-top: 115rem;
 }
 
 .main-content::-webkit-scrollbar {
@@ -328,16 +258,11 @@ a {
 
   .main-area {
     width: 80%;
-    margin-left: 20%;
   }
 }
 
 @media (max-width: 860px) {
-  .main-content {
-    display: flex;
-  }
   .content {
-    margin-left: 0;
     width: 35rem;
     margin-right: 1rem;
   }
@@ -350,16 +275,6 @@ a {
 }
 
 @media (max-width: 768px) {
-  .side-bar {
-    width: 15%;
-    font-size: 1rem;
-  }
-
-  .main-area {
-    width: 85%;
-    margin-left: 15%;
-  }
-
   .stories {
     flex-wrap: wrap;
     justify-content: flex-start;
@@ -376,15 +291,6 @@ a {
 }
 
 @media (max-width: 480px) {
-  .side-bar {
-    width: 10%;
-  }
-
-  .main-area {
-    width: 90%;
-    margin-left: 10%;
-  }
-
   .user-info img {
     height: 30px;
     width: 30px;

@@ -1,38 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Animalgram . Profile</title>
-        <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-        crossorigin="anonymous"
-        referrerpolicy="no-referrer"
-        />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link rel="icon" href="/icon/animals.png" >
+        <%- include("includes/head.ejs") %>
+    <link rel="stylesheet" href="/css/insta.css" />
     </head>
     <body>
-    <div class="side-bar">
-        <div class="upperside-bar">
-            <p class="icon-p" type="button"><a href="/ig"><i class="fa-solid fa-house"></i> Home</a></p>
-            <p class="icon-p" type="button"><a href="/search"><i class="fa-solid fa-magnifying-glass"></i> Search </a></p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-rotate-right"></i>Explore</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-film"></i>Reels</h1>
-            <p class="icon-p" type="button"><i class="fa-solid fa-envelope"></i>Message</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-heart"></i>Like</p>
-            <p class="icon-p" type="button"><i class="fa-solid fa-plus"></i>Create</p>
-            <p class="icon-p" type="button" style="opacity: 1; filter: brightness(2);">
-                <i class="fa-solid fa-user"></i>Profile
-            </p>
-        </div>
-        <div class="lowerside-bar">
-            <p class="icon-p" type="button"><i class="fa-solid fa-share"></i>Threads</p>
-            <p class="icon-p" type="button"><i class="fa-regular fa-sun"></i>Settings</p>
-        </div>
-    </div>
+        <%- include('navigation.ejs') %>
     <div class="right-side">
         <div class="top-bar">
             <div class="profile-img">

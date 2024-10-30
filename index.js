@@ -20,11 +20,18 @@ const writeData = (data) => {
   fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
 };
 
+//Home Route
+app.get("/ig", (req, res) => {
+  let data = require("./data.json");
+  res.render("home.ejs", { data });
+});
+
+//Profile Route
 app.get("/ig/:username", (req, res) => {
   let instaData = require("./data.json");
   let { username } = req.params;
 
-  let data = instaData[username.toLowerCase()]; // if a user looking in capital letters too then it will same result
+  let data = instaData[username.toLowerCase()]; 
 
   if (username === "tiger247") {
     res.render("myProfile.ejs", { data });
@@ -42,46 +49,42 @@ app.get("/ig/:username/edit-profile", (req, res) => {
   let data = instaData[username];
   res.render("edit-profile.ejs", { data });
 });
+
 // Submit the newly changed profile data
 app.patch("/ig/:username", (req, res) => {
-  let { username } = req.params; // Get the username from the URL
-  let instaData = require("./data.json"); // Load the JSON data
+  let { username } = req.params; 
+  let instaData = require("./data.json"); 
 
-  let data = instaData[username]; // Find the user in the data
+  let data = instaData[username]; 
 
-  // Check if the username exists in data.json
+
   if (data) {
-    // Update the fields based on the form data from edit-profile.ejs
-    data.profile = req.body.profile || data.profile; // If no new profile image, keep old one
+    data.profile = req.body.profile || data.profile; 
     data.bio.line1 = req.body.bio_line1 || data.bio.line1;
     data.bio.line2 = req.body.bio_line2 || data.bio.line2;
     data.bio.line3 = req.body.bio_line3 || data.bio.line3;
     data.bio.line4 = req.body.bio_line4 || data.bio.line4;
 
-    // Here, we'll just redirect back to the profile page to view the updated profile
+  
     res.redirect(`/ig/${username}`);
   } else {
-    res.render("error.ejs"); // Handle the case where the user is not found
+    res.render("error.ejs");
   }
 });
 
-// Assuming you have loaded data.json into a variable like `users`
 let users = require("./data.json");
 const { name } = require("ejs");
 const { log } = require("console");
 
+//Delete Route
 app.delete("/ig/:username/:id", (req, res) => {
   let { id, username } = req.params;
-
-  // Find the user by their username in your users object
   let user = users[username];
 
   if (user && user.posts) {
-    // Filter out the post with the matching id
     user.posts = user.posts.filter((p) => p.id !== id);
   }
 
-  // Redirect back to the user's profile page
   res.redirect(`/ig/${username}`);
 });
 
@@ -106,13 +109,6 @@ app.get("/ig/search/users", (req, res) => {
     });
 
   res.json({ users: matchedUsers });
-});
-
-//search complete
-
-app.get("/ig", (req, res) => {
-  let data = require("./data.json");
-  res.render("home.ejs", { data });
 });
 
 app.listen(port, () => {
