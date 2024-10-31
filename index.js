@@ -50,7 +50,10 @@ app.post("/signin", (req, res) => {
     req.session.isAuthenticated = true;
     res.redirect("/ig");
   } else {
-    res.render("signup.ejs", { error: "Warning: Invalid Credentials! Please check your email and password, then try again" });
+    res.render("signup.ejs", {
+      error:
+        "Warning: Invalid Credentials! Please check your email and password, then try again",
+    });
   }
 });
 
@@ -105,26 +108,31 @@ app.post("/ig/:username", (req, res) => {
     data.bio.line2 = req.body.bio_line2 || data.bio.line2;
     data.bio.line3 = req.body.bio_line3 || data.bio.line3;
     data.bio.line4 = req.body.bio_line4 || data.bio.line4;
+
     writeData(instaData);
-    res.redirect(`/ig/${username}`);
+
+    req.session.destroy(() => {
+      res.redirect("/");
+    });
   } else {
     res.render("error.ejs");
   }
 });
 
-let users = readData();
-
 // Route: Delete Post
-app.delete("/ig/:username/:id", (req, res) => {
-  let { id, username } = req.params;
+app.post("/ig/:username/delete", (req, res) => {
+  const { username } = req.params;
+  let users = readData();
   let user = users[username];
 
   if (user && user.posts) {
-    user.posts = user.posts.filter((p) => p.id !== id);
+    user.posts = user.posts.filter((p) => p.id !== req.body.id);
     writeData(users);
   }
 
-  res.redirect(`/ig/${username}`);
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
 });
 
 // Route: Search Page

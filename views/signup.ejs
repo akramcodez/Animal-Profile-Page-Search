@@ -1,39 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anigram . Sign Up</title>
-  <link rel="icon" href="/icon/animals.png" />
-  <link rel="stylesheet" href="/css/signup.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
-    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
-    crossorigin="anonymous"
-    referrerpolicy="no-referrer"
-  />
-</head>
-<body>
-  <% if (error) { %>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Anigram . Sign Up</title>
+    <link rel="icon" href="/icon/animals.png" />
+    <link rel="stylesheet" href="/css/signup.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <% if (error) { %>
     <div class="error-message"><%= error %></div>
-  <% } %>
+    <% } %>
 
-  <div class="signup-container">
-    <h1>Anigram</h1>
-    <p class="subtitle">Join Anigram and connect with your animal friends!</p>
-    <form action="/signin" method="POST" class="signup-form">
-      <input type="text" name="username" placeholder="Email (e.g., anigram@gmail.com)" required />
-      <input type="password" name="password" placeholder="Password (e.g., by-akram)" required />
-      <button type="submit">Sign In</button>
-    </form>
-    <div class="divider">OR</div>
-    <p class="footer-note">Created by <a href="https://github.com/akramcodez">Akramcodez</a></p>
-    <div class="animal-icons">
-      <i class="fas fa-dog"></i>
-      <i class="fas fa-cat"></i>
-      <i class="fas fa-paw"></i>
+    <div class="signup-container">
+      <h1>Anigram</h1>
+      <p class="subtitle">Join Anigram and connect with your animal friends!</p>
+      <form action="/signin" method="POST" class="signup-form">
+        <input
+          type="text"
+          name="username"
+          placeholder="Email ( anigram@gmail.com )"
+          required
+        />
+        <input
+          type="password"
+          name="password"
+          placeholder="Password ( by-akram )"
+          required
+        />
+        <button type="submit">Sign In</button>
+      </form>
+      <div class="divider">OR</div>
+      <p class="footer-note">
+        Created by <a href="https://github.com/akramcodez">Akramcodez</a>
+      </p>
+      <div class="animal-icons">
+        <i class="fas fa-dog"></i>
+        <i class="fas fa-cat"></i>
+        <i class="fas fa-paw"></i>
+      </div>
     </div>
-  </div>
-</body>
+  </body>
 </html>

@@ -17,9 +17,9 @@
             <div class="section">
                 <div class="section1">
                     <span>@<%=data.name%></span>
-                    <a href="http://localhost:8080/ig/tiger247/edit-profile">
-                        <button>Edit profile</button>
-                    </a>
+                        <form method="GET" action="/ig/<%= data.name %>/edit-profile">
+                            <button type="submit">Edit profile</button>
+                        </form>
                 </div>
                 <div class="section2">
                     <p>
@@ -42,9 +42,10 @@
                         <div class="post-details">
                             <p>
                                 <i class="fa-regular fa-heart"></i> : <%= post.likes %> &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%= post.comments %>
-                                &nbsp;&nbsp;<form method="post" action="/ig/tiger247/<%= post.id %>?_method=DELETE">
-                                                <i class="fa-solid fa-trash" onclick="this.closest('form').submit();"></i>
-                                            </form>
+                                &nbsp;&nbsp; <form method="post" action="/ig/<%= data.name %>/delete">
+                                                    <input type="hidden" name="id" value="<%= post.id %>" />
+                                                    <i class="fa-solid fa-trash" onclick="this.closest('form').submit();"></i>
+                                             </form>                                
                             </p>
                         </div>
                 </div>

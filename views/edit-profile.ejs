@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <%- include("includes/head.ejs") %>
-    <title>Anigram . Edit-Profile</title>
+    <title>Anigram - Edit Profile</title>
     <link rel="stylesheet" href="/css/card.css" />
   </head>
   <body>
@@ -11,10 +11,10 @@
       <div class="card">
         <div class="upper">
           <h3>Edit your profile</h3>
-          <p>Username: @king_Of_Pirates2003</p>
+          <p>Username: <%= data.name %></p>
         </div>
         <div class="lower">
-          <form method="post" action="/ig/<%= data.name %>?_method=PATCH">
+          <form method="POST" action="/ig/<%= data.name %>">
             <label for="profile">Profile Picture</label>
             <input
               type="text"
@@ -30,7 +30,7 @@
               name="bio_line1"
               id="bio_line1"
               placeholder="Enter name"
-              value="<%= data.bio.line1%>"
+              value="<%= data.bio.line1 %>"
             />
 
             <label for="bio_line2">Bio Line 1:</label>
@@ -39,7 +39,7 @@
               name="bio_line2"
               id="bio_line2"
               placeholder="Enter line 2"
-              value="<%= data.bio.line2%>"
+              value="<%= data.bio.line2 %>"
             />
 
             <label for="bio_line3">Bio Line 2:</label>
@@ -48,7 +48,7 @@
               name="bio_line3"
               id="bio_line3"
               placeholder="Enter line 3"
-              value="<%= data.bio.line3%>"
+              value="<%= data.bio.line3 %>"
             />
 
             <label for="bio_line4">Bio Line 3:</label>
@@ -57,7 +57,7 @@
               name="bio_line4"
               id="bio_line4"
               placeholder="Enter line 4"
-              value="<%= data.bio.line4%>"
+              value="<%= data.bio.line4 %>"
             />
 
             <button type="submit">Submit</button>
