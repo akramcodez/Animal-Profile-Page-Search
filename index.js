@@ -1,46 +1,77 @@
 // Importing Modules and Setting Up Constants
 const express = require("express");
-const app = express();
+const session = require("express-session");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
-const methodOverride = require("method-override");
+
+const app = express();
 const port = 8080;
 
 // Middleware and App Configuration
 app.use(express.urlencoded({ extended: true }));
-app.use(methodOverride("_method"));
 app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+// Set up session middleware
+app.use(
+  session({
+    secret: "your_secret_key",
+    resave: false,
+    saveUninitialized: true,
+    cookie: { secure: false }, // set to true in production with HTTPS
+  })
+);
+
 // Setting Up Paths and Utility Functions to Read and Write JSON Data
 const indexFilePath = path.join(__dirname, "data", "index.json");
-const readData = () => {
-  return JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
-};
-const writeData = (data) => {
+const readData = () => JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
+const writeData = (data) =>
   fs.writeFileSync(indexFilePath, JSON.stringify(data, null, 2));
-};
 
 const postsFilePath = path.join(__dirname, "data", "posts.json");
-const readPosts = () => {
-  return JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
-};
+const readPosts = () => JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
+
+// Route: Sign-up / Sign-in Page
+app.get("/", (req, res) => {
+  if (req.session.isAuthenticated) {
+    return res.redirect("/ig");
+  }
+  res.render("signup.ejs", { error: "" });
+});
+
+// Route: Handle Sign-up or Sign-in Logic
+app.post("/signin", (req, res) => {
+  const { username, password } = req.body;
+
+  if (username === "anigram@gmail.com" && password === "by-akram") {
+    req.session.isAuthenticated = true;
+    res.redirect("/ig");
+  } else {
+    res.render("signup.ejs", { error: "Email or password is wrong" });
+  }
+});
 
 // Route: Home Page
 app.get("/ig", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   let data = readData();
   let posts = readPosts();
-
   const shuffledPosts = posts.sort(() => Math.random() - 0.5);
   res.render("home.ejs", { data, posts: shuffledPosts });
 });
 
-
-// Route: Home Page
+// Route: Profile Page
 app.get("/ig/:username", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   let instaData = readData();
   let { username } = req.params;
   let data = instaData[username.toLowerCase()];
@@ -63,7 +94,7 @@ app.get("/ig/:username/edit-profile", (req, res) => {
 });
 
 // Route: Save Edited Profile
-app.patch("/ig/:username", (req, res) => {
+app.post("/ig/:username", (req, res) => {
   let { username } = req.params;
   let instaData = readData();
   let data = instaData[username];
@@ -98,11 +129,19 @@ app.delete("/ig/:username/:id", (req, res) => {
 
 // Route: Search Page
 app.get("/search", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   res.render("search.ejs");
 });
 
 // Route: User Search Results
 app.get("/ig/search/users", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   const searchQuery = req.query.query;
   let data = readData();
   const matchedUsers = Object.keys(data)

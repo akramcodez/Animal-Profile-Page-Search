@@ -43,7 +43,7 @@
   margin-bottom: 1rem;
 }
 
-/* Style for the search form */
+
 #searchForm {
   display: flex;
   align-items: center;
@@ -52,7 +52,7 @@
   margin-bottom: 1em;
 }
 
-/* Style for the input field */
+
 #searchInput {
   flex-grow: 1;
   padding: 0.5em 1em;
@@ -64,21 +64,21 @@
   color: #a8a8a8;
 }
 
-/* CSS for the search button */
+
 .search-button {
   background: none;
   border: none;
   outline: none;
   padding: 0.5em;
-  cursor: pointer; /* Change cursor to pointer */
+  cursor: pointer; 
   margin-left: 1rem;
 }
 
 .search-button i {
-  font-size: 1.5em; /* Adjust icon size */
-  color: white; /* Set icon color */
+  font-size: 1.5em; 
+  color: white; 
   opacity: 0.7;
-  transition: opacity 0.3s ease; /* Smooth color transition on hover */
+  transition: opacity 0.3s ease; 
 }
 
 .search-button:hover i {
@@ -93,7 +93,6 @@
   gap: 1em;
 }
 
-/* Style for the profile picture in each result */
 .profile-picture {
   width: 3rem;
   height: 3rem;
@@ -123,7 +122,6 @@
   justify-content: center;
 }
 
-/* Style for the username in each result */
 .user-name {
   font-size: 2em;
   color: #ffffff;
