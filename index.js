@@ -21,7 +21,7 @@ app.use(
     secret: "your_secret_key",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, // set to true in production with HTTPS
+    cookie: { secure: false }, 
   })
 );
 
