@@ -33,16 +33,16 @@ body {
 
 .card form {
   display: flex;
-  flex-direction: column; /* Stack form inputs vertically */
-  gap: 1rem; /* Add space between inputs */
+  flex-direction: column; 
+  gap: 1rem; 
 }
 
 .card label {
-  font-size: 1rem; /* Space between label and input */
+  font-size: 1rem;
 }
 
 .card input {
-  width: 50%; /* Full width input */
+  width: 50%; 
   padding: 0.8rem;
   background-color: #333;
   color: white;
@@ -83,6 +83,28 @@ a {
   text-decoration: none;
   margin: 0;
   padding: 0;
+}
+
+.card::-webkit-scrollbar {
+  width: 10px;
+}
+
+.card::-webkit-scrollbar-track {
+  background: #1c1c1e;
+  border-radius: 10px;
+}
+
+.card::-webkit-scrollbar-thumb {
+  background: #444;
+  border: 2px solid #1c1c1e;
+}
+
+.card::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.card::-webkit-scrollbar-thumb:active {
+  background: #777;
 }
 
 .right-side{

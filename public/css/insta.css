@@ -192,6 +192,28 @@ a {
   margin: 0;
   padding: 0;
 }
+
+.right-side::-webkit-scrollbar {
+  width: 10px;
+}
+
+.right-side::-webkit-scrollbar-track {
+  background: #1c1c1e;
+  border-radius: 10px;
+}
+
+.right-side::-webkit-scrollbar-thumb {
+  background: #444;
+  border: 2px solid #1c1c1e;
+}
+
+.right-side::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.right-side::-webkit-scrollbar-thumb:active {
+  background: #777;
+}
 @media (max-width: 860px) {
   .icon-p {
     margin-left: 0.5rem;
