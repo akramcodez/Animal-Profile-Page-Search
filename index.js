@@ -1,37 +1,49 @@
+// Importing Modules and Setting Up Constants
 const express = require("express");
 const app = express();
-const fs = require("fs"); // To read/write files
-const { v4: uuidv4 } = require("uuid"); // Import UUID
+const fs = require("fs");
+const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 const methodOverride = require("method-override");
 const port = 8080;
 
+// Middleware and App Configuration
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride("_method"));
-app.use(express.json()); // To parse JSON data
+app.use(express.json());
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "/views"));
 app.use(express.static(path.join(__dirname, "/public")));
 
+// Setting Up Paths and Utility Functions to Read and Write JSON Data
+const indexFilePath = path.join(__dirname, "data", "index.json");
 const readData = () => {
-  return JSON.parse(fs.readFileSync("data.json", "utf8"));
+  return JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
 };
 const writeData = (data) => {
-  fs.writeFileSync("data.json", JSON.stringify(data, null, 2));
+  fs.writeFileSync(indexFilePath, JSON.stringify(data, null, 2));
 };
 
-//Home Route
+const postsFilePath = path.join(__dirname, "data", "posts.json");
+const readPosts = () => {
+  return JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
+};
+
+// Route: Home Page
 app.get("/ig", (req, res) => {
-  let data = require("./data.json");
-  res.render("home.ejs", { data });
+  let data = readData();
+  let posts = readPosts();
+
+  const shuffledPosts = posts.sort(() => Math.random() - 0.5);
+  res.render("home.ejs", { data, posts: shuffledPosts });
 });
 
-//Profile Route
-app.get("/ig/:username", (req, res) => {
-  let instaData = require("./data.json");
-  let { username } = req.params;
 
-  let data = instaData[username.toLowerCase()]; 
+// Route: Home Page
+app.get("/ig/:username", (req, res) => {
+  let instaData = readData();
+  let { username } = req.params;
+  let data = instaData[username.toLowerCase()];
 
   if (username === "tiger247") {
     res.render("myProfile.ejs", { data });
@@ -42,62 +54,57 @@ app.get("/ig/:username", (req, res) => {
   }
 });
 
-// Get page to edit profile information
+// Route: Profile Editing Page
 app.get("/ig/:username/edit-profile", (req, res) => {
-  let instaData = require("./data.json");
+  let instaData = readData();
   let { username } = req.params;
   let data = instaData[username];
   res.render("edit-profile.ejs", { data });
 });
 
-// Submit the newly changed profile data
+// Route: Save Edited Profile
 app.patch("/ig/:username", (req, res) => {
-  let { username } = req.params; 
-  let instaData = require("./data.json"); 
-
-  let data = instaData[username]; 
-
+  let { username } = req.params;
+  let instaData = readData();
+  let data = instaData[username];
 
   if (data) {
-    data.profile = req.body.profile || data.profile; 
+    data.profile = req.body.profile || data.profile;
     data.bio.line1 = req.body.bio_line1 || data.bio.line1;
     data.bio.line2 = req.body.bio_line2 || data.bio.line2;
     data.bio.line3 = req.body.bio_line3 || data.bio.line3;
     data.bio.line4 = req.body.bio_line4 || data.bio.line4;
-
-  
+    writeData(instaData);
     res.redirect(`/ig/${username}`);
   } else {
     res.render("error.ejs");
   }
 });
 
-let users = require("./data.json");
-const { name } = require("ejs");
-const { log } = require("console");
+let users = readData();
 
-//Delete Route
+// Route: Delete Post
 app.delete("/ig/:username/:id", (req, res) => {
   let { id, username } = req.params;
   let user = users[username];
 
   if (user && user.posts) {
     user.posts = user.posts.filter((p) => p.id !== id);
+    writeData(users);
   }
 
   res.redirect(`/ig/${username}`);
 });
 
-//to search user
+// Route: Search Page
 app.get("/search", (req, res) => {
   res.render("search.ejs");
 });
 
-//to send search results
+// Route: User Search Results
 app.get("/ig/search/users", (req, res) => {
   const searchQuery = req.query.query;
-
-  let data = require("./data.json");
+  let data = readData();
   const matchedUsers = Object.keys(data)
     .filter((username) => username.toLowerCase().includes(searchQuery))
     .map((username) => {
@@ -111,6 +118,7 @@ app.get("/ig/search/users", (req, res) => {
   res.json({ users: matchedUsers });
 });
 
+// Starting the Server
 app.listen(port, () => {
-  console.log("App is listening :", port);
+  console.log("App is listening on port:", port);
 });

@@ -10,15 +10,14 @@
 .search-container {
   display: flex;
   flex-direction: column;
-  padding: 1em;
   width: 100%;
   height: 100%;
 }
 
 
 .search-box {
-  margin-left: 10%;
-  margin-top: 1rem;
+  margin-left: 5%;
+  margin-top: 2rem;
   width: 30rem;
   height: 40rem;
   display: flex;
