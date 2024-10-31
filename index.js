@@ -50,7 +50,7 @@ app.post("/signin", (req, res) => {
     req.session.isAuthenticated = true;
     res.redirect("/ig");
   } else {
-    res.render("signup.ejs", { error: "Email or password is wrong" });
+    res.render("signup.ejs", { error: "Warning: Invalid Credentials! Please check your email and password, then try again" });
   }
 });
 

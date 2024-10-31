@@ -104,7 +104,7 @@ body {
   transform: translateX(-50%);
   opacity: 0;
   font-weight: bold;
-  animation: fadeInOut 1.5s ease forwards;
+  animation: fadeInOut 3s ease forwards;
   z-index: 1000;
   text-align: center;
   width: 90%;
