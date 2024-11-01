@@ -226,10 +226,6 @@ body {
   color: rgb(39, 39, 239);
 }
 
-a {
-  text-decoration: none;
-}
-
 .main-content::-webkit-scrollbar {
   width: 10px;
 }
@@ -267,9 +263,7 @@ a {
     width: 35rem;
     margin-right: 1rem;
   }
-  .icon-p {
-    margin-left: 0.5rem;
-  }
+  
   .followBtn {
     right: 0;
   }

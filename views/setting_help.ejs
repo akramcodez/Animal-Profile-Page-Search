@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Anigram . Help</title>
+    <%- include("includes/head.ejs") %>
+    <link rel="stylesheet" href="/css/setting-options.css" />
+    <link rel="stylesheet" href="/css/setting-help.css" />
+  </head>
+  <body>
+    <%- include('navigation.ejs') %> 
+    <%- include('Setting-options.ejs') %>
+    <div class="summary">
+        <div class="help-summary">
+            <h2>Help Summary for Using the Web Application</h2>
+    
+            <p>Welcome to our web application! This guide will help you navigate through the features and functionalities available to you.</p>
+    
+            <h3>Getting Started</h3>
+            <h4>Sign Up / Sign In</h4>
+            <p>
+                <strong>Home Page:</strong> When you first visit the site, you'll land on the sign-up/sign-in page.
+            </p>
+            <p>
+                <strong>Sign Up:</strong> If you're a new user, you can create an account by entering your email and password.
+            </p>
+            <p>
+                <strong>Sign In:</strong> Existing users can log in using their registered credentials. Use the following details:
+                <ul>
+                    <li><strong>Email:</strong> anigram@gmail.com</li>
+                    <li><strong>Password:</strong> by-akram</li>
+                </ul>
+            </p>
+            <p>If you enter incorrect credentials, an error message will prompt you to try again.</p>
+    
+            <h3>Navigation</h3>
+            <p>Once signed in, you will be directed to the main interface ("/ig"), where you can access various features:</p>
+            <ol>
+                <li><strong>Home Page:</strong> Browse randomly shuffled posts from other users.</li>
+                <li><strong>Profile Page:</strong> Access your personal profile by navigating to <code>/ig/{your_username}</code>.</li>
+                <li><strong>Search:</strong> Use the search feature to find users or specific profiles. Navigate to <code>/search</code> to enter your query.</li>
+                <li><strong>Settings:</strong> Adjust your preferences and learn more about the application.</li>
+            </ol>
+    
+            <h3>Editing Your Profile</h3>
+            <p>Navigate to your profile page and select the edit option (<code>/ig/{your_username}/edit-profile</code>) to update your profile information. After editing, ensure you save the changes to reflect them on your profile.</p>
+    
+            <h3>Deleting a Post</h3>
+            <p>If you want to remove a post, go to your profile and select the delete option associated with the post. Confirm deletion, and the post will be removed from your profile.</p>
+    
+            <h3>Logging Out</h3>
+            <p>To log out, simply navigate to <code>/log-out</code>. This will end your session and redirect you back to the sign-up/sign-in page.</p>
+    
+            <h3>Important Notes</h3>
+            <p>Ensure that you have a stable internet connection while using the application for a seamless experience. If you encounter any issues or have further questions, visit the Help section for assistance.</p>
+    
+            <h3>Conclusion</h3>
+            <p>Explore, interact, and enjoy the features of our web application! We’re here to help you connect with others and share your experiences.</p>
+        </div>
+    </div>
+    
+  </body>
+</html>

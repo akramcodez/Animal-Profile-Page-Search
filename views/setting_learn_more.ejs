@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Anigram . Learn More</title>
+    <%- include("includes/head.ejs") %>
+    <link rel="stylesheet" href="/css/setting-options.css" />
+    <link rel="stylesheet" href="/css/setting_learn_more.css" />
+  </head>
+  <body>
+    <%- include('navigation.ejs') %> <%- include('Setting-options.ejs') %>
+    <div class="summary">
+      <div class="msg">
+        <h2>Anigram</h2>
+        <p>
+          Anigram is a responsive web application inspired by Instagram, focused
+          on showcasing interactive animal profiles. It allows users to sign up,
+          browse, and manage various animal profiles in a social media-like
+          environment, with features designed to emulate an Instagram
+          experience.
+        </p>
+
+        <h4>Key Features:</h4>
+        <ul>
+          <li>
+            <strong>Sign-up and Sign-in Authentication:</strong>
+            <ul>
+              <li>
+                Users are welcomed with a sign-in page on the root route (/). If
+                authenticated, they are redirected to the home page at
+                <code>/ig</code>.
+              </li>
+              <li>
+                Correct credentials (default username and password) authenticate
+                the user and create a session, granting access to Anigram's
+                features.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Home Page with Randomized Post Display:</strong>
+            <ul>
+              <li>
+                The home page displays a randomized collection of posts from
+                <code>posts.json</code>, representing interactions between
+                animal profiles.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Profile Management:</strong>
+            <ul>
+              <li>
+                Users can view their own or other animal profiles, each
+                featuring customizable photos and bios. An error page is shown
+                if a profile doesn’t exist or the username is incorrect.
+              </li>
+              <li>
+                Profiles are editable, allowing users to modify profile images
+                and bios.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Search Functionality with Suggestions:</strong>
+            <ul>
+              <li>
+                A search page enables users to look up profiles by username,
+                with autocomplete suggestions as they type.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Settings and Additional Information:</strong>
+            <ul>
+              <li>
+                The settings page (<code>/ig/settings</code>) provides options,
+                including a "Learn More" link for app guidelines.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Post Deletion:</strong>
+            <ul>
+              <li>
+                Users can delete posts within their profile, which resets the
+                session and requires a re-login to regain access.
+              </li>
+            </ul>
+          </li>
+        </ul>
+
+        <h4>Technical Overview:</h4>
+        <ul>
+          <li>
+            <strong>Technologies Used:</strong> Node.js, Express, EJS for
+            templating, <code>express-session</code> for session management, and
+            JSON files (<code>data.json</code> for user data and
+            <code>posts.json</code> for posts).
+          </li>
+          <li>
+            <strong>Session Management:</strong> Sessions maintain user
+            authentication, ensuring only logged-in users can access features.
+          </li>
+          <li>
+            <strong>Data Management:</strong> Utility functions handle reading
+            and writing from JSON files, supporting dynamic profile and post
+            management.
+          </li>
+        </ul>
+
+        <p>
+          Anigram is designed as a demo for an animal-focused social platform
+          and is planned to expand with more features, transforming it into a
+          fully interactive Instagram-like experience.
+        </p>
+        <br>
+        <div class="author"><p>Developed by SK Akram</p></div>
+      </div>
+    </div>
+  </body>
+</html>

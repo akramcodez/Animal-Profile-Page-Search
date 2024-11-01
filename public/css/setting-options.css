@@ -1,0 +1,71 @@
+.middle {
+  height: 100vh;
+  width: 23vw;
+  min-width: 18rem;
+  border-right: 1px solid rgba(255, 255, 255, 0.223);
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.card {
+  height: 13rem;
+  background-color: #222;
+  color: #ddd;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  margin: 1rem;
+  margin-top: 3rem;
+  line-height: 1.6;
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.card:hover{
+  background-color: #1c1c1c;
+}
+
+.info {
+  margin-top: 1.5rem;
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.card p {
+  margin-top: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.card a {
+  position: relative;
+  bottom: 0;
+  color: #1e90ff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.card a:hover {
+  color: #3cb4ff;
+}
+
+.log-out i{
+  color: red;
+}
+
+.log-out{
+  color: red;
+}
+
+.log-out:hover {
+  background-color: rgba(237, 8, 8, 0.106);
+}

@@ -188,7 +188,6 @@ a {
 }
 
 a {
-  text-decoration: none;
   margin: 0;
   padding: 0;
 }
@@ -213,9 +212,4 @@ a {
 
 .right-side::-webkit-scrollbar-thumb:active {
   background: #777;
-}
-@media (max-width: 860px) {
-  .icon-p {
-    margin-left: 0.5rem;
-  }
 }

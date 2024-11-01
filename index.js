@@ -21,7 +21,7 @@ app.use(
     secret: "your_secret_key",
     resave: false,
     saveUninitialized: true,
-    cookie: { secure: false }, 
+    cookie: { secure: false },
   })
 );
 
@@ -52,7 +52,7 @@ app.post("/signin", (req, res) => {
   } else {
     res.render("signup.ejs", {
       error:
-        "Warning: Invalid Credentials! Please check your email and password, then try again",
+        "Warning: Invalid Credentials! Please check the input fields, then try again",
     });
   }
 });
@@ -67,6 +67,49 @@ app.get("/ig", (req, res) => {
   let posts = readPosts();
   const shuffledPosts = posts.sort(() => Math.random() - 0.5);
   res.render("home.ejs", { data, posts: shuffledPosts });
+});
+
+// Route : Setting
+app.get("/ig/settings", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  res.render("setting.ejs");
+});
+
+// Route : Setting . learn more
+app.get("/ig/settings/learn-more", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  res.render("setting_learn_more.ejs");
+});
+
+// Route : Setting . creators
+app.get("/ig/settings/creators", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  res.render("setting_creators.ejs");
+});
+
+// Route : Setting . creators
+app.get("/ig/settings/help", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  res.render("setting_help.ejs");
+});
+
+// Route : log-out
+app.get("/log-out", (req, res) => {
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
 });
 
 // Route: Profile Page

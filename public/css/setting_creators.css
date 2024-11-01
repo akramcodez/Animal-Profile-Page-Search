@@ -1,0 +1,69 @@
+.right-side {
+  width: 55%;
+  padding: 20px;
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+li{
+  line-height: 1.5rem;
+}
+
+.msg {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+.author-title, .contributors-title {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2980b9;
+}
+
+.author-card {
+  background-color: #000;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+.author-card p {
+  padding: 0.4rem;
+}
+
+.author-card a {
+  color: #2980b9;
+  text-decoration: none;
+}
+
+.author-card a:hover {
+  text-decoration: underline;
+}
+
+.social-media {
+  padding: 0.4rem;
+}
+
+.social-link {
+  margin-right: 10px;
+  color: #2980b9;
+}
+
+.social-link:hover {
+  text-decoration: underline;
+}
+
+.divider {
+  margin: 20px 0;
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.contributors-list {
+  margin-left: 20px;
+}
+
+.contributors-list li {
+  margin-bottom: 5px;
+}
