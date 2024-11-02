@@ -27,12 +27,40 @@ app.use(
 
 // Setting Up Paths and Utility Functions to Read and Write JSON Data
 const indexFilePath = path.join(__dirname, "data", "index.json");
+const postsFilePath = path.join(__dirname, "data", "posts.json");
+
+// Utility functions to read and write JSON data
 const readData = () => JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
 const writeData = (data) =>
   fs.writeFileSync(indexFilePath, JSON.stringify(data, null, 2));
-
-const postsFilePath = path.join(__dirname, "data", "posts.json");
 const readPosts = () => JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
+
+// Load data from index.json
+let data = readData();
+
+// Check and update post IDs if needed
+let needsUpdate = false;
+for (const key in data) {
+  const user = data[key];
+  user.posts = user.posts.map((post) => {
+    if (post.id === "no") {
+      needsUpdate = true;
+      return {
+        ...post,
+        id: uuidv4(),
+      };
+    }
+    return post;
+  });
+}
+
+// Only write data if updates were made
+if (needsUpdate) {
+  writeData(data);
+  console.log("IDs updated in index.json");
+} else {
+  console.log("No IDs needed updating in index.json");
+}
 
 // Route: Sign-up / Sign-in Page
 app.get("/", (req, res) => {
@@ -128,6 +156,26 @@ app.get("/ig/:username", (req, res) => {
     res.render("insta.ejs", { data });
   } else {
     res.render("error.ejs");
+  }
+});
+
+app.get("/ig/posts/:id", (req, res) => {
+  let { id } = req.params;
+  let post = null;
+
+  for (const key in data) {
+    const user = data[key];
+    const foundPost = user.posts.find((p) => p.id === id);
+    if (foundPost) {
+      post = foundPost;
+      break;
+    }
+  }
+
+  if (post) {
+    res.render("post.ejs", { post });
+  } else {
+    res.status(404).render("error.ejs", { message: "Post not found" });
   }
 });
 

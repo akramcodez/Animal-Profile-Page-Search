@@ -124,6 +124,9 @@ body {
   justify-content: center;
   gap: 10px;
   font-size: 1.5rem;
+}
+
+.animal-icons {
   color: #3897f0;
 }
 

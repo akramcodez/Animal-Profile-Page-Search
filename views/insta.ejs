@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/insta.css" />
   </head>
   <body>
-    <%- include('navigation.ejs') %>
+    <%- include('includes/navigation.ejs') %>
     <div class="right-side">
       <div class="top-bar">
         <div class="profile-img">
@@ -36,16 +36,18 @@
       </div>
       <div class="down-bar">
         <% for (let post of data.posts) { %>
-        <div class="post">
-          <img src="<%= post.image %>" alt="Post Image" />
-          <div class="post-details">
-            <p>
-              <i class="fa-regular fa-heart"></i> : <%= post.likes %>
-              &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
-              post.comments %>
-            </p>
+        <a href="/ig/posts/<%= post.id %>">
+          <div class="post">
+            <img src="<%= post.image %>" alt="Post Image" />
+            <div class="post-details">
+              <p>
+                <i class="fa-regular fa-heart"></i> : <%= post.likes %>
+                &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
+                post.comments %>
+              </p>
+            </div>
           </div>
-        </div>
+        </a>
         <% } %>
       </div>
     </div>
