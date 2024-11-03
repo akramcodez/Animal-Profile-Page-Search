@@ -98,7 +98,6 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   margin: 1rem auto;
-
   padding-bottom: 2rem;
 }
 
@@ -115,6 +114,7 @@ body {
   margin-bottom: 1.5rem;
   transition: 1s ease-in-out;
   cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, 0.171);
 }
 
 .post:hover {
@@ -134,31 +134,38 @@ a {
   text-decoration: none;
 }
 
+.post a {
+  display: block;
+  width: 90%;
+  height: 80%; /* Adjust this if you need more space for the details */
+  overflow: hidden;
+}
+
 .post img {
   width: 100%;
-  height: 80%;
-  margin-top: 0;
+  height: 100%; /* Fill the anchor tag area completely */
   object-fit: cover;
-  border-radius: 10px;
+  border-radius: 10px; /* Keep the top corners rounded */
 }
 
 .post-details {
   width: 100%;
   text-align: center;
-  justify-content: center;
-  padding: 0.5rem;
+  padding: 0.5rem; /* Control padding */
   font-size: 0.9rem;
   color: white;
   display: flex;
   flex-wrap: wrap;
+  margin-top: 0; /* Remove default margin */
 }
 
 .post-details p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin: 0; /* Ensure no margin around paragraphs */
+  margin-left: 1rem;
 }
-
 .error-body {
   display: flex;
   justify-content: center;
@@ -192,24 +199,24 @@ a {
   padding: 0;
 }
 
-.right-side::-webkit-scrollbar {
-  width: 10px;
+/* new post icon */
+
+.post a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.right-side::-webkit-scrollbar-track {
-  background: #1c1c1e;
-  border-radius: 10px;
+.icon-container {
+  width: 150px;
+  height: 150px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.right-side::-webkit-scrollbar-thumb {
-  background: #444;
-  border: 2px solid #1c1c1e;
-}
-
-.right-side::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.right-side::-webkit-scrollbar-thumb:active {
-  background: #777;
+.icon-container i {
+  font-size: 5rem;
 }

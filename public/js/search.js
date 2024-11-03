@@ -1,10 +1,9 @@
 let searchForm = document.getElementById("searchForm");
 
 searchForm.addEventListener("submit", function (event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const searchQuery = document.getElementById("searchInput").value;
-
 
   fetch(`/ig/search/users?query=${searchQuery}`)
     .then((response) => response.json())
@@ -23,12 +22,12 @@ searchForm.addEventListener("submit", function (event) {
 
         userDiv.innerHTML = `
           <a href="/ig/${user.username}" class="user-link">
-            <img src="${user.profile}" alt="${user.name}'s profile picture" class="profile-picture" />
+            <img src="${user.profile}" onerror="this.hidden = true"="${user.name}'s profile picture" class="profile-picture" />
             <div class="user-name-container"><span class="user-name">${user.name}</span></div>
           </a>
         `;
 
-        resultsDiv.appendChild(userDiv);  
+        resultsDiv.appendChild(userDiv);
       });
     })
     .catch((err) => console.error("Error:", err));

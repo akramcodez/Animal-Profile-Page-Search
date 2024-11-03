@@ -11,7 +11,10 @@
       <div class="top-bar">
         <div class="profile-img">
           <div class="img">
-            <img src="<%= data.profile %>" alt="No Found" />
+            <img
+              src="<%= data.profile %>"
+              onerror="this.hidden = true"
+            />
           </div>
         </div>
         <div class="section">
@@ -36,18 +39,21 @@
       </div>
       <div class="down-bar">
         <% for (let post of data.posts) { %>
-        <a href="/ig/posts/<%= post.id %>">
-          <div class="post">
-            <img src="<%= post.image %>" alt="Post Image" />
-            <div class="post-details">
-              <p>
-                <i class="fa-regular fa-heart"></i> : <%= post.likes %>
-                &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
-                post.comments %>
-              </p>
-            </div>
+        <div class="post">
+          <a href="/ig/posts/<%= post.id %>">
+            <img
+              src="<%= post.image %>"
+              onerror="this.hidden = true"
+            />
+          </a>
+          <div class="post-details">
+            <p>
+              <i class="fa-regular fa-heart"></i> : <%= post.likes %>
+              &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
+              post.comments %>
+            </p>
           </div>
-        </a>
+        </div>
         <% } %>
       </div>
     </div>

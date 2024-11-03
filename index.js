@@ -226,6 +226,10 @@ app.post("/ig/:username/delete", (req, res) => {
   });
 });
 
+app.get("/ig/post/new", (req, res) => {
+  res.render("new.ejs");
+});
+
 // Route: Search Page
 app.get("/search", (req, res) => {
   if (!req.session.isAuthenticated) {

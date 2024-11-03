@@ -14,7 +14,7 @@
         <a href="/ig/<%= animalKey %>" class="story">
           <img
             src="<%= data[animalKey].profile %>"
-            alt="<%= data[animalKey].name %>"
+            onerror="this.hidden = true"
           />
           <p><%= data[animalKey].name %></p>
         </a>
@@ -22,9 +22,9 @@
       </div>
       <div class="content-area">
         <div class="main-content">
-          <% posts.forEach(post => { 
-            const randomIndex = Math.floor(Math.random() * post.mainImgs.length); 
-            const randomMainImg = post.mainImgs[randomIndex]; %>
+          <% posts.forEach(post => { const randomIndex =
+          Math.floor(Math.random() * post.mainImgs.length); const randomMainImg
+          = post.mainImgs[randomIndex]; %>
           <div class="content">
             <div class="post">
               <div class="user-info">
@@ -42,15 +42,19 @@
                   </div>
                 </div>
                 <div class="followBtn">
-                  <button class="button-23" role="button">Follow</button>
+                  <a href="/ig/<%= post.animal %>">
+                    <button class="button-23" role="button">Follow</button>
+                  </a>
                 </div>
               </div>
               <div class="mainImage">
-                <img
-                  src="<%= randomMainImg %>"
-                  onerror="this.hidden = true"
-                  id="mainImg"
-                />
+                <a href="/ig/<%= post.animal %>">
+                  <img
+                    src="<%= randomMainImg %>"
+                    onerror="this.hidden = true"
+                    id="mainImg"
+                  />
+                </a>
               </div>
               <div class="interactions">
                 <div class="like">
@@ -78,27 +82,27 @@
         </div>
       </div>
     </div>
-    <div class="suggestion">
+    <div class="right-side">
       <div class="text">
         <p class="sugg">Suggested for you</p>
         <p class="see">See all</p>
       </div>
       <div class="suggrows">
         <% Object.keys(data).forEach(animalKey => { %>
-        <div class="row">
-          <a href="/ig/<%= animalKey %>">
+        <a href="/ig/<%= animalKey %>">
+          <div class="row">
             <img
               src="<%= data[animalKey].profile %>"
-              alt="<%= data[animalKey].name %>"
+              onerror="this.hidden = true"
               class="rowImg"
             />
-          </a>
-          <div class="bound">
-            <p class="name"><%= data[animalKey].name %></p>
-            <p>Followed by Jack123</p>
+            <div class="bound">
+              <p class="name"><%= data[animalKey].name %></p>
+              <p>Followed by Jack123</p>
+            </div>
+            <p class="follow">Follow</p>
           </div>
-          <p class="follow">Follow</p>
-        </div>
+        </a>
         <% }); %>
       </div>
     </div>

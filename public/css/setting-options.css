@@ -26,7 +26,7 @@
   justify-content: space-between;
 }
 
-.card:hover{
+.card:hover {
   background-color: #1c1c1c;
 }
 
@@ -58,11 +58,11 @@
   color: #3cb4ff;
 }
 
-.log-out i{
+.log-out i {
   color: red;
 }
 
-.log-out{
+.log-out {
   color: red;
 }
 

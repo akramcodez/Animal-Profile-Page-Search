@@ -1,9 +1,9 @@
 .right-side {
   width: 80%;
   background-color: black;
-  display: flex;
+  /* display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
   padding: 20px;
   box-sizing: border-box;
   overflow-x: hidden;
@@ -15,14 +15,20 @@
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  margin: 40px auto;
+}
+
+.image {
+  margin: 1rem;
 }
 
 .image img {
   width: 100%;
+  border-radius: 10px;
   height: auto;
   display: block;
   object-fit: cover;
-  border-bottom: 1px solid #333;
+  border: 1px solid rgba(255, 255, 255, 0.712);
 }
 
 .post-details {
@@ -43,26 +49,4 @@
 .post-details i {
   color: #ff4d4d;
   font-size: 18px;
-}
-
-.right-side::-webkit-scrollbar {
-  width: 10px;
-}
-
-.right-side::-webkit-scrollbar-track {
-  background: #1c1c1e;
-  border-radius: 10px;
-}
-
-.right-side::-webkit-scrollbar-thumb {
-  background: #444;
-  border: 2px solid #1c1c1e;
-}
-
-.right-side::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.right-side::-webkit-scrollbar-thumb:active {
-  background: #777;
 }

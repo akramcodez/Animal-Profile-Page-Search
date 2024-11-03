@@ -1,84 +1,63 @@
-.summary {
-    width: 55%;
-    padding: 20px;
-    background-color: #000;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    overflow-x: hidden;
+.right-side {
+  width: 55%;
+  padding: 20px;
+  background-color: #000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-x: hidden;
 }
 
-.summary::-webkit-scrollbar {
-    width: 10px;
-  }
-  
-  .summary::-webkit-scrollbar-track {
-    background: #1c1c1e;
-    border-radius: 10px;
-  }
-  
-  .summary::-webkit-scrollbar-thumb {
-    background: #444;
-    border: 2px solid #1c1c1e;
-  }
-  
-  .summary::-webkit-scrollbar-thumb:hover {
-    background: #555;
-  }
-  
-  .summary::-webkit-scrollbar-thumb:active {
-    background: #777;
-  }
-
 .help-summary {
-    font-family: Arial, sans-serif;
-    color: #333;
+  font-family: Arial, sans-serif;
+  color: #333;
 }
 
 .help-summary h2 {
-    font-size: 24px;
-    margin-bottom: 15px;
-    color: #2980b9;
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #2980b9;
 }
 
 .help-summary h3 {
-    font-size: 20px;
-    margin-top: 20px;
-    margin-bottom: 10px;
-    color: #2980b9;
+  font-size: 20px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: #2980b9;
 }
 
 .help-summary h4 {
-    font-size: 18px;
-    margin-top: 15px;
-    margin-bottom: 5px;
-    color: #2980b9;
+  font-size: 18px;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #2980b9;
 }
 
 .help-summary p {
-    line-height: 1.6;
-    margin-bottom: 10px;
+  line-height: 1.6;
+  margin-bottom: 10px;
 }
 
-.help-summary ul, .help-summary ol {
-    margin-left: 20px;
-    margin-bottom: 10px;
+.help-summary ul,
+.help-summary ol {
+  margin-left: 20px;
+  margin-bottom: 10px;
 }
 
 .help-summary li {
-    margin-bottom: 5px;
+  margin-bottom: 5px;
 }
 
 .help-summary code {
-    background-color: #595a5a82;
-    padding: 2px 4px;
-    border-radius: 4px;
-    font-family: monospace;
+  background-color: #595a5a82;
+  padding: 2px 4px;
+  border-radius: 4px;
+  font-family: monospace;
 }
 
 .help-summary a {
-    color: #2980b9;
-    text-decoration: none;
+  color: #2980b9;
+  text-decoration: none;
 }
 
 .help-summary a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }

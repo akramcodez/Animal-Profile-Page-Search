@@ -10,7 +10,8 @@
     <div class="right-side">
       <div class="post-container">
         <div class="image">
-          <img src="<%= post.image %>" />
+          <img src="<%= post.image %>"
+          onerror="this.hidden = true" />
         </div>
         <div class="post-details">
           <p>

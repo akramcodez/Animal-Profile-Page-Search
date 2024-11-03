@@ -1,61 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <title>Anigram . Profile</title>
-        <%- include("includes/head.ejs") %>
+  <head>
+    <title>Anigram . Profile</title>
+    <%- include("includes/head.ejs") %>
     <link rel="stylesheet" href="/css/insta.css" />
-    </head>
-    <body>
-        <%- include('includes/navigation.ejs') %>
-        <div class="right-side">
-        <div class="top-bar">
-            <div class="profile-img">
-                <div class="img">
-                    <img src="<%= data.profile %>" alt="No Found">
-                </div>
-            </div>
-            <div class="section">
-                <div class="section1">
-                    <span>@<%=data.name%></span>
-                        <form method="GET" action="/ig/<%= data.name %>/edit-profile">
-                            <button type="submit">Edit profile</button>
-                        </form>
-                </div>
-                <div class="section2">
-                    <p>
-                        Followers : <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp; Following : <%=
-                        data.following %>
-                    </p>
-                </div>
-                <div class="section3">
-                    <p><%=data.bio.line1%></p>
-                    <p><%=data.bio.line2%></p>
-                    <p><%=data.bio.line3%></p>
-                    <p><%=data.bio.line4%></p>
-                </div>
-            </div>
+    <link rel="stylesheet" href="/css/my-profile.css" />
+  </head>
+  <body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="right-side">
+      <div class="top-bar">
+        <div class="profile-img">
+          <div class="img">
+            <img src="<%= data.profile %>" onerror="this.hidden = true" />
+          </div>
         </div>
-        <div class="down-bar">
-            <% for (let post of data.posts) { %>
-                <a href="/ig/posts/<%= post.id %>">
-                    <div class="post">
-                            <img src="<%= post.image %>" alt="Post Image" />
-                            <div class="post-details">
-                                <p>
-                                    <i class="fa-regular fa-heart"></i> : <%= post.likes %> &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%= post.comments %>
-                                    &nbsp;&nbsp; <form method="post" action="/ig/<%= data.name %>/delete">
-                                                        <input type="hidden" name="id" value="<%= post.id %>" />
-                                                        <i class="fa-solid fa-trash" onclick="this.closest('form').submit();"></i>
-                                                </form>                                
-                                </p>
-                            </div>
-                    </div>
-                </a>
-                <% } %>
-            </div>
+        <div class="section">
+          <div class="section1">
+            <span>@<%=data.name%></span>
+            <form method="GET" action="/ig/<%= data.name %>/edit-profile">
+              <button type="submit">Edit profile</button>
+            </form>
+          </div>
+          <div class="section2">
+            <p>
+              Followers : <%= data.followers %> &nbsp;&nbsp;&nbsp;&nbsp;
+              Following : <%= data.following %>
+            </p>
+          </div>
+          <div class="section3">
+            <p><%=data.bio.line1%></p>
+            <p><%=data.bio.line2%></p>
+            <p><%=data.bio.line3%></p>
+            <p><%=data.bio.line4%></p>
+          </div>
         </div>
-    
+      </div>
+      <div class="down-bar">
+        <% for (let post of data.posts) { %>
+          <div class="post">
+            <a href="/ig/posts/<%= post.id %>">
+            <img src="<%= post.image %>" onerror="this.hidden = true" />
+            </a>
+            <div class="post-details">
+              <p>
+                <i class="fa-regular fa-heart"></i> : <%= post.likes %>
+                &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
+                post.comments %>
+                &nbsp;&nbsp; 
+                <form method="post" action="/ig/<%= data.name %>/delete">
+                    <input type="hidden" name="id" value="<%= post.id %>" />
+                    <i class="fa-solid fa-trash" onclick="event.stopPropagation(); this.closest('form').submit();"></i>
+                </form>                  
+              </p>
+            </div>
+          </div>
+        <% } %>
+        <div class="post">
+            <a href="/ig/post/new">
+                <div class="icon-container">
+                    <i class="fa-solid fa-plus"></i>
+              </div>
+            </a>
+        </div>
+      </div>
+    </div>
 
     <script src="/js/app.js"></script>
-    </body>
+  </body>
 </html>

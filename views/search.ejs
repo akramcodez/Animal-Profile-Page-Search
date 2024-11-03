@@ -7,21 +7,32 @@
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
-    <div class="search-container">
-      <div class="search-box">
-        <div class="search-1"><p class="search-text">Search</p></div>
-        <div class="search-2">
-          <form id="searchForm">
-            <input type="text" id="searchInput" placeholder="Type : e.g - dog" required />
-            <button type="submit" class="search-button" alt="button">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </button>
-          </form>
+    <div class="right-side">
+      <div class="search-container">
+        <div class="search-box">
+          <div class="search-1"><p class="search-text">Search</p></div>
+          <div class="search-2">
+            <form id="searchForm">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="HINT - ( type - 'dog' )"
+                required
+              />
+              <button
+                type="submit"
+                class="search-button"
+                onerror="this.hidden = true"
+                ="button"
+              >
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+          <div id="searchResults"></div>
         </div>
-        <div id="searchResults"></div>
       </div>
     </div>
-
     <script src="/js/search.js"></script>
   </body>
 </html>

@@ -1,0 +1,12 @@
+form {
+  display: inline;
+}
+
+form i {
+  pointer-events: auto;
+  cursor: pointer;
+}
+
+a .post .post-details form i {
+  pointer-events: auto;
+}

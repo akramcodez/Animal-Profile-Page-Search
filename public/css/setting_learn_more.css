@@ -1,4 +1,4 @@
-.summary {
+.right-side {
   width: 100%;
   max-width: 800px;
   margin: 20px auto;
@@ -14,68 +14,46 @@ li {
   line-height: 2rem;
 }
 
-.summary {
+.right-side {
   overflow-x: hidden;
   width: 60%;
 }
 
-.summary::-webkit-scrollbar {
-  width: 10px;
-}
-
-.summary::-webkit-scrollbar-track {
-  background: #1c1c1e;
-  border-radius: 10px;
-}
-
-.summary::-webkit-scrollbar-thumb {
-  background: #444;
-  border: 2px solid #1c1c1e;
-}
-
-.summary::-webkit-scrollbar-thumb:hover {
-  background: #555;
-}
-
-.summary::-webkit-scrollbar-thumb:active {
-  background: #777;
-}
-
-.summary h2 {
+.right-side h2 {
   font-size: 28px;
   margin-bottom: 15px;
   color: #2980b9;
 }
 
-.summary h4 {
+.right-side h4 {
   font-size: 22px;
   margin-top: 20px;
   margin-bottom: 10px;
   color: #2980b9;
 }
 
-.summary p {
+.right-side p {
   line-height: 1.6;
   margin-bottom: 10px;
 }
 
-.summary ul {
+.right-side ul {
   margin-left: 20px;
   margin-bottom: 10px;
 }
 
-.summary li {
+.right-side li {
   margin-bottom: 5px;
 }
 
-.summary code {
+.right-side code {
   background-color: #424242a5;
   padding: 2px 4px;
   border-radius: 4px;
   font-family: monospace;
 }
 
-.summary .author {
+.right-side .author {
   margin-top: 20px;
   font-weight: bold;
   text-align: right;

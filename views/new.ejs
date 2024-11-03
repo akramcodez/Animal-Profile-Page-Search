@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs") %>
+    <title>Anigram • New Post</title>
+    <link rel="stylesheet" href="/css/new.css" />
+  </head>
+  <body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="right-side">
+      <div class="middle container">
+        <br />
+        <h2 class="title">Create New Post</h2>
+
+        <div class="image-preview">
+          <img id="previewImage" src=""  />
+          <p id="notFoundMessage" style="display: none; color: red">
+            Image Not Found
+          </p>
+        </div>
+
+        <div class="input-container">
+          <input type="text" id="imageUrlInput" placeholder="Enter image URL" />
+        </div>
+
+        <div class="button-container">
+          <form>
+            <button type="submit" class="dark-button">Post</button>
+          </form>
+        </div>
+        <br />
+      </div>
+    </div>
+
+    <script>
+      document
+        .getElementById("imageUrlInput")
+        .addEventListener("input", function () {
+          const imageUrl = this.value;
+          const previewImage = document.getElementById("previewImage");
+          const notFoundMessage = document.getElementById("notFoundMessage");
+
+          if (imageUrl) {
+            previewImage.src = imageUrl;
+            previewImage.style.display = "block";
+            notFoundMessage.style.display = "none";
+
+            previewImage.onload = function () {
+              previewImage.style.display = "block";
+              notFoundMessage.style.display = "none";
+            };
+
+            previewImage.onerror = function () {
+              previewImage.style.display = "none";
+              notFoundMessage.style.display = "block";
+            };
+          } else {
+            previewImage.src = "";
+            previewImage.style.display = "none";
+            notFoundMessage.style.display = "none";
+          }
+        });
+    </script>
+  </body>
+</html>
