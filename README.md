@@ -3,6 +3,8 @@
 A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.  
 **Inspired by Instagram!**
 
+---
+
 ## 🎉 Welcome to Anigram  
 
 A fun social media platform for pets! This web application lets users explore animal profiles, such as:  
@@ -30,12 +32,25 @@ Each profile showcases unique bios, posts, and user interactions.
 
 ## 🚀 Usage  
 
-- Users can explore various animal profiles and engage with posts.  
-- **Profiles** include unique bios and images, which can be edited at any time.  
-- Posts can be **deleted** to maintain an organized feed.  
-- User interactions feature **likes and comments** to enhance engagement.  
-- The **Home Page** displays recent activities, trending profiles, and quick updates via stories.  
-- A **search function** enables users to find profiles easily, with helpful suggestions based on their input.
+- **Signup Page**: New users sign in on the root route (`/`), and on success, are redirected to the main page (`/ig`). They won’t see the signup page again unless the app is restarted.
+
+- **Home Page**: Displays recent activities, trending profiles, and stories.
+
+- **User Profiles**: Each animal profile has unique bios and posts.
+
+- **New Post**: Users can create posts, which are added to `tiger247`'s section in `index.json`.
+
+- **Settings**: Users can update bios, profile images, and display names.
+
+- **Interactions**: Users can **like** and **comment** on posts.
+
+- **Post Deletion**: Users can delete posts to manage their feed.
+
+- **Search**: Search for profiles with dynamic suggestions.
+
+- **Sidebar Navigation**: Provides quick access to home, profile, settings, and logout.
+
+- **Error Handling**: Shows a "Post not found" page if the post is missing.
 
 ---
 
@@ -62,16 +77,16 @@ If the image URL from `data.json` isn't working:
 We appreciate the efforts and dedication of all contributors:
 
 - **[SK Akram](https://github.com/akramcodez)** :  
-  Worked on: **User Profiles**, **Posts**, **Responsive Design**, **Sidebar Navigation**.
+  Built **Signup Page**, **New Post**, **Settings**, **Show Post**, **User Profiles**, **Responsive Design**, and **Sidebar Navigation**.
 
 - **[Rajat Mishra](https://github.com/mishraRj)** :  
-  Worked on: **Profile Editing**, **Post Deletion**.
+  Worked on **Profile Editing** and **Post Deletion**.
 
 - **[Abijit Swain](https://github.com/Abhijit8951)** :  
-  Worked on: **Home Page**, **Routing**.
+  Worked on **Home Page** and **Routing**.
 
 - **[Himanshu](https://github.com/Himanshu19-coder)** :  
-  Worked on: **Search Functionality and Suggestions**.
+  Worked on **Search Functionality and Suggestions**.
 
 ---
 
@@ -109,11 +124,6 @@ git checkout -b <your-branch-name>
 
 # Step 6: Run the application
 node index.js
-
-# Step 7: After making changes, commit, push, and submit a pull request:
-git add .
-git commit -m "Enhanced functionality"
-git push origin <your-branch-name>
 
 # The application will be available at:
 # 👉 http://localhost:8080
