@@ -159,7 +159,12 @@ app.get("/ig/:username", (req, res) => {
   }
 });
 
+// Route : Show page
 app.get("/ig/posts/:id", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   let { id } = req.params;
   let post = null;
 
@@ -181,6 +186,10 @@ app.get("/ig/posts/:id", (req, res) => {
 
 // Route: Profile Editing Page
 app.get("/ig/:username/edit-profile", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   let instaData = readData();
   let { username } = req.params;
   let data = instaData[username];
@@ -226,8 +235,43 @@ app.post("/ig/:username/delete", (req, res) => {
   });
 });
 
+// Route : New page
 app.get("/ig/post/new", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
   res.render("new.ejs");
+});
+
+// Route : Add post
+app.post("/ig/post/new", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  const { image } = req.body;
+  let users = readData();
+  const tigerUser = users["tiger247"];
+
+  if (tigerUser) {
+    const newPost = {
+      id: uuidv4(),
+      image: image,
+      likes: Math.floor(Math.random() * 500) + 50,
+      comments: Math.floor(Math.random() * 150) + 10,
+    };
+
+    tigerUser.posts.push(newPost);
+    writeData(users);
+    res.redirect(`/ig/tiger247`);
+  } else {
+    res.render("error.ejs");
+  }
+
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
 });
 
 // Route: Search Page

@@ -13,21 +13,26 @@
         <h2 class="title">Create New Post</h2>
 
         <div class="image-preview">
-          <img id="previewImage" src=""  />
+          <img id="previewImage" src="" />
           <p id="notFoundMessage" style="display: none; color: red">
             Image Not Found
           </p>
         </div>
 
-        <div class="input-container">
-          <input type="text" id="imageUrlInput" placeholder="Enter image URL" />
-        </div>
+        <form method="POST" action="/ig/post/new" class="form">
+          <div class="input-container">
+            <input
+              type="text"
+              id="imageUrlInput"
+              placeholder="Enter Tiger image URL"
+              name="image"
+            />
+          </div>
 
-        <div class="button-container">
-          <form>
+          <div class="button-container">
             <button type="submit" class="dark-button">Post</button>
-          </form>
-        </div>
+          </div>
+        </form>
         <br />
       </div>
     </div>
