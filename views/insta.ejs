@@ -4,6 +4,7 @@
     <title>Anigram . @<%=data.name%></title>
     <%- include("includes/head.ejs") %>
     <link rel="stylesheet" href="/css/insta.css" />
+    <link rel="stylesheet" href="/css/my-profile.css" />
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
@@ -11,10 +12,7 @@
       <div class="top-bar">
         <div class="profile-img">
           <div class="img">
-            <img
-              src="<%= data.profile %>"
-              onerror="this.hidden = true"
-            />
+            <img src="<%= data.profile %>" onerror="this.hidden = true" />
           </div>
         </div>
         <div class="section">
@@ -41,17 +39,15 @@
         <% for (let post of data.posts) { %>
         <div class="post">
           <a href="/ig/posts/<%= post.id %>">
-            <img
-              src="<%= post.image %>"
-              onerror="this.hidden = true"
-            />
+            <img src="<%= post.image %>" onerror="this.hidden = true" />
           </a>
           <div class="post-details">
-            <p>
+            <div class="likes">
               <i class="fa-regular fa-heart"></i> : <%= post.likes %>
-              &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
-              post.comments %>
-            </p>
+            </div>
+            <div class="comments">
+              <i class="fa-regular fa-comment"></i> : <%= post.comments %>
+            </div>
           </div>
         </div>
         <% } %>

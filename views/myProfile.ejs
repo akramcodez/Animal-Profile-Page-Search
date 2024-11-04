@@ -38,30 +38,36 @@
       </div>
       <div class="down-bar">
         <% for (let post of data.posts) { %>
-          <div class="post">
-            <a href="/ig/posts/<%= post.id %>">
+        <div class="post">
+          <a href="/ig/posts/<%= post.id %>">
             <img src="<%= post.image %>" onerror="this.hidden = true" />
-            </a>
-            <div class="post-details">
-              <p>
-                <i class="fa-regular fa-heart"></i> : <%= post.likes %>
-                &nbsp;&nbsp; <i class="fa-regular fa-comment"></i> : <%=
-                post.comments %>
-                &nbsp;&nbsp; 
-                <form method="post" action="/ig/<%= data.name %>/delete">
-                    <input type="hidden" name="id" value="<%= post.id %>" />
-                    <i class="fa-solid fa-trash" onclick="event.stopPropagation(); this.closest('form').submit();"></i>
-                </form>                  
-              </p>
+          </a>
+          <div class="post-details">
+            <div class="likes">
+              <i class="fa-regular fa-heart"></i> : <%= post.likes %>
             </div>
+            <div class="comments">
+              <i class="fa-regular fa-comment"></i> : <%= post.comments %>
+            </div>
+            <form method="post" action="/ig/<%= data.name %>/delete">
+              <input type="hidden" name="id" value="<%= post.id %>" />
+              <i
+                class="fa-solid fa-trash"
+                onclick="event.stopPropagation(); this.closest('form').submit();"
+              ></i>
+            </form>
+            <a href="/ig/post/<%= post.id %>/edit"
+              ><i class="fa-solid fa-pencil"></i
+            ></a>
           </div>
+        </div>
         <% } %>
         <div class="post">
-            <a href="/ig/post/new">
-                <div class="icon-container">
-                    <i class="fa-solid fa-plus"></i>
-              </div>
-            </a>
+          <a href="/ig/post/new">
+            <div class="icon-container">
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </a>
         </div>
       </div>
     </div>

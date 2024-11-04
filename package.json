@@ -9,6 +9,7 @@
   "license": "ISC",
   "description": "A responsive demo of an animal profile page that allows users to browse and search for animal profiles.",
   "dependencies": {
+    "connect-flash": "^0.1.1",
     "ejs": "^3.1.10",
     "express": "^4.21.1",
     "express-session": "^1.18.1",

@@ -159,31 +159,6 @@ app.get("/ig/:username", (req, res) => {
   }
 });
 
-// Route : Show page
-app.get("/ig/posts/:id", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  let { id } = req.params;
-  let post = null;
-
-  for (const key in data) {
-    const user = data[key];
-    const foundPost = user.posts.find((p) => p.id === id);
-    if (foundPost) {
-      post = foundPost;
-      break;
-    }
-  }
-
-  if (post) {
-    res.render("post.ejs", { post });
-  } else {
-    res.status(404).render("error.ejs", { message: "Post not found" });
-  }
-});
-
 // Route: Profile Editing Page
 app.get("/ig/:username/edit-profile", (req, res) => {
   if (!req.session.isAuthenticated) {
@@ -246,10 +221,6 @@ app.get("/ig/post/new", (req, res) => {
 
 // Route : Add post
 app.post("/ig/post/new", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
   const { image } = req.body;
   let users = readData();
   const tigerUser = users["tiger247"];
@@ -267,6 +238,85 @@ app.post("/ig/post/new", (req, res) => {
     res.redirect(`/ig/tiger247`);
   } else {
     res.render("error.ejs");
+  }
+
+  req.session.destroy(() => {
+    res.redirect("/");
+  });
+});
+
+// Route : Show page
+app.get("/ig/posts/:id", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  let { id } = req.params;
+  let post = null;
+  let parent = null;
+
+  for (const key in data) {
+    const user = data[key];
+    const foundPost = user.posts.find((p) => p.id === id);
+    if (foundPost) {
+      post = foundPost;
+      parent = user;
+      break;
+    }
+  }
+
+  if (post && parent) {
+    res.render("post.ejs", { post, parent });
+  } else {
+    res.status(404).render("error.ejs", { message: "Post not found" });
+  }
+});
+
+// Route: Edit pape
+app.get("/ig/post/:id/edit", (req, res) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+
+  let { id } = req.params;
+  let post = null;
+
+  for (const key in data) {
+    const user = data[key];
+    const foundPost = user.posts.find((p) => p.id === id);
+    if (foundPost) {
+      post = foundPost;
+      break;
+    }
+  }
+
+  if (post) {
+    res.render("edit.ejs", { post });
+  } else {
+    res.status(404).render("error.ejs", { message: "Post not found" });
+  }
+});
+
+app.post("/ig/post/:id/edit", (req, res) => {
+  let { id } = req.params;
+  let { image } = req.body;
+  let post = null;
+
+  for (const key in data) {
+    const user = data[key];
+    const foundPost = user.posts.find((p) => p.id === id);
+    if (foundPost) {
+      post = foundPost;
+      break;
+    }
+  }
+
+  if (post) {
+    post.image = image;
+    writeData(data);
+    res.redirect("/ig/tiger247");
+  } else {
+    res.status(404).render("error.ejs");
   }
 
   req.session.destroy(() => {

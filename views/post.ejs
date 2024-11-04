@@ -4,20 +4,27 @@
     <%- include("includes/head.ejs") %>
     <title>Anigram . Post</title>
     <link rel="stylesheet" href="/css/post.css" />
+    <link rel="stylesheet" href="/css/my-profile.css" />
   </head>
   <body>
     <%- include('includes/navigation.ejs') %>
     <div class="right-side">
+      <div class="backA">
+        <a href="/ig/<%= parent.animal %>"
+          ><i class="fa-solid fa-arrow-left"></i
+        ></a>
+      </div>
       <div class="post-container">
         <div class="image">
-          <img src="<%= post.image %>"
-          onerror="this.hidden = true" />
+          <img src="<%= post.image %>" />
         </div>
         <div class="post-details">
-          <p>
-            <i class="fa-regular fa-heart"></i>  <%= post.likes %> 
-            <i class="fa-regular fa-comment"></i>  <%= post.comments %>
-          </p>
+          <div class="likes">
+            <i class="fa-regular fa-heart"></i> <%= post.likes %>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comment"></i> <%= post.comments %>
+          </div>
         </div>
       </div>
     </div>

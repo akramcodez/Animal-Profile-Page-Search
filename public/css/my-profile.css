@@ -10,3 +10,22 @@ form i {
 a .post .post-details form i {
   pointer-events: auto;
 }
+
+.post-details {
+  width: 90%;
+  margin-top: 0.3rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.post-details i {
+  font-size: 1rem;
+}
+
+.post-details i:hover{
+  color: #9f9e9e;
+}
+
+.post-details a {
+  width: auto;
+}
