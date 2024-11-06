@@ -62,6 +62,14 @@ if (needsUpdate) {
   console.log("No IDs needed updating in index.json");
 }
 
+// Authentication Middleware
+const authMiddleware = (req, res, next) => {
+  if (!req.session.isAuthenticated) {
+    return res.redirect("/");
+  }
+  next();
+};
+
 // Route: Sign-up / Sign-in Page
 app.get("/", (req, res) => {
   if (req.session.isAuthenticated) {
@@ -85,67 +93,53 @@ app.post("/signin", (req, res) => {
   }
 });
 
+// Apply the authMiddleware to both /ig and /search routes
+app.use("/ig", authMiddleware);
+
 // Route: Home Page
 app.get("/ig", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  let data = readData();
   let posts = readPosts();
   const shuffledPosts = posts.sort(() => Math.random() - 0.5);
   res.render("home.ejs", { data, posts: shuffledPosts });
 });
 
-// Route : Setting
-app.get("/ig/settings", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
+// Route : Settings and Subpages
+app.get("/ig/settings", (req, res) => res.render("setting.ejs"));
+app.get("/ig/settings/learn-more", (req, res) => res.render("setting_learn_more.ejs"));
+app.get("/ig/settings/creators", (req, res) => res.render("setting_creators.ejs"));
+app.get("/ig/settings/help", (req, res) => res.render("setting_help.ejs"));
 
-  res.render("setting.ejs");
-});
-
-// Route : Setting . learn more
-app.get("/ig/settings/learn-more", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  res.render("setting_learn_more.ejs");
-});
-
-// Route : Setting . creators
-app.get("/ig/settings/creators", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  res.render("setting_creators.ejs");
-});
-
-// Route : Setting . creators
-app.get("/ig/settings/help", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  res.render("setting_help.ejs");
-});
-
-// Route : log-out
+// Route : Log-out
 app.get("/log-out", (req, res) => {
   req.session.destroy(() => {
     res.redirect("/");
   });
 });
 
-// Route: Profile Page
-app.get("/ig/:username", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
+// Route: Search Page
+app.get("/ig/search", (req, res) => {
+  res.render("search.ejs");
+});
 
+// Route: User Search Results
+app.get("/ig/search/users", (req, res) => {
+  const searchQuery = req.query.query;
+  let data = readData();
+  const matchedUsers = Object.keys(data)
+    .filter((username) => username.toLowerCase().includes(searchQuery))
+    .map((username) => {
+      return {
+        username: username,
+        profile: data[username].profile,
+        name: data[username].name,
+      };
+    });
+
+  res.json({ users: matchedUsers });
+});
+
+// Route: Animal Pages
+app.get("/ig/:username", (req, res) => {
   let instaData = readData();
   let { username } = req.params;
   let data = instaData[username.toLowerCase()];
@@ -155,16 +149,12 @@ app.get("/ig/:username", (req, res) => {
   } else if (data) {
     res.render("insta.ejs", { data });
   } else {
-    res.render("error.ejs");
+    res.status(404).render("error.ejs", { message: "User not found" });
   }
 });
 
 // Route: Profile Editing Page
 app.get("/ig/:username/edit-profile", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
   let instaData = readData();
   let { username } = req.params;
   let data = instaData[username];
@@ -190,7 +180,7 @@ app.post("/ig/:username", (req, res) => {
       res.redirect("/");
     });
   } else {
-    res.render("error.ejs");
+    res.status(404).render("error.ejs", { message: "User not found" });
   }
 });
 
@@ -210,16 +200,9 @@ app.post("/ig/:username/delete", (req, res) => {
   });
 });
 
-// Route : New page
-app.get("/ig/post/new", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
+// Route : New Page and Post Addition
+app.get("/ig/post/new", (req, res) => res.render("new.ejs"));
 
-  res.render("new.ejs");
-});
-
-// Route : Add post
 app.post("/ig/post/new", (req, res) => {
   const { image } = req.body;
   let users = readData();
@@ -234,23 +217,19 @@ app.post("/ig/post/new", (req, res) => {
     };
 
     tigerUser.posts.push(newPost);
-    writeData(users);
-    res.redirect(`/ig/tiger247`);
-  } else {
-    res.render("error.ejs");
-  }
 
-  req.session.destroy(() => {
-    res.redirect("/");
-  });
+    writeData(users);
+
+    req.session.destroy(() => {
+      res.redirect("/");
+    });
+  } else {
+    res.status(404).render("error.ejs", { message: "User not found" });
+  }
 });
 
-// Route : Show page
+// Route: Show and Edit Post Pages
 app.get("/ig/posts/:id", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
   let { id } = req.params;
   let post = null;
   let parent = null;
@@ -272,12 +251,7 @@ app.get("/ig/posts/:id", (req, res) => {
   }
 });
 
-// Route: Edit pape
 app.get("/ig/post/:id/edit", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
   let { id } = req.params;
   let post = null;
 
@@ -313,48 +287,24 @@ app.post("/ig/post/:id/edit", (req, res) => {
 
   if (post) {
     post.image = image;
-    writeData(data);
-    res.redirect("/ig/tiger247");
+
+    writeData(data); 
+
+    req.session.destroy(() => {
+    res.redirect("/");
+  });
   } else {
     res.status(404).render("error.ejs");
   }
-
-  req.session.destroy(() => {
-    res.redirect("/");
-  });
 });
 
-// Route: Search Page
-app.get("/search", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  res.render("search.ejs");
+// Error-handling middleware for the /ig route
+app.use("/ig", (err, req, res, next) => {
+  console.error(err.stack);
+  res.status(500).render("error.ejs", { message: "Something went wrong!" });
 });
 
-// Route: User Search Results
-app.get("/ig/search/users", (req, res) => {
-  if (!req.session.isAuthenticated) {
-    return res.redirect("/");
-  }
-
-  const searchQuery = req.query.query;
-  let data = readData();
-  const matchedUsers = Object.keys(data)
-    .filter((username) => username.toLowerCase().includes(searchQuery))
-    .map((username) => {
-      return {
-        username: username,
-        profile: data[username].profile,
-        name: data[username].name,
-      };
-    });
-
-  res.json({ users: matchedUsers });
-});
-
-// Starting the Server
+// Start the Server
 app.listen(port, () => {
-  console.log("App is listening on port:", port);
+  console.log(`App is running at Port : ${port}`);
 });

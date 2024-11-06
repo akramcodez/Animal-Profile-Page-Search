@@ -2,10 +2,25 @@
 <html lang="en">
   <head>
     <%- include("includes/head.ejs") %>
-    <title>Anigram</title>
+    <title>Anigram • Error</title>
     <link rel="stylesheet" href="/css/insta.css" />
+    <style>
+      .right-side{
+        width: 80%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-items: center;
+      }
+      .right-side h1 {
+        font-size: 4rem;
+      }
+    </style>
   </head>
   <body class="error-body">
-    <h1 class="error-page">Sorry Animal page not Found</h1>
+    <%- include('includes/navigation.ejs') %>
+    <div class="right-side">
+      <h1 class="error-page">Something is wrong</h1>
+    </div>
   </body>
 </html>
