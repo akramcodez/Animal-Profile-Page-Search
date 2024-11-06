@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs") %>
+    <title>Anigram • Post</title>
+    <link rel="stylesheet" href="/css/post.css" />
+    <link rel="stylesheet" href="/css/my-profile.css" />
+  </head>
+  <body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="right-side">
+      <a href="/ig/<%= parent.animal %>">
+        <div class="backA button-a">
+          <span>Animal Profile</span><i class="fa-solid fa-arrow-left"></i>
+        </div>
+      </a>
+      <div class="post-container">
+        <div class="image">
+          <img src="<%= img.url %>" />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

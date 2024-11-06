@@ -14,7 +14,6 @@
   overflow: hidden;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   margin: 40px auto;
-  margin-left: 10%;
 }
 
 .image {
@@ -71,4 +70,20 @@
   .post-container {
     min-width: 33rem;
   }
+}
+
+
+/* explore-zoom */
+.button-a {
+  height: 3rem;
+  width: 7rem;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(65, 64, 64);
+  transition: background-color 0.8s ease;
+}
+
+.button-a:hover {
+  background-color: rgb(47, 46, 46);
 }

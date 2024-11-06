@@ -1,0 +1,31 @@
+.right-side {
+  overflow-x: auto;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.post {
+  margin-left: 2rem;
+  border: 1px solid rgba(255, 255, 255, 0.678);
+  border-radius: 15px;
+  opacity: 0.8;
+}
+
+.post img {
+  border-radius: 15px;
+}
+
+.post:hover {
+  opacity: 1;
+}

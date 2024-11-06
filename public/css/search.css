@@ -98,6 +98,7 @@
   height: 3rem;
   border-radius: 50%;
   margin-right: 0.75em;
+  border: 1px solid white;
   overflow: hidden;
   object-fit: cover;
 }

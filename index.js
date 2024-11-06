@@ -28,17 +28,24 @@ app.use(
 // Setting Up Paths and Utility Functions to Read and Write JSON Data
 const indexFilePath = path.join(__dirname, "data", "index.json");
 const postsFilePath = path.join(__dirname, "data", "posts.json");
+const exploreFilePath = path.join(__dirname, "data", "explore.json");
 
 // Utility functions to read and write JSON data
 const readData = () => JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
 const writeData = (data) =>
   fs.writeFileSync(indexFilePath, JSON.stringify(data, null, 2));
+
 const readPosts = () => JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
+
+const readExplorePosts = () =>
+  JSON.parse(fs.readFileSync(exploreFilePath, "utf8"));
+const writeExplorePosts = (data) =>
+  fs.writeFileSync(exploreFilePath, JSON.stringify(data, null, 2));
 
 // Load data from index.json
 let data = readData();
 
-// Check and update post IDs if needed
+// Check and update post IDs if needed in index.json
 let needsUpdate = false;
 for (const key in data) {
   const user = data[key];
@@ -54,12 +61,38 @@ for (const key in data) {
   });
 }
 
-// Only write data if updates were made
+// Only write data if updates were made in index.json
 if (needsUpdate) {
   writeData(data);
   console.log("IDs updated in index.json");
 } else {
   console.log("No IDs needed updating in index.json");
+}
+
+// Load data from explore.json
+let exploreData = readExplorePosts();
+
+// Check and update post IDs if needed in explore.json
+let needsUpdate2 = false;
+exploreData.forEach((entry) => {
+  entry.pic = entry.pic.map((post) => {
+    if (post.id === "no") {
+      needsUpdate2 = true;
+      return {
+        ...post,
+        id: uuidv4(),
+      };
+    }
+    return post;
+  });
+});
+
+// Only write data if updates were made in explore.json
+if (needsUpdate2) {
+  writeExplorePosts(exploreData);
+  console.log("IDs updated in explore.json");
+} else {
+  console.log("No IDs needed updating in explore.json");
 }
 
 // Authentication Middleware
@@ -105,8 +138,12 @@ app.get("/ig", (req, res) => {
 
 // Route : Settings and Subpages
 app.get("/ig/settings", (req, res) => res.render("setting.ejs"));
-app.get("/ig/settings/learn-more", (req, res) => res.render("setting_learn_more.ejs"));
-app.get("/ig/settings/creators", (req, res) => res.render("setting_creators.ejs"));
+app.get("/ig/settings/learn-more", (req, res) =>
+  res.render("setting_learn_more.ejs")
+);
+app.get("/ig/settings/creators", (req, res) =>
+  res.render("setting_creators.ejs")
+);
 app.get("/ig/settings/help", (req, res) => res.render("setting_help.ejs"));
 
 // Route : Log-out
@@ -136,6 +173,43 @@ app.get("/ig/search/users", (req, res) => {
     });
 
   res.json({ users: matchedUsers });
+});
+
+// Route : Explore
+app.get("/ig/explore", (req, res) => {
+  const allImages = [];
+  exploreData.forEach((animal) => {
+    animal.pic.forEach((image) => {
+      allImages.push(image);
+    });
+  });
+
+  const shuffledImages = allImages.sort(() => 0.5 - Math.random());
+  const randomImages = shuffledImages.slice(0, 21);
+
+  res.render("explore.ejs", { images: randomImages });
+});
+
+// Route: Show and Edit Post Pages
+app.get("/ig/explore/:id", (req, res) => {
+  let { id } = req.params;
+  let img = null;
+  let parent = null;
+
+  exploreData.forEach((animal) => {
+    animal.pic.forEach((image) => {
+      if (image.id === id) {
+        img = image;
+        parent = animal;
+      }
+    });
+  });
+
+  if (img && parent) {
+    res.render("explore-zoom.ejs", { img, parent });
+  } else {
+    res.status(404).render("error.ejs", { message: "Post not found" });
+  }
 });
 
 // Route: Animal Pages
@@ -288,11 +362,11 @@ app.post("/ig/post/:id/edit", (req, res) => {
   if (post) {
     post.image = image;
 
-    writeData(data); 
+    writeData(data);
 
     req.session.destroy(() => {
-    res.redirect("/");
-  });
+      res.redirect("/");
+    });
   } else {
     res.status(404).render("error.ejs");
   }

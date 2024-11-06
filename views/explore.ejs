@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("includes/head.ejs") %>
+    <title>Anigram • Explore</title>
+    <link rel="stylesheet" href="/css/insta.css" />
+    <link rel="stylesheet" href="/css/explore.css" />
+  </head>
+  <body>
+    <%- include('includes/navigation.ejs') %>
+    <div class="right-side">
+      <h1>Explore Animal Images</h1>
+      <div class="down-bar">
+        <% for (let image of images) { %>
+        <a href="/ig/explore/<%= image.id %>">
+            <div class="post">
+            <img src="<%= image.url %>" alt="Animal Image" class="image" /></div>
+        </a>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>
