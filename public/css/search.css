@@ -21,7 +21,8 @@
 .search-box {
   margin-left: 5%;
   margin-top: 2rem;
-  width: 30rem;
+  width: 35vw;
+  min-width: 25rem;
   height: 40rem;
   display: flex;
   flex-direction: column;

@@ -10,8 +10,11 @@
     <%- include('includes/navigation.ejs') %>
     <div class="right-side">
       <a href="/ig/<%= parent.animal %>">
-        <div class="backA button-a">
-          <span>Animal Profile</span><i class="fa-solid fa-arrow-left"></i>
+        <div class="button-a">
+          <div class="pic-container">
+            <img src="<%= parent.profile %>" />
+          </div>
+          <i class="fa-solid fa-arrow-left"></i>
         </div>
       </a>
       <div class="post-container">
