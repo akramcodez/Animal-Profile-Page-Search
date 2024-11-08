@@ -372,6 +372,11 @@ app.post("/ig/post/:id/edit", (req, res) => {
   }
 });
 
+// Catch-all route for undefined paths under /ig
+app.use("/ig/*", (req, res) => {
+  res.status(404).render("error.ejs", { message: "Page not found" });
+});
+
 // Error-handling middleware for the /ig route
 app.use("/ig", (err, req, res, next) => {
   console.error(err.stack);

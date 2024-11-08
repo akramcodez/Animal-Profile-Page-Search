@@ -137,15 +137,15 @@ a {
 .post a {
   display: block;
   width: 90%;
-  height: 80%; 
+  height: 80%;
   overflow: hidden;
 }
 
 .post img {
   width: 100%;
-  height: 100%; 
+  height: 100%;
   object-fit: cover;
-  border-radius: 10px; 
+  border-radius: 10px;
 }
 
 .post-details {
@@ -156,16 +156,7 @@ a {
   color: white;
   display: flex;
   flex-wrap: wrap;
-  margin-top: 0; 
-}
-
-.error-body {
-  display: flex;
-  justify-content: center;
-}
-.error-page {
-  font-size: 3rem;
-  margin-top: 5rem;
+  margin-top: 0;
 }
 
 .card {
@@ -212,4 +203,30 @@ a {
 
 .icon-container i {
   font-size: 5rem;
+}
+
+/* error */
+.error-div {
+  width: 30rem;
+  height: 5rem;
+  margin: 80px auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.error-msg {
+  font-size: 3rem;
+}
+
+.img {
+  height: 4rem;
+  width: 4rem;
+  display: flex;
+}
+
+.img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
 }

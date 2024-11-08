@@ -5,7 +5,7 @@
     <title>Anigram • Error</title>
     <link rel="stylesheet" href="/css/insta.css" />
     <style>
-      .right-side{
+      .right-side {
         width: 80%;
         height: 100vh;
         display: flex;
@@ -20,7 +20,10 @@
   <body class="error-body">
     <%- include('includes/navigation.ejs') %>
     <div class="right-side">
-      <h1 class="error-page">Something is wrong</h1>
+      <div class="error-div">
+        <span class="error-msg"><%= message %></span>
+        <div class="img"><img src="/icon/error.png" /></div>
+      </div>
     </div>
   </body>
 </html>
