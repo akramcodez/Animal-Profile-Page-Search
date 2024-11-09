@@ -1,0 +1,144 @@
+{
+  "tiger247": {
+    "cat": [
+      {
+        "sender": "tiger247",
+        "message": "Hello!",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Hi there!",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "How are you?",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "himanshu",
+        "timestamp": "2024-11-06T18:51:07.107Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "Why are you going outside today?",
+        "timestamp": "2024-11-06T18:51:43.131Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "Reply?",
+        "timestamp": "2024-11-06T19:09:20.409Z"
+      },
+      {
+        "sender": "cat",
+        "message": "It's okay ",
+        "timestamp": "2024-11-06T19:23:47.228Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "dfgh",
+        "timestamp": "2024-11-06T19:24:11.893Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "why ",
+        "timestamp": "2024-11-06T19:24:54.856Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "frgjhy",
+        "timestamp": "2024-11-06T19:24:57.915Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "drth",
+        "timestamp": "2024-11-06T19:25:00.349Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "sdrthy",
+        "timestamp": "2024-11-06T19:25:02.547Z"
+      },
+      {
+        "sender": "cat",
+        "message": "okay",
+        "timestamp": "2024-11-06T19:28:10.177Z"
+      }
+    ],
+    "dog": [
+      {
+        "sender": "dog",
+        "message": "Good morning!",
+        "timestamp": "2023-10-02T08:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "Good morning to you!",
+        "timestamp": "2023-10-02T08:02:00Z"
+      }
+    ],
+    "duck": [
+      {
+        "sender": "duck",
+        "message": "Good morning!",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "Good morning to you!",
+        "timestamp": "2023-10-03T08:02:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "How are you?",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "I'm doing well!",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "What's your favorite color?",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "I like black!",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "Where are you from?",
+        "timestamp": "2023-10-03T08:00:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "I'm from India!",
+        "timestamp": "2023-10-03T08:00:00Z"
+      }
+    ]
+  },
+  "cat": {
+    "tiger247": [
+      {
+        "sender": "tiger247",
+        "message": "Hello!",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Hi there!",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "okay",
+        "timestamp": "2024-11-06T19:28:10.177Z"
+      }
+    ]
+  }
+}

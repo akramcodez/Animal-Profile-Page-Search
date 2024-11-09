@@ -1,0 +1,250 @@
+.side-bar {
+    width: 15rem;
+}
+
+.list .header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 2rem;
+    font-weight: bold;
+    margin: 2rem 1rem 1rem;
+    border-bottom: 1px solid;
+    padding-bottom: 1rem;
+}
+
+.list {
+    width: 20%;
+    border-right: 1px solid;
+    padding: 1rem;
+}
+
+
+.chat-type {
+    padding-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    justify-content: space-around;
+    font-size: 1.3rem;
+    border-bottom: 1px solid #707070;
+    padding-bottom: 0.5rem;
+}
+
+.type-button {
+    opacity: 0.7;
+}
+
+.type-button:hover {
+    opacity: 1;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+
+.follower-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.follower-item {
+    display: flex;
+    padding: 0.5rem;
+    cursor: pointer;
+}
+
+.follower-name {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+}
+
+.name {
+    font-weight: bold;
+    padding-top: 0.4rem;
+}
+
+.follower-item img {
+    object-fit: cover;
+    width: 3.5rem;
+    border-radius: 50%;
+    margin-right: 0.75rem;
+}
+
+.profile-img {
+    object-fit: cover;
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 50%;
+}
+
+.big-profile-picture {
+    object-fit: cover;
+    width: 6.5rem;
+    height: 6.5rem;
+    border-radius: 50%;
+}
+
+.last-msg {
+    font-size: 0.85rem;
+    opacity: 0.6;
+    height: 1.125rem;
+}
+
+.message-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.msg-icon i {
+    font-size: 6rem;
+    width: 100%;
+}
+
+.text1 {
+    padding: 1.25rem 1rem 0;
+}
+
+.text1 span {
+    font-size: 1.25rem;
+}
+
+.text2 {
+    padding: 1rem 1rem 0;
+    font-size: 1rem;
+}
+
+.text2 span {
+    font-size: 0.85rem;
+    color: #a8a8a8;
+}
+
+.send-button {
+    padding: 1.25rem 1rem 0;
+}
+
+.send-button button {
+    padding: 0.5rem 1rem;
+    background-color: #0095F6;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+
+/*new page design after showing messages*/
+.message-section.chat-view {
+    display: flex;
+    justify-content: normal;
+}
+
+.msg-header {
+    display: flex;
+    justify-content: space-around;
+    padding: 0 1rem;
+    height: 4.688rem;
+    position: sticky;
+    border-bottom: 1px solid rgb(38, 38, 38);
+}
+
+.img-name {
+    display: flex;
+    width: 70%;
+    margin: -0.4rem;
+    height: 4rem;
+    align-self: center;
+    align-items: center;
+}
+
+.userId {
+    width: 100%;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.msg-header i {
+    align-self: center;
+    font-size: 1.5rem;
+}
+
+.default-detail {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.view-btn {
+    padding: 0.4rem 0.5rem 0.4rem 8px;
+    background-color: #0095F6;
+    color: white;
+    border: none;
+    border-radius: 0.4rem;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+/* Message container */
+.message {
+    display: flex;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 10px;
+    max-width: 70%;
+    background-color: #3897f0;
+    width: fit-content;
+}
+
+/* Right-aligned messages (primary user) */
+.message.right {
+    align-self: flex-end;
+    margin-left: auto; /* Aligns message to the right */
+    text-align: right;
+    margin-right: 0.5rem;
+}
+
+/* Left-aligned messages (other user) */
+.message.left {
+    align-self: flex-start;
+    margin-right: auto; /* Aligns message to the left */
+    text-align: left;
+    margin-left: 0.5rem;
+}
+
+.message-section input {
+    border: 1px solid rgb(54, 54, 54);
+    background-color: black;
+    height: 40px;
+    border-radius: 1rem;
+    margin-bottom: 0.5rem;
+    margin-left: 0.3rem;
+    padding-left: 1rem;
+    width: 90%;
+}
+
+.send-btn {
+    height: 40px;
+    width: 6%;
+    background-color: #3797F0;
+    color: white;
+    border: 1px solid rgb(54, 54, 54);
+    border-radius: 0.6rem;
+    margin-left: 0.6%;
+}
+
+.middle-container {
+    flex: 1;
+    overflow: auto;
+    padding: 10px;
+}
+
+.info-btn{
+    cursor: pointer;
+}
