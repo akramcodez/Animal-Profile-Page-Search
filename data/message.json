@@ -1,0 +1,40 @@
+{
+  "tiger247": {
+    "cat": [
+      {
+        "sender": "tiger247",
+        "message": "Hello!",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Hi there!",
+        "timestamp": "2023-10-01T10:05:00Z"
+      }
+    ],
+    "duck": [
+      {
+        "sender": "tiger247",
+        "message": "Hello!",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "Hi there!",
+        "timestamp": "2023-10-01T10:05:00Z"
+      }
+    ],
+    "dog": [
+      {
+        "sender": "tiger247",
+        "message": "Hello!",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "dog",
+        "message": "Hi there!",
+        "timestamp": "2023-10-01T10:05:00Z"
+      }
+    ]
+  }
+}

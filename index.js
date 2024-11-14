@@ -42,6 +42,10 @@ const readExplorePosts = () =>
 const writeExplorePosts = (data) =>
   fs.writeFileSync(exploreFilePath, JSON.stringify(data, null, 2));
 
+const messageFilePath = path.join(__dirname, "data", "message.json");
+const readMessages = () => JSON.parse(fs.readFileSync(messageFilePath, "utf8"));
+
+
 // Load data from index.json
 let data = readData();
 
@@ -372,6 +376,115 @@ app.post("/ig/post/:id/edit", (req, res) => {
   }
 });
 
+//message button clicked
+app.get("/message/:user", (req, res) => {
+  res.render("message.ejs");
+});
+
+app.get('/messages/:user1/:user2', (req, res) => {
+  const { user1, user2 } = req.params;
+  let messages = readMessages();
+  let chat = messages[user1] && messages[user1][user2] || [];
+
+  //detail
+  let data = readData();
+  const matchedUsers = Object.keys(data)
+      .filter((username) => username.toLowerCase().includes(user2))
+      .map((username) => {
+        return {
+          username: username,
+          profile: data[username].profile,
+          name: data[username].name,
+        };
+      });
+
+  res.json({ messages: chat, detail: matchedUsers });
+});
+
+// Endpoint to handle new messages
+
+//auto-reply
+const autoReplies = {
+  hello: "Hi there!",
+  hi: "Hi there!",
+  bye: "Bye!",
+  see_you: "See you later!",
+  greetings: "Greetings!",
+  howdy: "Howdy, partner!",
+  goodbye: "Take care!",
+  thanks: "You're welcome!",
+  farewell: "Farewell!",
+  "good night": "Goodnight!",
+  "how are you": "I'm doing well, thank you!",
+  "what's the weather like": "It's sunny with a chance of rainbows!",
+  "what's your name": "My name is Delta!",
+  "how old are you": "I'm 27 years old!",
+  "what do you do for a living": "I'm a software engineer!",
+  help: "How can I assist you?",
+  weather: "It's sunny with a chance of rainbows!",
+  news: "Stay informed, but stay positive!",
+  joke: "Why did the web developer go broke? Because they used up all their cache!",
+  music: "Here's a tune suggestion: 'Code and Chill.'",
+  "what's up": "Just coding away!",
+  "what's new": "I'm always here to help!",
+  "what's your favorite color": "I'm a bit of a color person, but my favorite color is blue!",
+  "what's your favorite animal": "I'm a bit of a animal person, but my favorite animal is a tiger!",
+  "what's your favorite book": "I'm a bit of a book person, but my favorite book is 'The Great Gatsby.'",
+  "what's your favorite movie": "I'm a bit of a movie person, but my favorite movie is 'The Shawshank Redemption.'",
+  "what's your favorite song": "I'm a bit of a song person, but my favorite song is 'Shape of You.'",
+  "what's your favorite TV show": "I'm a bit of a TV show person, but my favorite TV show is 'Friends.'",
+  "what's your favorite sport": "I'm a bit of a sport person, but my favorite sport is basketball!",
+  "what's your favorite game": "I'm a bit of a game person, but my favorite game is 'Minecraft.'",
+  "what's your favorite food": "I'm a bit of a food person, but my favorite food is 'Pizza.'",
+  "what's your favorite place": "I'm a bit of a place person, but my favorite place is 'New York City.'",
+  "what's your favorite activity": "I'm a bit of an activity person, but my favorite activity is playing basketball with friends!",
+  "what's your favorite thing to do": "I'm a bit of a thing to do person, but my favorite thing to do is going to the beach with friends!",
+};
+
+app.post('/messages/:sender/:receiver', (req, res) => {
+  const { sender, receiver } = req.params;
+  const { message } = req.body;
+  const lowerCaseMessage = message.toLowerCase();
+  const timestamp = new Date().toISOString();
+
+  // Load current data from message.json
+  fs.readFile(messageFilePath, 'utf8', (err, data) => {
+    if (err) {
+      console.error(err);
+      return res.status(500).send("Error reading message data");
+    }
+
+    const messages = JSON.parse(data);
+
+    // Ensure the sender exists in the data
+    if (!messages[sender]) {
+      messages[sender] = {};
+    }
+
+    // Ensure the conversation with the receiver exists
+    if (!messages[sender][receiver]) {
+      messages[sender][receiver] = [];
+    }
+
+    // Append the new message
+    messages[sender][receiver].push({ sender, message, timestamp });
+  });
+  let autoReplyMessage = null;
+  for (let keyword in autoReplies) {
+    if (lowerCaseMessage.includes(keyword)) {
+      autoReplyMessage = autoReplies[keyword];
+      break;
+    } else {
+      autoReplyMessage = ("I don't wanna reply with that. Sorry! :(");
+    }
+  }
+  if (autoReplyMessage) {
+    res.json({ autoReply: autoReplyMessage});
+  } else {
+    res.json({ success: true });
+  }
+});
+
 // Catch-all route for undefined paths under /ig
 app.use("/ig/*", (req, res) => {
   res.status(404).render("error.ejs", { message: "Page not found" });
@@ -383,7 +496,8 @@ app.use("/ig", (err, req, res, next) => {
   res.status(500).render("error.ejs", { message: "Something went wrong!" });
 });
 
-// Start the Server
+
+// Starting the Server
 app.listen(port, () => {
   console.log(`App is running at Port : ${port}`);
 });
