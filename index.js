@@ -5,6 +5,9 @@ const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
 
+// Import auto-replies from external file
+const autoReplies = require("./config/autoReplies");
+
 const app = express();
 const port = 8080;
 
@@ -44,7 +47,6 @@ const writeExplorePosts = (data) =>
 
 const messageFilePath = path.join(__dirname, "data", "message.json");
 const readMessages = () => JSON.parse(fs.readFileSync(messageFilePath, "utf8"));
-
 
 // Load data from index.json
 let data = readData();
@@ -381,72 +383,35 @@ app.get("/message/:user", (req, res) => {
   res.render("message.ejs");
 });
 
-app.get('/messages/:user1/:user2', (req, res) => {
+app.get("/messages/:user1/:user2", (req, res) => {
   const { user1, user2 } = req.params;
   let messages = readMessages();
-  let chat = messages[user1] && messages[user1][user2] || [];
+  let chat = (messages[user1] && messages[user1][user2]) || [];
 
   //detail
   let data = readData();
   const matchedUsers = Object.keys(data)
-      .filter((username) => username.toLowerCase().includes(user2))
-      .map((username) => {
-        return {
-          username: username,
-          profile: data[username].profile,
-          name: data[username].name,
-        };
-      });
+    .filter((username) => username.toLowerCase().includes(user2))
+    .map((username) => {
+      return {
+        username: username,
+        profile: data[username].profile,
+        name: data[username].name,
+      };
+    });
 
   res.json({ messages: chat, detail: matchedUsers });
 });
 
-// Endpoint to handle new messages
 
-//auto-reply
-const autoReplies = {
-  "hi": "Hey there! 🐾 Nice to meet you!",
-  "hello": "Hello! 🐾 Are you ready for some wild fun?",
-  "hey": "Hey! 🦁 What’s up in the jungle?",
-  "bye": "Goodbye, friend! 🐾 Hope to see you around!",
-  "see you": "Catch you later in the wild! 🐒",
-  "good morning": "Good morning! 🌅 The sun is shining, and so am I!",
-  "good afternoon": "Good afternoon! 🐾 Taking a break from roaming around?",
-  "good evening": "Good evening! 🌙 Time to wind down after a day of adventure.",
-  "good night": "Goodnight! 🌙 Time to curl up and rest.",
-  "how are you": "I’m as happy as a puppy with a new toy! 🐶 How about you?",
-  "what is your name": "I go by many names in the wild! 🐾 What would you like to call me?",
-  "how old are you": "Age? Just like a lion, I get stronger with each year! 🦁",
-  "what do you do": "I roam, I play, and I enjoy the beauty of nature! 🦋",
-  "help": "How can I assist? 🐾 Maybe a fun fact or a bit of wild wisdom?",
-  "weather": "Right now, it’s perfect for a run in the fields! 🌤️",
-  "news": "Not much news here—just the usual rustling leaves and chirping birds. 🌳",
-  "joke": "Why did the duck bring an umbrella? Because it was afraid of a fowl weather! 🦆",
-  "music": "I love the sounds of nature, like the wind and flowing streams. 🎶",
-  "what are you doing": "Just exploring the wild! 🦊",
-  "favorite color": "Green, like the leaves in the trees! 🌿",
-  "favorite animal": "I love all my animal friends, but I’d say elephants are pretty amazing! 🐘",
-  "favorite book": "'The Jungle Book'! It feels like home. 📚",
-  "favorite movie": "'The Lion King'—a true classic! 🦁",
-  "favorite song": "'Circle of Life'—it’s a roar-some tune! 🎶",
-  "favorite tv show": "'Planet Earth'! It really captures the beauty of nature. 📺",
-  "favorite sport": "Chasing after my friends! 🐾",
-  "favorite game": "Hide and seek! The forest is the best place for it. 🐒",
-  "favorite food": "Fresh fruit and greens! 🍃",
-  "favorite place": "The forest—there’s no place like home! 🌲",
-  "favorite activity": "Exploring new trails and sniffing around. 🐾",
-  "favorite thing": "Playing in the river and splashing around! 🐟",
-};
-
-
-app.post('/messages/:sender/:receiver', (req, res) => {
+app.post("/messages/:sender/:receiver", (req, res) => {
   const { sender, receiver } = req.params;
   const { message } = req.body;
   const lowerCaseMessage = message.toLowerCase();
   const timestamp = new Date().toISOString();
 
   // Load current data from message.json
-  fs.readFile(messageFilePath, 'utf8', (err, data) => {
+  fs.readFile(messageFilePath, "utf8", (err, data) => {
     if (err) {
       console.error(err);
       return res.status(500).send("Error reading message data");
@@ -473,11 +438,11 @@ app.post('/messages/:sender/:receiver', (req, res) => {
       autoReplyMessage = autoReplies[keyword];
       break;
     } else {
-      autoReplyMessage = ("I don't wanna reply with that. Sorry! :(");
+      autoReplyMessage = "I don't wanna reply with that. Sorry! :(";
     }
   }
   if (autoReplyMessage) {
-    res.json({ autoReply: autoReplyMessage});
+    res.json({ autoReply: autoReplyMessage });
   } else {
     res.json({ success: true });
   }
@@ -493,7 +458,6 @@ app.use("/ig", (err, req, res, next) => {
   console.error(err.stack);
   res.status(500).render("error.ejs", { message: "Something went wrong!" });
 });
-
 
 // Starting the Server
 app.listen(port, () => {
