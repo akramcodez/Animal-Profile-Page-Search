@@ -379,7 +379,7 @@ app.post("/ig/post/:id/edit", (req, res) => {
 });
 
 //message button clicked
-app.get("/message/:user", (req, res) => {
+app.get("/ig/message/:user", (req, res) => {
   res.render("message.ejs");
 });
 

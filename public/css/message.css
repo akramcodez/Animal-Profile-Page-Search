@@ -7,7 +7,7 @@
 .list {
     width: 23%;
     min-width: 16rem;
-    border-right: 1px solid;
+    border-right: 2px solid rgba(255, 255, 255, 0.486);
     padding: 0.8rem;
     display: flex;
     flex-direction: column;

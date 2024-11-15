@@ -3,36 +3,126 @@
     "cat": [
       {
         "sender": "tiger247",
-        "message": "Hello!",
+        "message": "hi",
         "timestamp": "2023-10-01T10:00:00Z"
       },
       {
         "sender": "cat",
-        "message": "Hi there!",
+        "message": "Hiya! Ready to swing into some fun? 🐒 What’s up, buddy?",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "tell me a joke",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Alright, here’s one for you: Why did the lion eat the comedian? Because he wanted to hear a roaring good joke! 😄",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "you are boring",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Oh, I’m boring? Well, maybe you should try meowing a little more. You know, I only grace those worthy of my attention. Yawn.",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "bye",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "cat",
+        "message": "Goodbye! Take care and come back soon! 👋",
         "timestamp": "2023-10-01T10:05:00Z"
       }
     ],
     "duck": [
       {
         "sender": "tiger247",
-        "message": "Hello!",
+        "message": "hi",
         "timestamp": "2023-10-01T10:00:00Z"
       },
       {
         "sender": "duck",
-        "message": "Hi there!",
+        "message": "Hiya! Ready to swing into some fun? 🐒 What’s up, buddy?",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "tell me a joke",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "Alright, here’s one for you: Why did the lion eat the comedian? Because he wanted to hear a roaring good joke! 😄",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "you are boring",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "Oh, I’m boring? Well, maybe you should try meowing a little more. You know, I only grace those worthy of my attention. Yawn.",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "bye",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "duck",
+        "message": "Goodbye! Take care and come back soon! 👋",
         "timestamp": "2023-10-01T10:05:00Z"
       }
     ],
     "dog": [
       {
         "sender": "tiger247",
-        "message": "Hello!",
+        "message": "hi",
         "timestamp": "2023-10-01T10:00:00Z"
       },
       {
         "sender": "dog",
-        "message": "Hi there!",
+        "message": "Hiya! Ready to swing into some fun? 🐒 What’s up, buddy?",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "tell me a joke",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "dog",
+        "message": "Alright, here’s one for you: Why did the lion eat the comedian? Because he wanted to hear a roaring good joke! 😄",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "you are boring",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "dog",
+        "message": "Oh, I’m boring? Well, maybe you should try meowing a little more. You know, I only grace those worthy of my attention. Yawn.",
+        "timestamp": "2023-10-01T10:05:00Z"
+      },
+      {
+        "sender": "tiger247",
+        "message": "bye",
+        "timestamp": "2023-10-01T10:00:00Z"
+      },
+      {
+        "sender": "dog",
+        "message": "Goodbye! Take care and come back soon! 👋",
         "timestamp": "2023-10-01T10:05:00Z"
       }
     ]
