@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("includes/head.ejs") %>
-    <title>Anigram • Create Post</title>
+    <%- include("../includes/head.ejs") %>
+    <title>Anigram • Edit Post</title>
     <link rel="stylesheet" href="/css/new.css" />
   </head>
   <body>
-    <%- include('includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
     <div class="right-side">
       <div class="middle container">
         <br />
-        <h2 class="title">Create New Post</h2>
+        <h2 class="title">Edit Post</h2>
 
         <div class="image-preview">
           <img id="previewImage" src="" />
@@ -19,19 +19,19 @@
           </p>
         </div>
 
-        <form method="POST" action="/ig/post/new" class="form">
+        <form method="POST" action="/ig/post/<%= post.id %>/edit" class="form">
           <div class="input-container">
             <input
               type="text"
               id="imageUrlInput"
-              placeholder="Enter Tiger image URL"
               name="image"
+              value="<%= post.image %>"
               required
             />
           </div>
 
           <div class="button-container">
-            <button type="submit" class="dark-button">Post</button>
+            <button type="submit" class="dark-button">Submit</button>
           </div>
         </form>
         <br />
@@ -39,12 +39,21 @@
     </div>
 
     <script>
-      document
-        .getElementById("imageUrlInput")
-        .addEventListener("input", function () {
+      document.addEventListener("DOMContentLoaded", function () {
+        const imageUrlInput = document.getElementById("imageUrlInput");
+        const previewImage = document.getElementById("previewImage");
+        const notFoundMessage = document.getElementById("notFoundMessage");
+
+        const initialImageUrl = imageUrlInput.value;
+        if (initialImageUrl) {
+          previewImage.src = initialImageUrl;
+          previewImage.style.display = "block";
+        } else {
+          previewImage.style.display = "none";
+        }
+
+        imageUrlInput.addEventListener("input", function () {
           const imageUrl = this.value;
-          const previewImage = document.getElementById("previewImage");
-          const notFoundMessage = document.getElementById("notFoundMessage");
 
           if (imageUrl) {
             previewImage.src = imageUrl;
@@ -66,6 +75,7 @@
             notFoundMessage.style.display = "none";
           }
         });
+      });
     </script>
   </body>
 </html>

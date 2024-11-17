@@ -114,7 +114,7 @@ app.get("/", (req, res) => {
   if (req.session.isAuthenticated) {
     return res.redirect("/ig");
   }
-  res.render("signup.ejs", { error: "" });
+  res.render("auth-ejs/signup.ejs", { error: "" });
 });
 
 // Route: Handle Sign-up or Sign-in Logic
@@ -125,7 +125,7 @@ app.post("/signin", (req, res) => {
     req.session.isAuthenticated = true;
     res.redirect("/ig");
   } else {
-    res.render("signup.ejs", {
+    res.render("auth-ejs/signup.ejs", {
       error:
         "Warning: Invalid Credentials! Please check the input fields, then try again",
     });
@@ -139,18 +139,18 @@ app.use("/ig", authMiddleware);
 app.get("/ig", (req, res) => {
   let posts = readPosts();
   const shuffledPosts = posts.sort(() => Math.random() - 0.5);
-  res.render("home.ejs", { data, posts: shuffledPosts });
+  res.render("main-ejs/home.ejs", { data, posts: shuffledPosts });
 });
 
 // Route : Settings and Subpages
-app.get("/ig/settings", (req, res) => res.render("setting.ejs"));
+app.get("/ig/settings", (req, res) => res.render("settings-ejs/setting.ejs"));
 app.get("/ig/settings/learn-more", (req, res) =>
-  res.render("setting_learn_more.ejs")
+  res.render("settings-ejs/setting_learn_more.ejs")
 );
 app.get("/ig/settings/creators", (req, res) =>
-  res.render("setting_creators.ejs")
+  res.render("settings-ejs/setting_creators.ejs")
 );
-app.get("/ig/settings/help", (req, res) => res.render("setting_help.ejs"));
+app.get("/ig/settings/help", (req, res) => res.render("settings-ejs/setting_help.ejs"));
 
 // Route : Log-out
 app.get("/log-out", (req, res) => {
@@ -161,7 +161,7 @@ app.get("/log-out", (req, res) => {
 
 // Route: Search Page
 app.get("/ig/search", (req, res) => {
-  res.render("search.ejs");
+  res.render("main-ejs/search.ejs");
 });
 
 // Route: User Search Results
@@ -193,7 +193,7 @@ app.get("/ig/explore", (req, res) => {
   const shuffledImages = allImages.sort(() => 0.5 - Math.random());
   const randomImages = shuffledImages.slice(0, 21);
 
-  res.render("explore.ejs", { images: randomImages });
+  res.render("explore-ejs/explore.ejs", { images: randomImages });
 });
 
 // Route: Show and Edit Post Pages
@@ -212,7 +212,7 @@ app.get("/ig/explore/:id", (req, res) => {
   });
 
   if (img && parent) {
-    res.render("explore-zoom.ejs", { img, parent });
+    res.render("explore-ejs/explore-zoom.ejs", { img, parent });
   } else {
     res.status(404).render("error.ejs", { message: "Post not found" });
   }
@@ -225,9 +225,9 @@ app.get("/ig/:username", (req, res) => {
   let data = instaData[username.toLowerCase()];
 
   if (username === "tiger247") {
-    res.render("myProfile.ejs", { data });
+    res.render("profile-ejs/myProfile.ejs", { data });
   } else if (data) {
-    res.render("insta.ejs", { data });
+    res.render("posts-ejs/insta.ejs", { data });
   } else {
     res.status(404).render("error.ejs", { message: "User not found" });
   }
@@ -238,7 +238,7 @@ app.get("/ig/:username/edit-profile", (req, res) => {
   let instaData = readData();
   let { username } = req.params;
   let data = instaData[username];
-  res.render("edit-profile.ejs", { data });
+  res.render("profile-ejs/edit-profile.ejs", { data });
 });
 
 // Route: Save Edited Profile
@@ -281,7 +281,7 @@ app.post("/ig/:username/delete", (req, res) => {
 });
 
 // Route : New Page and Post Addition
-app.get("/ig/post/new", (req, res) => res.render("new.ejs"));
+app.get("/ig/post/new", (req, res) => res.render("profile-ejs/new.ejs"));
 
 app.post("/ig/post/new", (req, res) => {
   const { image } = req.body;
@@ -325,7 +325,7 @@ app.get("/ig/posts/:id", (req, res) => {
   }
 
   if (post && parent) {
-    res.render("post.ejs", { post, parent });
+    res.render("posts-ejs/post.ejs", { post, parent });
   } else {
     res.status(404).render("error.ejs", { message: "Post not found" });
   }
@@ -345,7 +345,7 @@ app.get("/ig/post/:id/edit", (req, res) => {
   }
 
   if (post) {
-    res.render("edit.ejs", { post });
+    res.render("profile-ejs/edit.ejs", { post });
   } else {
     res.status(404).render("error.ejs", { message: "Post not found" });
   }
@@ -380,7 +380,7 @@ app.post("/ig/post/:id/edit", (req, res) => {
 
 //message button clicked
 app.get("/ig/message/:user", (req, res) => {
-  res.render("message.ejs");
+  res.render("message-ejs/message.ejs");
 });
 
 app.get("/messages/:user1/:user2", (req, res) => {

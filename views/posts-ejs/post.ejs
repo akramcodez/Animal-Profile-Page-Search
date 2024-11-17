@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <%- include("includes/head.ejs") %>
-    <title>Anigram • Explore/Post</title>
+    <%- include("../includes/head.ejs") %>
+    <title>Anigram • Post</title>
     <link rel="stylesheet" href="/css/post.css" />
     <link rel="stylesheet" href="/css/my-profile.css" />
   </head>
   <body>
-    <%- include('includes/navigation.ejs') %>
+    <%- include('../includes/navigation.ejs') %>
     <div class="right-side">
       <a href="/ig/<%= parent.animal %>">
         <div class="button-a">
@@ -19,7 +19,15 @@
       </a>
       <div class="post-container">
         <div class="image">
-          <img src="<%= img.url %>" />
+          <img src="<%= post.image %>" />
+        </div>
+        <div class="post-details">
+          <div class="likes">
+            <i class="fa-regular fa-heart"></i> <%= post.likes %>
+          </div>
+          <div class="comments">
+            <i class="fa-regular fa-comment"></i> <%= post.comments %>
+          </div>
         </div>
       </div>
     </div>
