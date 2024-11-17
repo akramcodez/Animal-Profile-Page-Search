@@ -36,12 +36,6 @@ app.use(
   }),
 );
 
-// Load data from index.json
-let data = readData();
-
-// Load data from explore.json
-let exploreData = readExplorePosts();
-
 // Authentication Middleware
 const authMiddleware = (req, res, next) => {
   if (!req.session.isAuthenticated) {
@@ -78,6 +72,7 @@ app.use('/ig', authMiddleware);
 
 // Route: Home Page
 app.get('/ig', (req, res) => {
+  let data = readData();
   let posts = readPosts();
   const shuffledPosts = posts.sort(() => Math.random() - 0.5);
   res.render('main-ejs/home.ejs', { data, posts: shuffledPosts });
@@ -127,6 +122,7 @@ app.get('/ig/search/users', (req, res) => {
 // Route : Explore
 app.get('/ig/explore', (req, res) => {
   const allImages = [];
+  let exploreData = readExplorePosts();
   exploreData.forEach((animal) => {
     animal.pic.forEach((image) => {
       allImages.push(image);
@@ -141,6 +137,7 @@ app.get('/ig/explore', (req, res) => {
 
 // Route: Show and Edit Post Pages
 app.get('/ig/explore/:id', (req, res) => {
+  let exploreData = readExplorePosts();
   let { id } = req.params;
   let img = null;
   let parent = null;
@@ -253,6 +250,7 @@ app.post('/ig/post/new', (req, res) => {
 
 // Route: Show and Edit Post Pages
 app.get('/ig/posts/:id', (req, res) => {
+  let data = readData();
   let { id } = req.params;
   let post = null;
   let parent = null;
@@ -275,6 +273,7 @@ app.get('/ig/posts/:id', (req, res) => {
 });
 
 app.get('/ig/post/:id/edit', (req, res) => {
+  let data = readData();
   let { id } = req.params;
   let post = null;
 
@@ -295,6 +294,7 @@ app.get('/ig/post/:id/edit', (req, res) => {
 });
 
 app.post('/ig/post/:id/edit', (req, res) => {
+  let data = readData();
   let { id } = req.params;
   let { image } = req.body;
   let post = null;
