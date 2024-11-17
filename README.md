@@ -106,7 +106,7 @@ We appreciate the efforts and dedication of all contributors:
 
 This project is licensed under the **MIT License**.  
 
-Permission is granted to use, copy, modify, and distribute this software for any purpose with or without fee, provided that the original copyright notice is included.  
+Permission is granted to use, copy, modify, and distribute this software for any purpose with or without fee, provided that the original copyright notice is included. [LICENSE](/LICENSE) 
 
 **THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND.**
 
