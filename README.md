@@ -1,6 +1,6 @@
 # 🐾 Anigram  
 
-A responsive demo of an **animal profile page** that allows users to browse, search, and interact with animal profiles.  
+A **dynamic animal social media platform** where users can browse, search, and interact with animal profiles.  
 **Inspired by Instagram!**
 
 ---
@@ -76,9 +76,6 @@ If the image URL from `data.json` isn't working:
 
 We appreciate the efforts and dedication of all contributors:
 
-- **[SK Akram](https://github.com/akramcodez)** :  
-  Built **Signup Page**, **New Post**, **Settings**, **Show Post**, **User Profiles**, **Responsive Design**, and **Sidebar Navigation**.
-
 - **[Rajat Mishra](https://github.com/mishraRj)** :  
   Worked on **Profile Editing** and **Post Deletion**.
 
@@ -86,7 +83,10 @@ We appreciate the efforts and dedication of all contributors:
   Worked on **Home Page** and **Routing**.
 
 - **[Himanshu](https://github.com/Himanshu19-coder)** :  
-  Worked on **Search Functionality and Suggestions**.
+  Worked on **Search Functionality, Suggestions, and Messaging**.
+
+- **[SK Akram](https://github.com/akramcodez)** :  
+  **Except for the above, everything else was developed by SK Akram**.  
 
 ---
 
