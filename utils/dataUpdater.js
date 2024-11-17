@@ -1,45 +1,50 @@
-// const fs = require("fs");
-// const { v4: uuidv4 } = require("uuid");
-// const path = require("path");
 
-// const {
-//   readData,
-//   writeData,
-//   readPosts,
-//   readExplorePosts,
-//   readMessages
-// } = require("./filePaths");
+/*
+ * NOTE:
+ * When adding a new explore post, a new user, or posts for any user,
+ * come to this file to update IDs to the correct UUID format.
+ * This ensures consistency across the application.
+ */
 
-// const isInvalidId = (id) => {
-//   return id === "no" || !/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id);
-// };
+const { v4: uuidv4 } = require("uuid");
 
-// const updateIds = (data, key) => {
-//   let needsUpdate = false;
-//   data.forEach((entry) => {
-//     if (entry[key]) {
-//       entry[key] = entry[key].map((item) => {
-//         if (isInvalidId(item.id)) {
-//           needsUpdate = true;
-//           return { ...item, id: uuidv4() };
-//         }
-//         return item;
-//       });
-//     }
-//   });
-//   return needsUpdate;
-// };
+const {
+  readData,
+  writeData,
+  readExplorePosts,
+  writeExplorePosts
+} = require("./filePaths");
 
-// const indexData = readData();
-// const indexNeedsUpdate = updateIds(Object.values(indexData), "posts");
+const isInvalidId = (id) => {
+  return id === "no" || !/^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$/.test(id);
+};
 
-// if (indexNeedsUpdate) {
-//   writeData(indexData);
-// }
+const updateIds = (data, key) => {
+  let needsUpdate = false;
+  data.forEach((entry) => {
+    if (entry[key]) {
+      entry[key] = entry[key].map((item) => {
+        if (isInvalidId(item.id)) {
+          needsUpdate = true;
+          return { ...item, id: uuidv4() };
+        }
+        return item;
+      });
+    }
+  });
+  return needsUpdate;
+};
 
-// const exploreData = readExplorePosts();
-// const exploreNeedsUpdate = updateIds(exploreData, "pic");
+const indexData = readData();
+const indexNeedsUpdate = updateIds(Object.values(indexData), "posts");
 
-// if (exploreNeedsUpdate) {
-//   writeData(exploreData);
-// }
+if (indexNeedsUpdate) {
+  writeData(indexData);
+}
+
+const exploreData = readExplorePosts();
+const exploreNeedsUpdate = updateIds(exploreData, "pic");
+
+if (exploreNeedsUpdate) {
+  writeExplorePosts(exploreData);
+}

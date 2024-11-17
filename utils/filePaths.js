@@ -14,6 +14,7 @@ const writeData = (data) => fs.writeFileSync(indexFilePath, JSON.stringify(data,
 const readPosts = () => JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
 
 const readExplorePosts = () => JSON.parse(fs.readFileSync(exploreFilePath, "utf8"));
+const writeExplorePosts = (data) => fs.writeFileSync(exploreFilePath, JSON.stringify(data, null, 2));
 
 const readMessages = () => JSON.parse(fs.readFileSync(messageFilePath, "utf8"));
 
@@ -24,5 +25,6 @@ module.exports = {
     readPosts,
     readExplorePosts,
     readMessages,
+    writeExplorePosts,
     messageFilePath
 };
