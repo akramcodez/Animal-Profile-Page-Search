@@ -4,6 +4,13 @@ const session = require("express-session");
 const fs = require("fs");
 const { v4: uuidv4 } = require("uuid");
 const path = require("path");
+const {readData,
+writeData,
+readPosts,
+readExplorePosts,
+readMessages,
+messageFilePath
+} = require("./utils/filePaths")
 
 // Import auto-replies from external file
 const autoReplies = require("./config/autoReplies");
@@ -27,26 +34,6 @@ app.use(
     cookie: { secure: false },
   })
 );
-
-// Setting Up Paths and Utility Functions to Read and Write JSON Data
-const indexFilePath = path.join(__dirname, "data", "index.json");
-const postsFilePath = path.join(__dirname, "data", "posts.json");
-const exploreFilePath = path.join(__dirname, "data", "explore.json");
-
-// Utility functions to read and write JSON data
-const readData = () => JSON.parse(fs.readFileSync(indexFilePath, "utf8"));
-const writeData = (data) =>
-  fs.writeFileSync(indexFilePath, JSON.stringify(data, null, 2));
-
-const readPosts = () => JSON.parse(fs.readFileSync(postsFilePath, "utf8"));
-
-const readExplorePosts = () =>
-  JSON.parse(fs.readFileSync(exploreFilePath, "utf8"));
-const writeExplorePosts = (data) =>
-  fs.writeFileSync(exploreFilePath, JSON.stringify(data, null, 2));
-
-const messageFilePath = path.join(__dirname, "data", "message.json");
-const readMessages = () => JSON.parse(fs.readFileSync(messageFilePath, "utf8"));
 
 // Load data from index.json
 let data = readData();
