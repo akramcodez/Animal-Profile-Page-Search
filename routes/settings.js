@@ -1,5 +1,6 @@
 // routes/settings.js
 const express = require('express');
+const expressError = require('../utils/expressError.js');
 const router = express.Router();
 
 router.get('/', (req, res) => {

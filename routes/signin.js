@@ -11,9 +11,9 @@ router.get('/', (req, res) => {
 
 // Route: Handle Sign-up or Sign-in Logic
 router.post('/signin', (req, res) => {
-  const { username, password } = req.body;
+  const { email, password } = req.body;
 
-  if (username === 'anigram@gmail.com' && password === 'by-akram') {
+  if (email === 'anigram@gmail.com' && password === 'by-akram') {
     req.session.isAuthenticated = true;
     res.redirect('/ig');
   } else {

@@ -2,6 +2,7 @@
 const express = require('express');
 const session = require('express-session');
 const path = require('path');
+const expressError = require('./utils/expressError.js');
 const app = express();
 const port = 8080;
 
@@ -55,14 +56,14 @@ app.use('/ig/posts', postsRoutes);
 app.use('/', msgRoutes);
 
 // Catch-all route for undefined paths under /ig
-app.use('/ig/*', (req, res) => {
-  res.status(404).render('error.ejs', { message: 'Page not found' });
+app.all('*', (req, res, next) => {
+  next(new expressError(404, 'Page not found'));
 });
 
 // Error-handling middleware for the /ig route
-app.use('/ig', (err, req, res, next) => {
-  console.error(err.stack);
-  res.status(500).render('error.ejs', { message: 'Something went wrong!' });
+app.use((err, req, res, next) => {
+  let { statusCode = 500, message = 'Something went wrong' } = err;
+  res.status(statusCode).render('error.ejs', { message });
 });
 
 // Starting the Server

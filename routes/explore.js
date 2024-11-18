@@ -1,11 +1,17 @@
 const express = require('express');
 const { readExplorePosts } = require('../utils/filePaths');
+const expressError = require('../utils/expressError.js');
 const router = express.Router();
 
-// Route : Explore
-router.get('/', (req, res) => {
+// Route: Explore
+router.get('/', (req, res, next) => {
   const allImages = [];
   let exploreData = readExplorePosts();
+
+  if (!exploreData) {
+    return next(new expressError(500, 'Error loading explore data'));
+  }
+
   exploreData.forEach((animal) => {
     animal.pic.forEach((image) => {
       allImages.push(image);
@@ -19,11 +25,15 @@ router.get('/', (req, res) => {
 });
 
 // Route: Show and Edit Post Pages
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
   let exploreData = readExplorePosts();
   let { id } = req.params;
   let img = null;
   let parent = null;
+
+  if (!exploreData) {
+    return next(new expressError(500, 'Error loading explore data'));
+  }
 
   exploreData.forEach((animal) => {
     animal.pic.forEach((image) => {
@@ -37,7 +47,7 @@ router.get('/:id', (req, res) => {
   if (img && parent) {
     res.render('explore/explore-zoom.ejs', { img, parent });
   } else {
-    res.status(404).render('error.ejs', { message: 'Post not found' });
+    next(new expressError(404, 'Post not found'));
   }
 });
 

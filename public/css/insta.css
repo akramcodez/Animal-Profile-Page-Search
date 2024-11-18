@@ -205,28 +205,61 @@ a {
   font-size: 5rem;
 }
 
-/* error */
+
 .error-div {
-  width: 30rem;
-  height: 5rem;
+  width: auto; 
+  max-width: 32rem; 
+  height: auto;
   margin: 80px auto;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: flex-start; 
+  padding: 1rem;
+  background-color: #1d0d0e; 
+  border-radius: 8px; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+  border: 1px solid #f5c6cb3f; 
+  color: #ff0720;
+  font-family: 'Arial', sans-serif;
+  word-wrap: break-word; 
+  max-width: 100%; 
 }
 
 .error-msg {
-  font-size: 2.2rem;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1.4;
+  color: #f80b23; 
+  margin-left: 1rem; 
+  flex: 1; 
+  white-space: pre-wrap; 
+  word-break: break-word; 
 }
 
 .img {
   height: 4rem;
   width: 4rem;
+  margin-left: 2rem;
+  border: 1px solid #f5c6cb3f;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
 
 .img img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  object-fit: contain; 
+}
+
+@media screen and (max-width: 768px) {
+  .error-div {
+    width: 90%; 
+    padding: 0.8rem;
+  }
+
+  .error-msg {
+    font-size: 1.6rem;
+  }
 }

@@ -89,6 +89,16 @@ a {
   right: 0;
   height: 100%;
 }
+
+input:invalid {
+  border: 1px solid red !important; 
+  background-color: #fdd;  
+}
+
+input:valid {
+  border: 2px solid green !important; 
+}
+
 @media (max-width: 860px) {
   .icon-p {
     margin-left: 0.5rem;

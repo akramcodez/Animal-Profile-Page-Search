@@ -85,3 +85,12 @@
   background-color: #484848;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5);
 }
+
+input:invalid {
+  border: 1px solid red !important; 
+  background-color: #fdd;  
+}
+
+input:valid {
+  border: 2px solid green !important; 
+}

@@ -1,17 +1,23 @@
 const express = require('express');
 const { v4: uuidv4 } = require('uuid');
 const { readData, writeData } = require('../utils/filePaths');
-
+const isValidUrl = require('../utils/isValidUrl');
+const expressError = require('../utils/expressError');
 const router = express.Router({ mergeParams: true });
 
 // Route: Render New Post Page
 router.get('/new', (req, res) => res.render('profile/new.ejs'));
 
 // Route: Handle New Post Creation
-router.post('/new', (req, res) => {
+router.post('/new', (req, res, next) => {
   const { image } = req.body;
   let users = readData();
   const tigerUser = users['tiger247'];
+
+  // Check if the image URL is valid
+  if (!image || !isValidUrl(image)) {
+    return next(new expressError(400, 'Invalid or missing image URL'));
+  }
 
   if (tigerUser) {
     const newPost = {
@@ -22,18 +28,22 @@ router.post('/new', (req, res) => {
     };
 
     tigerUser.posts.push(newPost);
-    writeData(users);
+    writeData(users, (err) => {
+      if (err) {
+        return next(new expressError(500, 'Error saving post data'));
+      }
 
-    req.session.destroy(() => {
-      res.redirect('/');
+      req.session.destroy(() => {
+        res.redirect('/');
+      });
     });
   } else {
-    res.status(404).render('error.ejs', { message: 'User not found' });
+    return next(new expressError(404, 'User not found'));
   }
 });
 
 // Route: Show Post by ID
-router.get('/:id', (req, res) => {
+router.get('/:id', (req, res, next) => {
   let data = readData();
   let { id } = req.params;
   let post = null;
@@ -52,12 +62,12 @@ router.get('/:id', (req, res) => {
   if (post && parent) {
     res.render('posts/post.ejs', { post, parent });
   } else {
-    res.status(404).render('error.ejs', { message: 'Post not found' });
+    next(new expressError(404, 'Post not found'));
   }
 });
 
 // Route: Render Edit Post Page
-router.get('/:id/edit', (req, res) => {
+router.get('/:id/edit', (req, res, next) => {
   let data = readData();
   let { id } = req.params;
   let post = null;
@@ -72,18 +82,23 @@ router.get('/:id/edit', (req, res) => {
   }
 
   if (post) {
-    res.render('profile/edit.ejs', { post });
+    res.render('profile/edit.ejs', { post }); //edit.ejs is used for both edit post and create new post
   } else {
-    res.status(404).render('error.ejs', { message: 'Post not found' });
+    next(new expressError(404, 'Post not found'));
   }
 });
 
 // Route: Handle Edit Post Submission
-router.post('/:id/edit', (req, res) => {
+router.post('/:id/edit', (req, res, next) => {
   let data = readData();
   let { id } = req.params;
   let { image } = req.body;
   let post = null;
+
+  // Validate the new image URL
+  if (image && !isValidUrl(image)) {
+    return next(new expressError(400, 'Invalid image URL'));
+  }
 
   for (const key in data) {
     const user = data[key];
@@ -96,13 +111,16 @@ router.post('/:id/edit', (req, res) => {
 
   if (post) {
     post.image = image;
-    writeData(data);
-
-    req.session.destroy(() => {
-      res.redirect('/');
+    writeData(data, (err) => {
+      if (err) {
+        return next(new expressError(500, 'Error saving post data'));
+      }
+      req.session.destroy(() => {
+        res.redirect('/');
+      });
     });
   } else {
-    res.status(404).render('error.ejs');
+    next(new expressError(404, 'Post not found'));
   }
 });
 
