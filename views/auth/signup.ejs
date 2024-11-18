@@ -3,6 +3,7 @@
   <head>
     <title>Anigram • Sign Up</title>
     <%- include("../includes/head.ejs") %>
+    <%- include("../includes/bootstrap.ejs") %>
     <link rel="stylesheet" href="/css/signup.css" />
   </head>
   <body>
@@ -12,19 +13,29 @@
     <div class="signup-container">
       <h1>Anigram</h1>
       <p class="subtitle">Join Anigram and connect with your animal friends!</p>
-      <form action="/signin" method="POST" class="signup-form">
-        <input
-          type="text"
-          name="username"
-          placeholder="Email ( anigram@gmail.com )"
-          required
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password ( by-akram )"
-          required
-        />
+      <form
+        action="/signin"
+        method="POST"
+        class="signup-form needs-validation"
+        novalidate
+      >
+        <div>
+          <input
+            type="text"
+            name="username"
+            placeholder="Email ( anigram@gmail.com )"
+            class="form-control"
+            required
+          />
+          <input
+            type="password"
+            name="password"
+            placeholder="Password ( by-akram )"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback" style="text-align: left;">See the placeholder, write the email and password.</div>
+        </div>
         <button type="submit">Sign In</button>
       </form>
       <div class="divider">OR</div>
@@ -37,5 +48,7 @@
         <i class="fas fa-paw" style="color: #3897f0"></i>
       </div>
     </div>
+
+    <script src="/js/script.js"></script>
   </body>
 </html>

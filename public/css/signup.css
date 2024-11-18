@@ -45,7 +45,7 @@ body {
   margin: 0.4rem 0;
   border: 1px solid #333;
   background-color: #333;
-  color: #ffffff;
+  color: #ffffff !important;
   border-radius: 4px;
   font-size: 0.9rem;
 }
@@ -133,6 +133,17 @@ body {
 a {
   text-decoration: none;
   color: #3897f0;
+}
+
+form input::placeholder {
+  color: #6c6b6b !important;
+  opacity: 0.8 !important;
+}
+
+
+form input:focus::placeholder {
+  color: #969292  !important;
+  opacity: 1 !important;
 }
 
 @keyframes fadeInOut {
