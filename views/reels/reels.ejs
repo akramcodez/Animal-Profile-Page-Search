@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include("../includes/head.ejs") %>
+    <title>Anigram • Reels</title>
+    <link rel="stylesheet" href="/css/reels.css" />
+  </head>
+  <body>
+    <%- include('../includes/navigation.ejs') %>
+    <div class="reels-container right-side">
+      <div class="reels-wrapper">
+        <% for (let video of videos) { %>
+        <div class="reel">
+          <video class="reel-video" controls>
+            <source src="<%= video.videoUrl %>" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+          <a href="/ig/<%= video.animal %>">
+            <div class="reel-info">
+              <img
+                style="width: 2.5rem; height: 2.5rem; border-radius: 50%"
+                src="<%= video.profile %>"
+                alt="Img"
+              />
+              <h3><%= video.title %></h3>
+              <p><%= video.description %></p>
+            </div>
+          </a>
+        </div>
+        <% } %>
+      </div>
+    </div>
+
+    <script>
+      // Function to handle autoplay and pause on scroll
+      window.addEventListener('scroll', () => {
+        const videos = document.querySelectorAll('.reel-video');
+        videos.forEach((video) => {
+          const rect = video.getBoundingClientRect();
+          if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+            video.play();
+          } else {
+            video.pause();
+          }
+        });
+      });
+
+      // Function to pause the video on click
+      const videoElements = document.querySelectorAll('.reel-video');
+      videoElements.forEach((video) => {
+        video.addEventListener('click', (event) => {
+          // Pause the video when clicked
+          video.pause();
+        });
+      });
+    </script>
+  </body>
+</html>

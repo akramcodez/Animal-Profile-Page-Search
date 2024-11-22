@@ -12,7 +12,9 @@ const {
   readData,
   writeData,
   readExplorePosts,
-  writeExplorePosts
+  writeExplorePosts,
+  readReels,
+  writeReels
 } = require("./filePaths");
 
 const isInvalidId = (id) => {
@@ -47,4 +49,25 @@ const exploreNeedsUpdate = updateIds(exploreData, "pic");
 
 if (exploreNeedsUpdate) {
   writeExplorePosts(exploreData);
+}
+
+
+const updateIdsInArray = (data) => {
+  let needsUpdate = false;
+
+  data.forEach((item) => {
+    if (isInvalidId(item.id)) {
+      needsUpdate = true;
+      item.id = uuidv4();
+    }
+  });
+
+  return needsUpdate;
+};
+
+const reelsData = readReels();
+const reelsNeedsUpdate = updateIdsInArray(reelsData);
+
+if (reelsNeedsUpdate) {
+  writeReels(reelsData);
 }

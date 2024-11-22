@@ -13,7 +13,7 @@
     },
     "posts": [
       {
-        "id": "59fd44e0-cf09-4c8b-aca2-af9e0fb39d4f",
+        "id": "ee2e8d83-f75e-438f-98ad-eae174cb30f6",
         "image": "https://images.unsplash.com/photo-1454023492550-5696f8ff10e1?q=80&w=2948&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
         "likes": "2k",
         "comments": 320
@@ -42,7 +42,8 @@
         "likes": 500,
         "comments": 6
       }
-    ]
+    ],
+    "id": "d1a4202f-9d26-442f-a552-a4d301020df1"
   },
   "cat": {
     "name": "Jack123",
@@ -75,7 +76,8 @@
         "likes": "1.65k",
         "comments": 200
       }
-    ]
+    ],
+    "id": "ae03a737-285f-44e0-85a5-55ecbcba8955"
   },
   "dog": {
     "name": "Beerry123",
@@ -108,7 +110,8 @@
         "likes": 500,
         "comments": 6
       }
-    ]
+    ],
+    "id": "afca49e6-602d-4c29-91d8-f90ebf1baaab"
   },
   "cow": {
     "name": "Momo123",
@@ -141,7 +144,8 @@
         "likes": "9.5k",
         "comments": 96
       }
-    ]
+    ],
+    "id": "9f4bff3b-505c-445b-a73f-6241aee79945"
   },
   "goat": {
     "name": "Kuttu123",
@@ -174,7 +178,8 @@
         "likes": 950,
         "comments": 9
       }
-    ]
+    ],
+    "id": "062c8269-1a52-48a7-92fe-c906cddd4288"
   },
   "hen": {
     "name": "Jhunu123",
@@ -207,7 +212,8 @@
         "likes": "9.57k",
         "comments": 98
       }
-    ]
+    ],
+    "id": "47d972cb-42b1-4074-8859-ff3afb3e5378"
   },
   "duck": {
     "name": "Punni123",
@@ -240,7 +246,8 @@
         "likes": 90,
         "comments": 8
       }
-    ]
+    ],
+    "id": "97644db6-cd50-4783-94b4-b43c7b6ac648"
   },
   "horse": {
     "name": "Speed123",
@@ -273,6 +280,7 @@
         "likes": 800,
         "comments": 8
       }
-    ]
+    ],
+    "id": "c247f6f8-128b-4c81-8441-846d6417b04b"
   }
 }

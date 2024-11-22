@@ -8,15 +8,13 @@ const port = 8080;
 
 // Import routes from external files
 const signinRoutes = require('./routes/signin');
-const mainPageRoutes = require('./routes/mainPage.js');
+const mainPageRoutes = require('./routes/mainPage');
 const settingsRoutes = require('./routes/settings');
 const exploreRoutes = require('./routes/explore');
 const usersRoutes = require('./routes/users');
 const postsRoutes = require('./routes/posts');
 const msgRoutes = require('./routes/msg');
-
-// Import auto-replies from external file
-const autoReplies = require('./config/autoReplies');
+const reelsRoutes = require('./routes/reel');
 
 // Middleware and App Configuration
 app.use(express.urlencoded({ extended: true }));
@@ -51,6 +49,7 @@ app.use('/ig', authMiddleware);
 app.use('/ig', mainPageRoutes);
 app.use('/ig/settings', settingsRoutes);
 app.use('/ig/explore', exploreRoutes);
+app.use('/ig/reels', reelsRoutes);
 app.use('/ig/:username', usersRoutes);
 app.use('/ig/posts', postsRoutes);
 app.use('/', msgRoutes);

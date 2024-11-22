@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1ec4ab4f-cb8c-46dc-973b-55df008fc445",
+    "animal": "cat",
+    "profile": "https://images.unsplash.com/photo-1645307472863-131c304b7bfc?q=80&w=2860&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Jack",
+    "description": "Watch a playful cat enjoy its time.",
+    "videoUrl": "/videos/cat.mp4"
+  },
+  {
+    "id": "38749fd1-df80-44bf-a216-f33a78b4f397",
+    "animal": "dog",
+    "profile": "https://images.unsplash.com/photo-1493916665398-143bdeabe500?q=80&w=2874&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Beerry",
+    "description": "Enjoy the playful and energetic dog running around.",
+    "videoUrl": "/videos/dog.mp4"
+  },
+  {
+    "id": "679b6eac-4138-4dd2-97e8-635c2da925fc",
+    "animal": "horse",
+    "profile": "https://images.unsplash.com/photo-1582438936689-2c109222b7f9?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "title": "Speed",
+    "description": "Experience the elegance and beauty of a majestic horse.",
+    "videoUrl": "/videos/horse.mp4"
+  }
+]
