@@ -299,3 +299,70 @@ body {
     height: 300px;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .main-area{
+    margin-top : 4rem;
+    margin-bottom: 4rem;
+    flex: 1;
+  }
+  .stories {
+    flex-wrap: nowrap; 
+    overflow-y: hidden;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; 
+    padding-top: 1rem;
+    padding-bottom: 6.5rem;
+    margin-bottom: 1rem; 
+    margin-top: 4rem;
+    height: 5rem!important;
+  }
+
+  .story {
+    flex: 0 0 auto; 
+    margin: 0 0.5rem; 
+  }
+
+  .content-area {
+    flex-direction: column; /* Stack the content vertically */
+    align-items: center;   /* Center-align the content */
+    padding: 0;       /* Add some padding for spacing */
+    margin-bottom: 2rem;
+    margin-left: 1rem;
+    overflow-y: auto;      /* Enable vertical scrolling if needed */
+  }
+
+  .content:first-child {
+    margin-top: 86rem;
+  }
+
+  .main-area {
+    width: 100%;          /* Use full width for the main content */
+    margin: 0;            /* Remove margins for a cleaner look */
+    overflow-y: visible;  /* Avoid hidden overflow on mobile */
+  }
+
+  .right-side {
+    display: none; /* Hide the right-side suggestions for mobile */
+  }
+
+  .main-content {
+    width: 95%;          /* Slightly reduce width for padding */
+    margin: 0 auto;      /* Center the main content */
+    padding: 1rem 0.5rem; /* Adjust padding for mobile */
+  }
+
+  .content {
+    width: 100%;          /* Make each content block fill the screen width */
+    margin-bottom: 1rem;  /* Adjust spacing between content blocks */
+  }
+
+  .post {
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  #mainImg {
+    height: 300px; /* Scale down images for mobile */
+  }
+
+}

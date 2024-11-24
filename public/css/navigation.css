@@ -1,3 +1,4 @@
+/* Base styles for desktop view (unchanged) */
 * {
   margin: 0;
   padding: 0;
@@ -52,4 +53,117 @@ body {
 
 a {
   text-decoration: none;
+}
+
+.top-nav-bar {
+  display: none;
+}
+
+/* Responsive styles for smaller screens */
+@media screen and (max-width: 768px) {
+  body {
+    display: block;
+    padding-bottom: 4rem; /* Add space for bottom navigation */
+  }
+
+  .lowerside-bar {
+    display: none;
+  }
+
+  .side-bar {
+    height: 4rem;
+    width: 100%;
+    min-width: 0;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.223);
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background-color: black;
+    z-index: 10;
+  }
+
+  .upperside-bar {
+    margin-top: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .upperside-bar a {
+    width: 100%;
+  }
+
+  .icon-p {
+    padding-left: 0;
+    justify-content: center;
+    flex-direction: column;
+    height: 100%;
+    font-size: 0.8rem;
+    text-align: center;
+  }
+
+  .icon-p i {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+
+  .explore,
+  .Message,
+  .like {
+    display: none !important;
+  }
+
+  span {
+    display: none;
+  }
+
+  .top-nav-bar {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4rem;
+    background-color: black;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.223);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 15; 
+  }
+
+  .top-nav-bar .top-right-bar {
+    display: flex;
+    position: fixed;
+    right: 0;
+    margin-right: 5%;
+  }
+
+  .top-nav-bar h1 {
+    position: fixed;
+    left: 0;
+    margin-left: 5%;
+    font-weight: 400;
+  }
+  
+  .top-nav-bar .icon-pp {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    text-align: center;
+    margin-left: 1rem;
+  }
+  
+  .top-nav-bar .icon-pp i {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+  
 }
