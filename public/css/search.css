@@ -6,6 +6,7 @@
 }
 .body {
   display: flex;
+  overflow-y: hidden;
 }
 
 .right-side {
@@ -131,3 +132,29 @@
   height: 3rem;
   align-items: center;
 }
+
+@media screen and (max-width: 768px) {
+  .right-side {
+    overflow-y: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: center; /* Horizontally center */
+    align-items: center; /* Vertically center */
+    height: 100vh;
+    flex-direction: column; /* Keep layout column-based for mobile */
+  }
+
+  .search-container{
+    margin-top: 10rem;
+    height: 50%;
+  }
+  .search-box {
+    margin: 0;
+    transform: translateY(-30%); /* Slight offset to balance alignment */
+  }
+  .search-1{
+    width: 60%;
+  }
+}
+
+

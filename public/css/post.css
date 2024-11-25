@@ -91,6 +91,24 @@
   }
 }
 
+@media screen and (max-width: 768px) {
+  .right-side{
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
+    height: 100vh;
+  }
 
-/* explore-zoom */
+  .post-container{
+    background-color: black;
+  }
 
+  .post-container .image {
+    width: 70%!important;
+    margin: 0;
+  }
+
+  .post-details{
+    justify-content: flex-start!important;
+  }
+}

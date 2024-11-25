@@ -333,7 +333,7 @@ body {
   }
 
   .content:first-child {
-    margin-top: 86rem;
+    margin-top: 76rem;
   }
 
   .main-area {
@@ -362,7 +362,7 @@ body {
   }
 
   #mainImg {
-    height: 300px;
+    height: 250px;
   }
 
 }

@@ -107,3 +107,14 @@ input:valid {
     width: 60%;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .right-side {
+    width: 100%;
+    padding-top: 3rem;
+  }
+
+  .lower form input {
+     width: 90%;
+  }
+}
